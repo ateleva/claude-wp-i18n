@@ -1,0 +1,67 @@
+{
+  "locale": "es_ES",
+  "_status": "partial",
+  "_source": "https://es.wordpress.org/team/handbook/traducciones/guia/",
+  "_note": "The Title Case and quoting rules come from the es team's own stated conventions (see es_ES.md). The rest is standard Spanish orthography. Rules marked not-researched need the es guide read before enabling.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": false,
+      "_why": "not-applicable: this is Italian orthography (e' for e-grave)."
+    },
+    "6f_title_case": {
+      "enabled": true,
+      "_why": "es team rule: 'No se admiten capitalizaciones dentro de las frases salvo nombres propios y excepciones aceptadas por la RAE.'",
+      "function_words": [
+        "el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del",
+        "a", "al", "en", "con", "por", "para", "y", "e", "o", "u", "que",
+        "se", "su", "sus", "es", "son", "no", "como", "si", "pero", "más",
+        "este", "esta", "estos", "estas"
+      ]
+    },
+    "6f_lowercase_months": {
+      "enabled": true,
+      "_why": "Spanish month names are lowercase.",
+      "months": [
+        "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+        "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+      ]
+    },
+    "6g_space_before_punctuation": {
+      "enabled": true,
+      "_why": "Spanish attaches punctuation to the preceding word. Note the opening marks in a pair are attached to the FOLLOWING word.",
+      "marks": ",.;:?!"
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": true,
+      "_why": "Spanish does not use a serial comma before the final conjunction.",
+      "conjunctions": ["y", "e", "o", "u"]
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": true,
+      "_why": "Spanish conjunction is 'y'.",
+      "conjunction": "y"
+    },
+    "6i_loanword_plural": {
+      "enabled": false,
+      "_why": "not-researched: Spanish commonly pluralises borrowed nouns (plugins, widgets). Confirm against the es glossary before enabling."
+    },
+    "6j_please": {
+      "enabled": false,
+      "_why": "not-researched: Spanish convention for 'Por favor' in device messages is not documented here."
+    },
+    "6k_gerund": {
+      "enabled": false,
+      "_why": "not-researched: no documented Spanish equivalent of Italian's 'in corso'."
+    },
+    "6l_clock_24h": {
+      "enabled": true,
+      "_why": "Spain uses the 24-hour clock in written/UI contexts."
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "host": "es.wordpress.org"
+    }
+  }
+}

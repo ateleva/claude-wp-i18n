@@ -771,3 +771,9 @@ Note non presenti nel manuale ufficiale, raccolte da un GTE italiano in `typhogr
 Dal glossario la traduzione di `required` è `necessario/a/i/e` (aggettivo, va concordato in genere e numero con il sostantivo a cui si riferisce). È un termine la cui traduzione è stata storicamente molto discussa: il gruppo italiano ha deciso nel 2020, con votazione, di adottare questa forma - vedi [https://it.wordpress.org/team/tag/required/](https://it.wordpress.org/team/tag/required/).
 
 Oltre a rispettare il glossario è importante mantenere una traduzione omogenea: nel parco traduzioni esistente sono presenti sia varianti di "necessarix" sia di "richiestx" per lo stesso significato. Quando il contesto lo consente, preferire la forma da glossario (`necessario/a/i/e`); un termine composto come "required plugin" può però legittimamente restare "plugin richiesto" per consistenza con l'uso di "plugin" come sostantivo invariato - in quel caso trattarlo come voce di glossario di progetto (vedi [Glossario di progetto](#glossario-di-progetto)), non come eccezione silenziosa alla regola generale.
+
+## Deterministic rule config
+
+Machine-readable companion: `data/locales/it_IT.rules.json` (status: **complete**, 13 rules active, 0 inactive).
+
+That file decides which of the deterministic checks 6e-6m `polyglots_check.py` applies to it_IT. Rules 6a-6d are locale-neutral and always run. A disabled rule records whether it is `not-applicable` (wrong for this locale) or `not-researched` (nobody has checked the handbook yet). Editing the prose here does not change what the script enforces; edit the JSON for that.

@@ -33,3 +33,9 @@ Slack: #polyglots-es channel on Make WordPress Slack
 Punctuation beyond quoting, date/number formats, capitalization edge cases
 beyond the RAE-exception rule above. Read the translators' guide before
 translating anything beyond single glossary terms.
+
+## Deterministic rule config
+
+Machine-readable companion: `data/locales/es_ES.rules.json` (status: **partial**, 9 rules active, 4 inactive).
+
+That file decides which of the deterministic checks 6e-6m `polyglots_check.py` applies to es_ES. Rules 6a-6d are locale-neutral and always run. A disabled rule records whether it is `not-applicable` (wrong for this locale) or `not-researched` (nobody has checked the handbook yet). Editing the prose here does not change what the script enforces; edit the JSON for that.

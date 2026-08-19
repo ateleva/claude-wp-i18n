@@ -1,0 +1,57 @@
+{
+  "locale": "de_DE",
+  "_status": "partial",
+  "_source": "https://de.wordpress.org/team/handbook/polyglots-team/style-guide/",
+  "_note": "Enables only rules justified by German orthography or by the de glossary itself. Rules marked not-applicable are deliberate and correct to leave off. Rules marked not-researched need someone to read the German style guide before enabling.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": false,
+      "_why": "not-applicable: this is Italian orthography (e' for e-grave). German has no equivalent."
+    },
+    "6f_title_case": {
+      "enabled": false,
+      "_why": "not-applicable: German capitalises EVERY noun, and the formal register capitalises the pronoun Sie/Ihr. The capitalised-function-word heuristic does not transfer and would fire constantly."
+    },
+    "6f_lowercase_months": {
+      "enabled": false,
+      "_why": "not-applicable: German month names are nouns and are correctly capitalised (Januar, Februar)."
+    },
+    "6g_space_before_punctuation": {
+      "enabled": true,
+      "_why": "German attaches punctuation to the preceding word, as Italian does.",
+      "marks": ",.;:?!"
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": true,
+      "_why": "German does not use a serial comma before the final conjunction.",
+      "conjunctions": ["und", "oder"]
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": true,
+      "_why": "German conjunction is 'und'. Previously this rule told German translators to use the Italian 'e'.",
+      "conjunction": "und"
+    },
+    "6i_loanword_plural": {
+      "enabled": false,
+      "_why": "not-applicable: German DOES take English -s plurals on loanwords. The de glossary documents 'add-ons -> Add-ons' as Mehrzahl. The Italian rule flagged that correct plural as an error."
+    },
+    "6j_please": {
+      "enabled": false,
+      "_why": "not-researched: German convention for 'Bitte' in device messages is not documented here."
+    },
+    "6k_gerund": {
+      "enabled": false,
+      "_why": "not-researched: no documented German equivalent of Italian's 'in corso'."
+    },
+    "6l_clock_24h": {
+      "enabled": true,
+      "_why": "German-speaking locales use the 24-hour clock."
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "host": "de.wordpress.org"
+    }
+  }
+}

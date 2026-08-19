@@ -62,22 +62,38 @@ If `LOCALE` or `SLUG` is missing, ask. Do not guess.
 
 ---
 
-## Step 2 - STOP CHECK: locale rules must exist
+## Step 2 - Check what this locale actually has
 
-Check `$WPI18N/data/locales/{LOCALE}.md`.
+Two files matter, and they are separate:
 
-If missing, stop and tell the user:
+| File | Purpose | If missing |
+|------|---------|------------|
+| `data/locales/{LOCALE}.md` | Human-readable style rules, tone. You read this to adjudicate Step 6. | Stop and ask the user to create it. |
+| `data/locales/{LOCALE}.rules.json` | Machine-readable switch for which deterministic rules apply. | The script runs **locale-neutral rules only** and says so. Not an error. |
+
+If the `.md` is missing, stop:
 
 > "No locale rules found for `{LOCALE}` at `data/locales/{LOCALE}.md`.
 > Create it with that locale's Polyglots style guidelines first.
 > Official guidelines: https://make.wordpress.org/polyglots/handbook/"
 
-Do **not** fall back to generic checks. Read the file fully if it exists -
-it is the reference for tone and for adjudicating Step 6.
+**Never substitute another locale's conventions.** That is not a harmless
+default: it tells the translator to break their own rules. Real cases the
+config system exists to prevent are listed in `references/rules.md`.
 
-Note which locales ship only a **stub** (currently fr_FR, de_DE, es_ES,
-pt_PT, en_GB). A stub covers tone and quoting but not full punctuation or
-date rules; say so rather than implying full coverage.
+Locale coverage as shipped:
+
+| Locale | Style rules | Rule config |
+|--------|-------------|-------------|
+| `it_IT` | full handbook | complete, all 13 rules |
+| `es_ES` | stub | partial, 9 active |
+| `fr_FR` | stub | partial, 8 active (space-before-punctuation off: French requires it) |
+| `pt_PT` | stub | minimal, 9 active, unverified against the pt handbook |
+| `de_DE` | stub | partial, 7 active (Title Case, months, loanword plural all off) |
+| `en_GB` | stub | complete, 4 active (it is English; most rules do not apply) |
+
+Report the locale's `_status` from the JSON to the user rather than implying
+full coverage.
 
 ---
 
@@ -126,10 +142,17 @@ python3 "$WPI18N/scripts/polyglots_check.py" \
   [--overlay "{overlay_path}"] --json /tmp/polyglots-{LOCALE}.json
 ```
 
-Exit 0 = clean. Exit 1 = findings. Exit 2 = no `.po` at the expected path.
+Exit 0 = clean. Exit 1 = findings. Exit 2 = no `.po`, or no cached glossary
+for the locale (the message says which, and how to fetch it).
 
-The JSON has two arrays: `findings` (deterministic, rules 6a-6m) and
-`glossary_findings` (candidates needing adjudication).
+The JSON has three keys: `findings` (deterministic, rules 6a-6m),
+`glossary_findings` (candidates needing adjudication), and `rule_status`.
+
+**Report `rule_status` to the user.** It names which rules actually ran for
+this locale. A rule listed as `inactive` means "not configured or not
+applicable for this locale", never "the strings passed it". Saying "no
+punctuation problems" when the punctuation rule never ran would be a false
+assurance.
 
 Rule reference, if you need to explain a finding:
 `$WPI18N/skills/wp-polyglots-check/references/rules.md`.
@@ -259,6 +282,7 @@ exists to catch. The doctor run at the end confirms the chain is intact.
 ━━ WP Polyglots Compliance ━━━━━━━━━━━━
   Locale : {LOCALE}   Plugin : {SLUG}
   File   : {PO_FILE}
+  Rules  : {status} - {n} active, {n} not applicable/configured
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Deterministic   ERROR {n}  WARNING {n}  INFO {n}

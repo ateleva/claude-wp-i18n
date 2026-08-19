@@ -173,7 +173,9 @@ skills/
   wp-i18n-doctor/        diagnose, read-only
 data/
   glossaries/            per-locale CSVs + fetch metadata
-  locales/               per-locale style rules
+  locales/
+    {LOCALE}.md          human-readable style rules and tone
+    {LOCALE}.rules.json  which deterministic rules apply to that locale
   locale-map.md          locale code, plural forms, glossary slug
 scripts/
   glossary.py            fetch / cache / lookup / candidate extraction
@@ -209,7 +211,20 @@ Glossaries are seeded for six locales and fetchable for any.
 
 Any other locale still works for extraction, `.pot`/`.po`/`.mo` generation, and sidecars. Fetch its glossary with `glossary.py fetch --slug <slug>`.
 
-**Caveat worth knowing:** the style rules encoded in `polyglots_check.py` for accents, capitalization, punctuation, humanised "Please", gerunds, and dates are **Italian** conventions, currently applied regardless of locale. Before trusting the checker on another locale, port those rules to its handbook or rely on the locale-neutral ones (placeholders, HTML tags, must-not-translate strings, and the glossary-driven loanword rule).
+### Style rules are scoped per locale
+
+Rules 6a-6d (must-not-translate, fuzzy, placeholders, HTML tags) are locale-neutral and always run. Everything else is language-specific and runs only where `data/locales/{LOCALE}.rules.json` enables it.
+
+**A locale with no rule config gets the locale-neutral rules and the glossary check, nothing else,** and the report says so explicitly. No locale ever inherits another's conventions, because that does not produce vague advice, it tells the translator to break their own rules:
+
+| Locale | What a one-size-fits-all Italian rule would do |
+|--------|-----------------------------------------------|
+| `de_DE` | Flag `Add-ons` and say to drop the `-s`. That is the German glossary's own documented plural (Mehrzahl). |
+| `de_DE` | Tell a German translator to use `e` instead of `und`. |
+| `fr_FR` | Flag `Voulez-vous vraiment ?`. French typography *requires* that space before `?`. |
+| `en_GB` | Flag ordinary Title Case, capitalised months, `&`, and 12-hour clocks. |
+
+Each config records why a rule is off, distinguishing **`not-applicable`** (wrong for this locale, leave off) from **`not-researched`** (nobody has read that handbook yet, safe to enable once someone does). Per-locale coverage is in the table above; see `skills/wp-polyglots-check/references/rules.md` for the format.
 
 ---
 

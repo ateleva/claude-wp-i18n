@@ -112,37 +112,77 @@ def check_6d(msgid, msgstr):
     return None
 
 
-# --- 6e: accent errors (it_IT) ---------------------------------------------------
+# =============================================================================
+# LOCALE-SPECIFIC RULES (6e-6m)
+#
+# Everything below depends on the target language's conventions and is driven
+# by data/locales/{LOCALE}.rules.json. A rule with no config entry does NOT
+# run. That default is deliberate: applying one locale's conventions to
+# another does not merely give generic advice, it tells the translator to
+# BREAK their own rules. Real examples this design prevents:
+#
+#   de_DE  "Add-ons" is the German glossary's OWN documented plural
+#          (Mehrzahl). The Italian no-English-plural rule flagged it as an
+#          error and told the translator to write "Add-on".
+#   de_DE  Italian's "use e instead of &" told a German translator to use
+#          an Italian conjunction rather than "und".
+#   fr_FR  "Voulez-vous vraiment ?" carries the space before "?" that French
+#          typography REQUIRES. The Italian rule flagged it as a mistake.
+#
+# So a missing config means "we do not know this locale's rules", never
+# "assume Italian".
+# =============================================================================
 
-def check_6e(msgid, msgstr):
-    if re.search(r"\be'|\bE'", msgstr):
-        return Finding("6e", "ERROR", msgid, msgstr, "Uses e'/E' instead of è/È")
+LOCALE_NEUTRAL_RULES = ("6a", "6b", "6c", "6d")
+
+
+def load_locale_rules(locale, data_dir):
+    """Load data/locales/{LOCALE}.rules.json.
+
+    Returns (rules_dict, status). status is 'configured' when a file exists,
+    'neutral-only' when it does not, in which case rules_dict is empty and
+    only the locale-neutral checks 6a-6d will run."""
+    path = os.path.join(data_dir, "locales", f"{locale}.rules.json")
+    if not os.path.isfile(path):
+        return {}, "neutral-only"
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("rules", {}), "configured"
+
+
+def _rule(cfg, key):
+    """Return the rule's config dict if it is enabled, else None."""
+    r = cfg.get(key)
+    if isinstance(r, dict) and r.get("enabled"):
+        return r
     return None
 
 
-# --- 6f: capitalization (it_IT) --------------------------------------------------
+def active_rule_ids(cfg):
+    """Rule ids that will actually run for this locale, for the report."""
+    active = list(LOCALE_NEUTRAL_RULES)
+    active += sorted(k for k, v in cfg.items() if isinstance(v, dict) and v.get("enabled"))
+    return active
 
-ITALIAN_MONTHS = (
-    "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio",
-    "agosto", "settembre", "ottobre", "novembre", "dicembre",
-)
 
-# Italian function words. A capitalised one MID-SENTENCE is the actual signal
-# for Title Case, because proper nouns and acronyms never capitalise these.
-# Counting "3 consecutive capitalised words" instead flagged ordinary strings
-# like "PHP OpenSSL", "Google Authenticator, Authy" and "Local by Flywheel":
-# measured against the real free-plugin .po, that heuristic produced 8
-# findings, all 8 false positives.
-ITALIAN_FUNCTION_WORDS = {
-    "il", "lo", "la", "i", "gli", "le", "un", "uno", "una", "di", "a", "da",
-    "in", "con", "su", "per", "tra", "fra", "e", "o", "ma", "che", "se",
-    "del", "dello", "della", "dei", "degli", "delle", "dal", "dallo",
-    "dalla", "dai", "dagli", "dalle", "al", "allo", "alla", "ai", "agli",
-    "alle", "nel", "nello", "nella", "nei", "negli", "nelle", "sul",
-    "sullo", "sulla", "sui", "sugli", "sulle", "come", "non", "anche",
-    "quando", "dove", "questo", "questa", "sono", "essere",
-}
+def inactive_rule_ids(cfg):
+    return sorted(k for k, v in cfg.items() if isinstance(v, dict) and not v.get("enabled"))
 
+
+# --- 6e: apostrophe used instead of an accented vowel -------------------------
+
+def check_6e(msgid, msgstr, cfg):
+    r = _rule(cfg, "6e_apostrophe_accent")
+    if not r:
+        return None
+    for bad, good in r.get("pairs", []):
+        if re.search(r"\b" + re.escape(bad), msgstr):
+            return Finding("6e", "ERROR", msgid, msgstr,
+                           f"Uses {bad} instead of {good}")
+    return None
+
+
+# --- 6f: capitalization -------------------------------------------------------
 
 def _is_sentence_initial(text, start):
     """True if the token at `start` opens the string or a new sentence.
@@ -155,77 +195,128 @@ def _is_sentence_initial(text, start):
     return before[-1] in ".?!:;\n" or before[-1] in "([{\"'«"
 
 
-def check_6f(msgid, msgstr):
-    words = list(re.finditer(r"[A-Za-zÀ-ÿ']+", msgstr))
-    if len(words) > 3:
-        # ALL-CAPS acronyms (PHP, PDF, MB) carry no case information, and a
-        # function word opening a sentence is correct, so neither counts.
-        offenders = [
-            m.group(0) for m in words
-            if m.group(0)[:1].isupper()
-            and m.group(0) != m.group(0).upper()
-            and m.group(0).lower() in ITALIAN_FUNCTION_WORDS
-            and not _is_sentence_initial(msgstr, m.start())
-        ]
-        if offenders:
-            return Finding("6f", "WARNING", msgid, msgstr,
-                           f"Possible Title Case: function word(s) capitalised "
-                           f"mid-sentence {sorted(set(offenders))}. Italian uses "
-                           f"sentence case.")
-    # month name capitalised mid-sentence (not the first word of msgstr)
-    tail = msgstr[1:] if msgstr else ""
-    for month in ITALIAN_MONTHS:
-        if re.search(r"(?<=\s)" + month.capitalize() + r"\b", tail):
-            return Finding("6f", "WARNING", msgid, msgstr,
-                            f"Month name '{month.capitalize()}' capitalised mid-sentence "
-                            "-- should be lowercase")
+def check_6f_title_case(msgid, msgstr, cfg):
+    """Flag a FUNCTION word capitalised mid-sentence.
+
+    Counting "3 consecutive capitalised words" instead flagged ordinary
+    strings full of acronyms and proper nouns ("PHP OpenSSL", "Google
+    Authenticator, Authy", "Local by Flywheel"): 8 findings on the real
+    free-plugin .po, all 8 false positives. Proper nouns never capitalise
+    function words, so those are the real signal.
+
+    The word list is per-locale because the words differ, and because some
+    locales must not run this at all: German capitalises every noun, and its
+    formal register capitalises the pronoun "Sie", so the heuristic does not
+    transfer."""
+    r = _rule(cfg, "6f_title_case")
+    if not r:
+        return None
+    function_words = {w.lower() for w in r.get("function_words", [])}
+    if not function_words:
+        return None
+    words = list(re.finditer(r"[^\W\d_]+", msgstr, re.UNICODE))
+    if len(words) <= 3:
+        return None
+    offenders = [
+        m.group(0) for m in words
+        if m.group(0)[:1].isupper()
+        and m.group(0) != m.group(0).upper()      # skip ALL-CAPS acronyms
+        and m.group(0).lower() in function_words
+        and not _is_sentence_initial(msgstr, m.start())
+    ]
+    if offenders:
+        return Finding("6f", "WARNING", msgid, msgstr,
+                       f"Possible Title Case: function word(s) capitalised "
+                       f"mid-sentence {sorted(set(offenders))}. This locale uses "
+                       f"sentence case.")
     return None
 
 
-# --- 6g: punctuation (it_IT) -----------------------------------------------------
+def check_6f_months(msgid, msgstr, cfg):
+    """Flag a capitalised month name mid-sentence.
 
-def check_6g(msgid, msgstr):
+    Off for de_DE (months are nouns, so German capitalises them) and for
+    en_GB (English capitalises them)."""
+    r = _rule(cfg, "6f_lowercase_months")
+    if not r:
+        return None
+    for month in r.get("months", []):
+        if re.search(r"(?<=\s)" + re.escape(month.capitalize()) + r"\b", msgstr):
+            return Finding("6f", "WARNING", msgid, msgstr,
+                           f"Month name '{month.capitalize()}' capitalised "
+                           f"mid-sentence, should be lowercase in this locale")
+    return None
+
+
+# --- 6g: punctuation ----------------------------------------------------------
+
+def check_6g(msgid, msgstr, cfg):
     problems = []
-    if re.search(r"\s[,.;:?!]", msgstr):
-        problems.append("space before punctuation")
-    if re.search(r"\.{4,}", msgstr):
-        problems.append("ellipsis has 4+ dots (use … or exactly ...)")
-    # Oxford comma: per the it_IT handbook this is specifically "la virgola
-    # inserita prima della congiunzione che TERMINA UN ELENCO" ("uno, due, e
-    # tre"). A comma before "e" joining two independent clauses is ordinary
-    # correct Italian, so require an earlier comma proving a list is in
-    # progress. Without that, real strings like "... Sodium e Zip, e questo
-    # server non le ha" were flagged wrongly.
-    m_ox = re.search(r",\s+[eo]\s", msgstr)
-    if m_ox and "," in msgstr[:m_ox.start()]:
-        problems.append("Oxford comma ending a list (Italian omits it: 'uno, due e tre')")
-    if re.search(r"\(\s|\s\)", msgstr):
-        problems.append("space just inside parentheses")
+
+    # French REQUIRES a space before ; : ! ? so this sub-rule is off there.
+    r = _rule(cfg, "6g_space_before_punctuation")
+    if r:
+        marks = r.get("marks", ",.;:?!")
+        if re.search(r"\s[" + re.escape(marks) + r"]", msgstr):
+            problems.append("space before punctuation")
+
+    if _rule(cfg, "6g_ellipsis"):
+        if re.search(r"\.{4,}", msgstr):
+            problems.append("ellipsis has 4+ dots (use the ellipsis character or exactly ...)")
+
+    # Scoped to the conjunction ENDING A LIST, per the it_IT handbook: "la
+    # virgola inserita prima della congiunzione che termina un elenco". A
+    # comma before "e" joining two independent clauses is correct, so require
+    # an earlier comma proving a list is in progress.
+    r = _rule(cfg, "6g_oxford_comma")
+    if r:
+        conj = r.get("conjunctions", [])
+        if conj:
+            pattern = r",\s+(?:" + "|".join(re.escape(c) for c in conj) + r")\s"
+            m_ox = re.search(pattern, msgstr)
+            if m_ox and "," in msgstr[:m_ox.start()]:
+                problems.append("serial comma before the final conjunction; this locale omits it")
+
+    if _rule(cfg, "6g_paren_spacing"):
+        if re.search(r"\(\s|\s\)", msgstr):
+            problems.append("space just inside parentheses")
+
     if problems:
         return Finding("6g", "WARNING", msgid, msgstr, "; ".join(problems))
     return None
 
 
-# --- 6h: & as conjunction (it_IT) ------------------------------------------------
+# --- 6h: & used as a conjunction ----------------------------------------------
 
 def _has_bare_ampersand(s):
     return re.search(r"(?<!&)\s&\s(?!amp;)", s) is not None
 
 
-def check_6h(msgid, msgstr):
+def check_6h(msgid, msgstr, cfg):
+    r = _rule(cfg, "6h_ampersand")
+    if not r:
+        return None
+    conjunction = r.get("conjunction")
+    if not conjunction:
+        return None
     if _has_bare_ampersand(msgid) and _has_bare_ampersand(msgstr):
         return Finding("6h", "WARNING", msgid, msgstr,
-                        "Uses '&' as conjunction -- Italian should use 'e'")
+                       f"Uses '&' as a conjunction; this locale should use "
+                       f"'{conjunction}'")
     return None
 
 
-# --- 6i: English loanword plurals (it_IT), generalised from the glossary --------
+# --- 6i: English loanword plurals, driven by the locale glossary --------------
 
 def build_invariato_terms(entries):
-    """Terms the LOCALE glossary keeps unchanged (target text equals the
-    English term itself) -- generalises rule 6i beyond its original
-    hardcoded plugins/themes/widgets list to every such loanword (~130 in
-    it.csv: account, blog, editor, ...)."""
+    """Terms the LOCALE glossary keeps unchanged (target equals the English
+    term). Generalises 6i beyond its original hardcoded plugins/themes/widgets
+    list to every such loanword (~130 in it.csv: account, blog, editor, ...).
+
+    Note this only identifies the terms. Whether an English -s plural on them
+    is WRONG is a separate, per-locale question, gated by 6i_loanword_plural:
+    Italian drops the -s, German does not ("Add-ons" is the German glossary's
+    own documented plural)."""
     out = set()
     for key, entry_list in entries.items():
         if len(key) < 3:
@@ -237,104 +328,147 @@ def build_invariato_terms(entries):
     return out
 
 
-def check_6i(msgid, msgstr, invariato_terms):
-    hits = [t for t in invariato_terms if re.search(r"\b" + re.escape(t) + r"s\b", msgstr, re.IGNORECASE)]
+def check_6i(msgid, msgstr, invariato_terms, cfg):
+    if not _rule(cfg, "6i_loanword_plural"):
+        return None
+    hits = [t for t in invariato_terms
+            if re.search(r"\b" + re.escape(t) + r"s\b", msgstr, re.IGNORECASE)]
     if hits:
         return Finding("6i", "WARNING", msgid, msgstr,
-                        f"English loanword plural(s) should drop the 's' in Italian: {sorted(hits)}")
+                       f"English loanword plural(s); this locale keeps the "
+                       f"singular form: {sorted(hits)}")
     return None
 
 
-# --- 6j: "Please" humanised (it_IT) -----------------------------------------------
+# --- 6j: "Please" humanised ----------------------------------------------------
 
-def check_6j(msgid, msgstr):
-    if re.match(r"^Please\b", msgid.strip()):
-        if re.match(r"^(Si prega|Per favore)\b", msgstr.strip(), re.IGNORECASE):
-            return Finding("6j", "WARNING", msgid, msgstr,
-                            "Humanized 'Please' as Si prega/Per favore -- Italian "
-                            "device messages should drop it entirely")
+def check_6j(msgid, msgstr, cfg):
+    r = _rule(cfg, "6j_please")
+    if not r:
+        return None
+    humanizers = r.get("humanizers", [])
+    if not humanizers:
+        return None
+    if re.match(r"^Please\b", msgid.strip(), re.IGNORECASE):
+        for h in humanizers:
+            if re.match(r"^" + re.escape(h) + r"\b", msgstr.strip(), re.IGNORECASE):
+                return Finding("6j", "WARNING", msgid, msgstr,
+                               f"Humanized 'Please' as '{h}'; this locale drops "
+                               f"it from device messages")
     return None
 
 
-# --- 6k: gerund without "in corso" (it_IT) ----------------------------------------
+# --- 6k: progressive/gerund marker ---------------------------------------------
 
-def check_6k(msgid, msgstr):
+def check_6k(msgid, msgstr, cfg):
+    r = _rule(cfg, "6k_gerund")
+    if not r:
+        return None
+    marker = r.get("marker")
+    if not marker:
+        return None
     if re.match(r"^[A-Z][a-z]*ing\b", msgid.strip()):
-        if "in corso" not in msgstr.lower():
+        if marker.lower() not in msgstr.lower():
             return Finding("6k", "INFO", msgid, msgstr,
-                            "Gerund without 'in corso' -- Italian convention adds it "
-                            "(e.g. 'Caricamento impostazioni in corso...')")
+                           f"Gerund without '{marker}'; this locale's convention "
+                           f"adds it")
     return None
 
 
-# --- 6l: date format (it_IT) ------------------------------------------------------
+# --- 6l: 12-hour vs 24-hour clock in date-format strings ------------------------
 
 DATE_FORMAT_HINT = re.compile(r"[gGhH]:i(:s)?\s*[Aa]?")
 
 
-def check_6l(msgid, msgstr):
+def check_6l(msgid, msgstr, cfg):
+    """Off for en_GB, where 12-hour am/pm is legitimate."""
+    if not _rule(cfg, "6l_clock_24h"):
+        return None
     if DATE_FORMAT_HINT.search(msgid):
         if re.search(r"[gh]:i(:s)?\s*[Aa]\b", msgstr):
             return Finding("6l", "WARNING", msgid, msgstr,
-                            "Keeps 12-hour AM/PM format -- Italian dates use 24h (H:i), no AM/PM")
+                           "Keeps 12-hour AM/PM format; this locale uses 24h (H:i)")
     return None
 
 
-# --- 6m: wordpress.org URL (it_IT) ------------------------------------------------
+# --- 6m: localized wordpress.org host ------------------------------------------
 
-def check_6m(msgid, msgstr):
+def check_6m(msgid, msgstr, cfg):
+    r = _rule(cfg, "6m_localized_host")
+    if not r:
+        return None
+    host = r.get("host")
+    if not host:
+        return None
     if re.search(r"https://wordpress\.org/", msgstr):
         return Finding("6m", "INFO", msgid, msgstr,
-                        "Bare wordpress.org URL -- consider it.wordpress.org where "
-                        "an Italian page exists")
+                       f"Bare wordpress.org URL; consider {host} where a "
+                       f"localized page exists")
     return None
 
 
-DETERMINISTIC_CHECKS_SIMPLE = (
-    check_6c, check_6d, check_6e, check_6f, check_6g, check_6h,
-    check_6j, check_6k, check_6l, check_6m,
-)
+def check_entry(msgid, fields, invariato_terms, cfg):
+    """Run the applicable rules against one entry.
 
-
-def check_entry(msgid, fields, invariato_terms):
-    """Run every deterministic rule (6a-6m) against one entry. Only requires
-    msgstr to be non-empty -- unlike the checks' original prose gate
-    ("non-empty AND different from msgid"), msgstr == msgid is NOT
-    skipped here, matching the fix glossary.py's find_candidates already
-    tests for (test_untranslated_entry_is_still_checked): an untranslated
-    Dashboard left as "Dashboard" is a real finding, not a no-op. The only
-    checks where msgstr == msgid is itself the CORRECT state (6a) encode
-    that in their own condition rather than as a blanket skip."""
+    Only requires msgstr to be non-empty. Unlike the checks' original prose
+    gate ("non-empty AND different from msgid"), msgstr == msgid is NOT
+    skipped, matching the fix glossary.py's find_candidates already tests for
+    (test_untranslated_entry_is_still_checked): an untranslated Dashboard
+    left as "Dashboard" is a real finding. The one check where msgstr ==
+    msgid is the CORRECT state (6a) encodes that in its own condition."""
     msgstr = fields["msgstr"]
     if not msgstr:
         return []
 
     findings = []
-    f = check_6a(msgid, msgstr, fields["extracted_comments"])
-    if f:
-        findings.append(f)
-    f = check_6b(msgid, msgstr, fields["flags"])
-    if f:
-        findings.append(f)
-    for check in DETERMINISTIC_CHECKS_SIMPLE:
-        f = check(msgid, msgstr)
+    # Locale-neutral: always run.
+    for f in (check_6a(msgid, msgstr, fields["extracted_comments"]),
+              check_6b(msgid, msgstr, fields["flags"]),
+              check_6c(msgid, msgstr),
+              check_6d(msgid, msgstr)):
         if f:
             findings.append(f)
-    f = check_6i(msgid, msgstr, invariato_terms)
-    if f:
-        findings.append(f)
+
+    # Locale-specific: run only what this locale's config enables.
+    for f in (check_6e(msgid, msgstr, cfg),
+              check_6f_title_case(msgid, msgstr, cfg),
+              check_6f_months(msgid, msgstr, cfg),
+              check_6g(msgid, msgstr, cfg),
+              check_6h(msgid, msgstr, cfg),
+              check_6i(msgid, msgstr, invariato_terms, cfg),
+              check_6j(msgid, msgstr, cfg),
+              check_6k(msgid, msgstr, cfg),
+              check_6l(msgid, msgstr, cfg),
+              check_6m(msgid, msgstr, cfg)):
+        if f:
+            findings.append(f)
+
     return findings
 
 
-def run_checks(po_path, slug, data_dir, overlay_path=None):
-    """Run every check against every translated entry in po_path. Returns
-    (findings: list[Finding], glossary_findings: list[glossary.Candidate]).
-    Read-only: never writes to po_path or anything else."""
+def run_checks(po_path, slug, data_dir, overlay_path=None, locale=None):
+    """Run the applicable checks against every translated entry in po_path.
+
+    Returns (findings, glossary_findings, rule_status). rule_status describes
+    which rules ran for this locale so callers can be explicit about coverage
+    rather than implying every rule was applied.
+
+    `locale` selects data/locales/{LOCALE}.rules.json. When it is None or has
+    no config file, ONLY the locale-neutral rules 6a-6d run: no locale's
+    conventions are ever assumed for another. Read-only throughout."""
     with open(po_path, encoding="utf-8", errors="replace") as f:
         content = f.read()
     blocks = parse_po_blocks(content)
     entries = load_glossary(slug, data_dir, overlay_path=overlay_path)
     invariato_terms = build_invariato_terms(entries)
+
+    cfg, status = ({}, "neutral-only") if locale is None else load_locale_rules(locale, data_dir)
+    rule_status = {
+        "locale": locale,
+        "status": status,
+        "active": active_rule_ids(cfg),
+        "inactive": inactive_rule_ids(cfg),
+    }
 
     findings = []
     glossary_findings = []
@@ -345,11 +479,11 @@ def run_checks(po_path, slug, data_dir, overlay_path=None):
         msgstr = fields["msgstr"]
         if not msgstr:
             continue
-        findings.extend(check_entry(msgid, fields, invariato_terms))
+        findings.extend(check_entry(msgid, fields, invariato_terms, cfg))
         for c in find_candidates(entries, msgid, msgstr):
             glossary_findings.append(_with_msgid(c, msgid, msgstr))
 
-    return findings, glossary_findings
+    return findings, glossary_findings, rule_status
 
 
 GlossaryFinding = namedtuple(
@@ -403,7 +537,12 @@ def main():
         sys.exit(2)
 
     slug = _glossary_slug_for_locale(args.locale, args.data_dir)
-    findings, glossary_findings = run_checks(po_path, slug, args.data_dir, overlay_path=args.overlay)
+    try:
+        findings, glossary_findings, rule_status = run_checks(
+            po_path, slug, args.data_dir, overlay_path=args.overlay, locale=args.locale)
+    except FileNotFoundError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        sys.exit(2)
 
     by_sev = {"ERROR": [], "WARNING": [], "INFO": []}
     for f in findings:
@@ -414,6 +553,22 @@ def main():
     print(f"  WARNING : {len(by_sev['WARNING'])}")
     print(f"  INFO    : {len(by_sev['INFO'])}")
     print(f"  GLOSSARY: {len(glossary_findings)} (needs model adjudication)")
+
+    # State coverage explicitly. Silence here would let a user assume every
+    # rule ran for their locale when most may not be configured.
+    print(f"\nRule coverage for {args.locale}: {rule_status['status']}")
+    if rule_status["status"] == "neutral-only":
+        print(f"  No data/locales/{args.locale}.rules.json, so ONLY the")
+        print(f"  locale-neutral rules ran: {', '.join(LOCALE_NEUTRAL_RULES)}")
+        print(f"  (must-not-translate, fuzzy, placeholders, HTML tags) plus the")
+        print(f"  glossary check. No style rules from any other locale were")
+        print(f"  applied. Add that file to enable style checks for {args.locale}.")
+    else:
+        print(f"  active  : {', '.join(rule_status['active'])}")
+        if rule_status["inactive"]:
+            print(f"  inactive: {', '.join(rule_status['inactive'])}")
+            print(f"  (inactive means not configured or not applicable for this")
+            print(f"   locale, never that the string passed the rule)")
     for sev in ("ERROR", "WARNING", "INFO"):
         for f in by_sev[sev]:
             print(f"\n[{f.rule} {f.severity}] {f.message}")
@@ -427,6 +582,7 @@ def main():
     if args.json:
         payload = {
             "po_path": po_path,
+            "rule_status": rule_status,
             "findings": [f._asdict() for f in findings],
             "glossary_findings": [g._asdict() for g in glossary_findings],
         }

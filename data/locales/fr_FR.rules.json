@@ -1,0 +1,66 @@
+{
+  "locale": "fr_FR",
+  "_status": "partial",
+  "_source": "https://fr.wordpress.org/team/handbook/polyglots/les-regles-typographiques-utilisees-pour-la-traduction-de-wp-en-francais/",
+  "_note": "Enables only rules justified by standard French typography. The space-before-punctuation rule is deliberately OFF because French requires that space, the opposite of Italian.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": false,
+      "_why": "not-applicable: this is Italian orthography (e' for e-grave)."
+    },
+    "6f_title_case": {
+      "enabled": true,
+      "_why": "French uses sentence case, not Title Case.",
+      "function_words": [
+        "le", "la", "les", "un", "une", "des", "de", "du", "au", "aux",
+        "et", "ou", "en", "dans", "sur", "pour", "par", "avec", "que",
+        "qui", "ne", "pas", "ce", "cette", "ces", "son", "sa", "ses",
+        "est", "sont", "plus", "comme", "si", "mais", "vous", "nous"
+      ]
+    },
+    "6f_lowercase_months": {
+      "enabled": true,
+      "_why": "French month names are lowercase.",
+      "months": [
+        "janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+        "août", "septembre", "octobre", "novembre", "décembre"
+      ]
+    },
+    "6g_space_before_punctuation": {
+      "enabled": false,
+      "_why": "not-applicable and actively WRONG for French: French typography REQUIRES a space (narrow no-break) before ; : ! and ?. The Italian rule flagged correct French such as 'Voulez-vous vraiment ?' as an error. Enabling this for fr_FR would tell translators to break their own rules."
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": true,
+      "_why": "French does not use a serial comma before the final conjunction.",
+      "conjunctions": ["et", "ou"]
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": true,
+      "_why": "French conjunction is 'et'.",
+      "conjunction": "et"
+    },
+    "6i_loanword_plural": {
+      "enabled": false,
+      "_why": "not-researched: French generally does pluralise borrowed nouns, unlike Italian. Confirm against the fr glossary before enabling."
+    },
+    "6j_please": {
+      "enabled": false,
+      "_why": "not-researched: French convention for 'Veuillez' in device messages is not documented here."
+    },
+    "6k_gerund": {
+      "enabled": false,
+      "_why": "not-researched: no documented French equivalent of Italian's 'in corso'."
+    },
+    "6l_clock_24h": {
+      "enabled": true,
+      "_why": "France uses the 24-hour clock."
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "host": "fr.wordpress.org"
+    }
+  }
+}

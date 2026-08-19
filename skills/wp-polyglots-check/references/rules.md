@@ -40,9 +40,49 @@ marker phrases, which is how its own POT generator emits them.
 
 ## Locale scope
 
-The accent, capitalization, punctuation, humanisation, gerund, and date
-rules (6e-6m) encode **Italian** conventions. They are applied regardless of
-locale today. Before trusting this skill on fr_FR, de_DE, es_ES, pt_PT, or
-en_GB, port each rule's expectations to that locale's handbook, or restrict
-the run to the locale-neutral rules (6a-6d, plus 6i, which is glossary-driven
-and therefore already locale-correct).
+**6a-6d are locale-neutral** and always run: they check WP.org structural
+markers, the fuzzy flag, placeholders, and HTML tags. None depends on the
+target language.
+
+**6e-6m are locale-specific** and run only where
+`data/locales/{LOCALE}.rules.json` enables them. A locale with no config
+file gets the locale-neutral rules and the glossary check, nothing else.
+
+That default is deliberate. Applying one locale's conventions to another
+does not give generic advice, it instructs the translator to break their own
+rules. Every one of these was a real defect before the config existed:
+
+| Locale | What the Italian rule did |
+|--------|---------------------------|
+| `de_DE` | Flagged `Add-ons` as an error and said to drop the `-s`. That is the German glossary's OWN documented plural (`add-ons -> Add-ons`, Mehrzahl). |
+| `de_DE` | Told a German translator to replace `&` with the Italian `e` rather than `und`. |
+| `de_DE` | Would flag every correctly capitalised German noun and month as Title Case. |
+| `fr_FR` | Flagged `Voulez-vous vraiment ?` as "space before punctuation". French typography REQUIRES that space. |
+| `en_GB` | Would flag ordinary English Title Case, capitalised months, `&`, and 12-hour am/pm clocks, none of which are errors in English. |
+
+### Rule config format
+
+`data/locales/{LOCALE}.rules.json`:
+
+```json
+{
+  "locale": "it_IT",
+  "_status": "complete",
+  "rules": {
+    "6h_ampersand": { "enabled": true, "conjunction": "e" },
+    "6i_loanword_plural": { "enabled": false, "_why": "not-applicable: ..." }
+  }
+}
+```
+
+Every disabled rule must carry a `_why` (a test enforces this), and the
+wording distinguishes two very different states:
+
+- **`not-applicable`** - the rule is wrong for this locale and should stay
+  off permanently. German loanword plurals, French punctuation spacing.
+- **`not-researched`** - the rule might well apply, but nobody has checked
+  that locale's handbook yet. Safe to investigate and enable.
+
+`_status` is `complete`, `partial`, or `minimal`, describing how far the
+locale has actually been verified against its own handbook. Only `it_IT` and
+`en_GB` are `complete`, and `en_GB` only because almost nothing applies to it.

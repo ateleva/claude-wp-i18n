@@ -1,0 +1,75 @@
+{
+  "locale": "it_IT",
+  "_status": "complete",
+  "_source": "https://it.wordpress.org/team/handbook/polyglots/ (full handbook reproduced in it_IT.md)",
+  "_note": "The only locale whose style rules are fully verified against its handbook. Every rule below traces to a documented section.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": true,
+      "_why": "it_IT.md 'Apostrofi' / 'L'apostrofo non e un accento'",
+      "pairs": [["e'", "e grave"], ["E'", "E grave"]]
+    },
+    "6f_title_case": {
+      "enabled": true,
+      "_why": "it_IT.md 'Scrittura Title Case': Italian does not use Title Case",
+      "function_words": [
+        "il", "lo", "la", "i", "gli", "le", "un", "uno", "una", "di", "a",
+        "da", "in", "con", "su", "per", "tra", "fra", "e", "o", "ma", "che",
+        "se", "del", "dello", "della", "dei", "degli", "delle", "dal",
+        "dallo", "dalla", "dai", "dagli", "dalle", "al", "allo", "alla",
+        "ai", "agli", "alle", "nel", "nello", "nella", "nei", "negli",
+        "nelle", "sul", "sullo", "sulla", "sui", "sugli", "sulle", "come",
+        "non", "anche", "quando", "dove", "questo", "questa", "sono",
+        "essere"
+      ]
+    },
+    "6f_lowercase_months": {
+      "enabled": true,
+      "_why": "it_IT.md 'Nomi dei giorni e dei mesi': lowercase in Italian",
+      "months": [
+        "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+        "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"
+      ]
+    },
+    "6g_space_before_punctuation": {
+      "enabled": true,
+      "_why": "it_IT.md 'Punteggiatura'. Italian attaches punctuation to the preceding word.",
+      "marks": ",.;:?!"
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": true,
+      "_why": "it_IT.md 'Virgola di Oxford': not used in Italian. Scoped to a list-ending conjunction.",
+      "conjunctions": ["e", "o"]
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": true,
+      "_why": "Italian spells the conjunction out",
+      "conjunction": "e"
+    },
+    "6i_loanword_plural": {
+      "enabled": true,
+      "_why": "Glossary descriptions repeat 'In italiano non si riportano le s del plurale' for invariato loanwords"
+    },
+    "6j_please": {
+      "enabled": true,
+      "_why": "it glossary entry: Please -> NON SI TRADUCE. Device messages drop it.",
+      "humanizers": ["si prega", "per favore"]
+    },
+    "6k_gerund": {
+      "enabled": true,
+      "_why": "it_IT.md 'Verbi che finiscono in ...ING'",
+      "marker": "in corso"
+    },
+    "6l_clock_24h": {
+      "enabled": true,
+      "_why": "it_IT.md 'Formattazione delle date e degli orari'"
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "_why": "it_IT.md 'URL da trasformare nella versione italiana'",
+      "host": "it.wordpress.org"
+    }
+  }
+}

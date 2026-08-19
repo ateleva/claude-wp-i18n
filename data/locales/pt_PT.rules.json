@@ -1,0 +1,67 @@
+{
+  "locale": "pt_PT",
+  "_status": "minimal",
+  "_source": "https://pt.wordpress.org/team/handbook/ (specific handbook page not yet located)",
+  "_note": "The thinnest config here. The source material for this locale supplied no style notes at all, so only rules backed by general European Portuguese orthography are enabled. Read the pt handbook and revisit before relying on this beyond the locale-neutral checks and the glossary.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": false,
+      "_why": "not-applicable: this is Italian orthography (e' for e-grave)."
+    },
+    "6f_title_case": {
+      "enabled": true,
+      "_why": "Portuguese uses sentence case. Not verified against the pt handbook, only against general orthography.",
+      "function_words": [
+        "o", "a", "os", "as", "um", "uma", "de", "do", "da", "dos", "das",
+        "em", "no", "na", "nos", "nas", "ao", "aos", "para", "com", "por",
+        "e", "ou", "que", "se", "não", "mais", "como", "este", "esta",
+        "seu", "sua", "é", "são"
+      ]
+    },
+    "6f_lowercase_months": {
+      "enabled": true,
+      "_why": "Portuguese month names are lowercase.",
+      "months": [
+        "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
+        "agosto", "setembro", "outubro", "novembro", "dezembro"
+      ]
+    },
+    "6g_space_before_punctuation": {
+      "enabled": true,
+      "_why": "Portuguese attaches punctuation to the preceding word.",
+      "marks": ",.;:?!"
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": true,
+      "_why": "Portuguese does not use a serial comma before the final conjunction.",
+      "conjunctions": ["e", "ou"]
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": true,
+      "_why": "Portuguese conjunction is 'e'.",
+      "conjunction": "e"
+    },
+    "6i_loanword_plural": {
+      "enabled": false,
+      "_why": "not-researched: confirm against the pt glossary before enabling."
+    },
+    "6j_please": {
+      "enabled": false,
+      "_why": "not-researched: Portuguese convention for 'Por favor' in device messages is not documented here."
+    },
+    "6k_gerund": {
+      "enabled": false,
+      "_why": "not-researched: no documented Portuguese equivalent of Italian's 'in corso'."
+    },
+    "6l_clock_24h": {
+      "enabled": true,
+      "_why": "Portugal uses the 24-hour clock."
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "host": "pt.wordpress.org"
+    }
+  }
+}

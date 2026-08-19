@@ -1,0 +1,55 @@
+{
+  "locale": "en_GB",
+  "_status": "complete",
+  "_source": "en-gb glossary; en_GB is a spelling-variant locale rather than a translation target",
+  "_note": "Deliberately the emptiest config. en_GB is English, so most of these rules are Romance-language conventions that are simply wrong here: English DOES use Title Case in UI, DOES capitalise month names, DOES use '&', and DOES legitimately use a 12-hour am/pm clock. The real work for this locale is the glossary (British spelling) plus the locale-neutral checks.",
+  "rules": {
+    "6e_apostrophe_accent": {
+      "enabled": false,
+      "_why": "not-applicable: English has no accented vowels to mistype."
+    },
+    "6f_title_case": {
+      "enabled": false,
+      "_why": "not-applicable: English UI legitimately uses Title Case for labels and buttons."
+    },
+    "6f_lowercase_months": {
+      "enabled": false,
+      "_why": "not-applicable: English capitalises month names."
+    },
+    "6g_space_before_punctuation": {
+      "enabled": true,
+      "_why": "English attaches punctuation to the preceding word.",
+      "marks": ",.;:?!"
+    },
+    "6g_ellipsis": { "enabled": true },
+    "6g_oxford_comma": {
+      "enabled": false,
+      "_why": "not-applicable: the Oxford comma is a legitimate and widely used English style, not an error."
+    },
+    "6g_paren_spacing": { "enabled": true },
+    "6h_ampersand": {
+      "enabled": false,
+      "_why": "not-applicable: '&' is normal in English UI copy."
+    },
+    "6i_loanword_plural": {
+      "enabled": false,
+      "_why": "not-applicable: these are English words in English; the -s plural is correct."
+    },
+    "6j_please": {
+      "enabled": false,
+      "_why": "not-applicable: the source string's own 'Please' is being preserved, not humanised."
+    },
+    "6k_gerund": {
+      "enabled": false,
+      "_why": "not-applicable: the English gerund stays a gerund."
+    },
+    "6l_clock_24h": {
+      "enabled": false,
+      "_why": "not-applicable: en_GB legitimately uses 12-hour am/pm as well as 24-hour."
+    },
+    "6m_localized_host": {
+      "enabled": true,
+      "host": "en-gb.wordpress.org"
+    }
+  }
+}
