@@ -1,0 +1,30 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wp-i18n",
+  "description": "WordPress i18n suite for Claude Code: translate, check against Polyglots glossary/style rules, diagnose broken translations.",
+  "owner": {
+    "name": "ateleva",
+    "url": "https://github.com/ateleva"
+  },
+  "plugins": [
+    {
+      "name": "wp-i18n",
+      "description": "Translate WordPress plugin/theme strings, check them against the WordPress.org Polyglots glossary and locale style rules, and diagnose why a translated string is not rendering.",
+      "version": "2.0.0",
+      "author": {
+        "name": "ateleva",
+        "url": "https://github.com/ateleva"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/ateleva/claude-wp-i18n",
+      "tags": [
+        "wordpress",
+        "i18n",
+        "translation",
+        "polyglots",
+        "l10n"
+      ]
+    }
+  ]
+}

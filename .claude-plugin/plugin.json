@@ -1,0 +1,9 @@
+{
+  "name": "wp-i18n",
+  "description": "WordPress i18n suite: translate plugin/theme strings, check them against WordPress.org Polyglots glossary + style rules, and diagnose why a translated string is not rendering.",
+  "version": "2.0.0",
+  "author": {
+    "name": "ateleva",
+    "url": "https://github.com/ateleva"
+  }
+}
