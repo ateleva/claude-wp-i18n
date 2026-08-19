@@ -1,0 +1,3 @@
+en,it,pos,description
+"required plugin","plugin richiesto",expression,"Project overlay: loanword noun keeps richiesto (agrees with plugin), not the bare locale glossary lemma necessario."
+"required plugins","plugin richiesti",expression,"Project overlay: plural agreement for the above."
