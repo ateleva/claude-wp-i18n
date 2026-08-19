@@ -17,7 +17,7 @@ FIXTURE_OVERLAY = os.path.join(TESTS_DIR, "fixtures", "overlay-it_IT.csv")
 
 sys.path.insert(0, os.path.join(REPO_ROOT, "scripts"))
 
-from glossary import load_glossary, find_candidates  # noqa: E402
+from glossary import load_glossary, find_candidates, is_po_header_block  # noqa: E402
 
 
 class TestFindCandidates(unittest.TestCase):
@@ -82,6 +82,28 @@ class TestFindCandidates(unittest.TestCase):
         self.assertTrue(c)
         self.assertEqual(c[0].source, "overlay")
         self.assertEqual(c[0].expected, "plugin richiesto")
+
+
+class TestPoHeaderDetection(unittest.TestCase):
+    def test_real_po_header_is_detected(self):
+        """po_manager.parse_po_blocks() mis-attributes the header's msgstr
+        continuation lines to msgid instead of returning msgid=None for it
+        (a bug in that existing, unmodified file) -- confirmed against the
+        real free-plugin it_IT.po, whose header produced fake 'domain' and
+        'last' glossary candidates (from its X-Domain:/Last-Translator:
+        fields) before this guard existed."""
+        block = (
+            '# Italian translation\n'
+            'msgid ""\n'
+            'msgstr ""\n'
+            '"Project-Id-Version: eleva-crm-for-photographers 1.3.8\\n"\n'
+            '"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"\n'
+        )
+        self.assertTrue(is_po_header_block(block))
+
+    def test_real_entry_is_not_mistaken_for_header(self):
+        block = 'msgid "Last Name"\nmsgstr "Cognome"\n'
+        self.assertFalse(is_po_header_block(block))
 
 
 if __name__ == "__main__":

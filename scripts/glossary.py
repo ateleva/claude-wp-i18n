@@ -162,6 +162,52 @@ def fetch_glossary(slug, data_dir):
     return len(content), path
 
 
+_PO_HEADER_SHAPE = re.compile(r'^msgid\s+""\s*\nmsgstr\s+""\s*$', re.MULTILINE)
+
+
+def is_po_header_block(block):
+    """True for the .po file header block specifically.
+
+    po_manager.parse_po_blocks() is supposed to return msgid=None for the
+    header, but its continuation-line scan for an empty msgid doesn't stop
+    before the following msgstr line, so it walks straight into msgstr's OWN
+    continuation lines and returns their joined text as if it were msgid's
+    continuation -- the header comes back as a normal, non-None "entry"
+    whose fake msgid is literally the Project-Id-Version/Report-Msgid-Bugs
+    metadata block. That's an existing bug in po_manager.py (left unchanged
+    per the plan), so every caller here defends against it directly instead
+    of trusting msgid is None for headers. The header's real, distinguishing
+    shape is msgid "" immediately followed by msgstr "" on the next line --
+    no real translatable entry has both a literally empty msgid AND msgstr."""
+    return _PO_HEADER_SHAPE.search(block) is not None
+
+
+def parse_entry_fields(block):
+    """Extract the fields Phase 2/3 checks need from one raw .po block (as
+    returned by po_manager.parse_po_blocks: msgid already decoded, block is
+    the untouched raw text). Not a second .po parser -- it's a field
+    accessor over a block parse_po_blocks already split out, the same
+    technique po_manager.list_untranslated uses inline for msgstr alone;
+    this just makes it reusable and adds the two fields (#. comments, #,
+    flags) list_untranslated didn't need."""
+    msgstr = ""
+    m = re.search(r'^msgstr\s+"((?:[^"\\]|\\.)*)"', block, re.MULTILINE)
+    if m:
+        msgstr = m.group(1)
+        rest = block[m.end():]
+        cont = re.findall(r'^"([^"]*)"', rest, re.MULTILINE)
+        if cont:
+            msgstr += "".join(cont)
+        msgstr = msgstr.replace('\\"', '"').replace("\\\\", "\\").replace("\\n", "\n")
+
+    extracted_comments = re.findall(r"^#\.\s?(.*)$", block, re.MULTILINE)
+    flags = set()
+    for fline in re.findall(r"^#,\s?(.*)$", block, re.MULTILINE):
+        flags.update(x.strip() for x in fline.split(","))
+
+    return {"msgstr": msgstr, "extracted_comments": extracted_comments, "flags": flags}
+
+
 def _strip_allcaps_literals(text):
     """Drop tokens the user types or sees verbatim (RESET, OTP codes) so
     they can't accidentally match a same-spelled lowercase glossary term."""
@@ -287,17 +333,9 @@ def _cmd_candidates(args):
 
     report = []
     for msgid, block in blocks:
-        if msgid is None:
+        if msgid is None or is_po_header_block(block):
             continue
-        m = re.search(r'^msgstr\s+"((?:[^"\\]|\\.)*)"', block, re.MULTILINE)
-        if not m:
-            continue
-        msgstr_val = m.group(1)
-        rest = block[m.end():]
-        cont = re.findall(r'^"([^"]*)"', rest, re.MULTILINE)
-        if cont:
-            msgstr_val += "".join(cont)
-        msgstr_val = msgstr_val.replace('\\"', '"').replace("\\\\", "\\").replace("\\n", "\n")
+        msgstr_val = parse_entry_fields(block)["msgstr"]
         if not msgstr_val:
             continue  # untranslated: not this script's concern
 
