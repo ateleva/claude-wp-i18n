@@ -1,0 +1,32 @@
+{
+  "it": {
+    "fetched": "2026-08-19",
+    "bytes": 39577,
+    "source_url": "https://translate.wordpress.org/locale/it/default/glossary/-export/?format=csv"
+  },
+  "fr": {
+    "fetched": "2026-08-19",
+    "bytes": 26515,
+    "source_url": "https://translate.wordpress.org/locale/fr/default/glossary/-export/?format=csv"
+  },
+  "de": {
+    "fetched": "2026-08-19",
+    "bytes": 23104,
+    "source_url": "https://translate.wordpress.org/locale/de/default/glossary/-export/?format=csv"
+  },
+  "es": {
+    "fetched": "2026-08-19",
+    "bytes": 27408,
+    "source_url": "https://translate.wordpress.org/locale/es/default/glossary/-export/?format=csv"
+  },
+  "pt": {
+    "fetched": "2026-08-19",
+    "bytes": 17060,
+    "source_url": "https://translate.wordpress.org/locale/pt/default/glossary/-export/?format=csv"
+  },
+  "en-gb": {
+    "fetched": "2026-08-19",
+    "bytes": 16851,
+    "source_url": "https://translate.wordpress.org/locale/en-gb/default/glossary/-export/?format=csv"
+  }
+}

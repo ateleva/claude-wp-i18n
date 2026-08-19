@@ -761,3 +761,13 @@ It is not different as what happens on GitHub, where access is not given directl
 We do feel you can understand that these rules are meant **to give You the best possible localization for your product**(s), and **to give the entire WP community a better UX, a stronger platform and a healthier ecosystem to work on**.
 
 We hope everything is clear. If not, you can always catch us on [Slack](https://make.wordpress.org/chat/) to discuss this further. Happy coding!
+
+## Regole aggiuntive dai GTE
+
+Note non presenti nel manuale ufficiale, raccolte da un GTE italiano in `typhography-rules.md` e riportate qui perché rilevanti per chi traduce plugin/tema.
+
+### "required"
+
+Dal glossario la traduzione di `required` è `necessario/a/i/e` (aggettivo, va concordato in genere e numero con il sostantivo a cui si riferisce). È un termine la cui traduzione è stata storicamente molto discussa: il gruppo italiano ha deciso nel 2020, con votazione, di adottare questa forma — vedi [https://it.wordpress.org/team/tag/required/](https://it.wordpress.org/team/tag/required/).
+
+Oltre a rispettare il glossario è importante mantenere una traduzione omogenea: nel parco traduzioni esistente sono presenti sia varianti di "necessarix" sia di "richiestx" per lo stesso significato. Quando il contesto lo consente, preferire la forma da glossario (`necessario/a/i/e`); un termine composto come "required plugin" può però legittimamente restare "plugin richiesto" per consistenza con l'uso di "plugin" come sostantivo invariato — in quel caso trattarlo come voce di glossario di progetto (vedi [Glossario di progetto](#glossario-di-progetto)), non come eccezione silenziosa alla regola generale.

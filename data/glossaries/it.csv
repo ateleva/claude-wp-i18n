@@ -1,0 +1,562 @@
+en,it,pos,description
+"404 not found","404: la pagina non è stata trovata",expression,
+about,"chi siamo",noun,"ALTRE POSSIBILI TRADUZIONI: Chi sono oppure Info
+Il termine va contestualizzato a seconda se si tratti di una sezione/pagina di un tema, oppure altre parti. Nel caso in cui sia una voce del menu nel backend (o una etichetta) che restituisce informazioni sul tema/plugin (o sul suo autore) si traduce con *Info* o *Informazioni su (plugin/tema/autore/…)"
+accent,"in risalto",noun,"quando riferito ad esempio al colore principale di un tema"
+"accent color","colore in risalto",expression,
+accordion,accordion,noun,"Si riferisce a un preciso tipo di visualizzazione a scomparsa. Si lascia invariato, declinare al maschile"
+account,account,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"action hook","action hook",noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+activate,attivazione,noun,
+activate,attiva,verb,
+activated,attivato,adjective,
+"add on",add-on,noun,"In riferimento ad un'estensione o componente aggiuntivo di un software. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale. "
+add-on,add-on,noun,"In riferimento ad un'estensione o componente aggiuntivo di un software. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+addon,add-on,noun,"In riferimento ad un'estensione o componente aggiuntivo di un software. Lasciare invariato, senza trattino. Declinare al maschile. In italiano non si riportano le s del plurale."
+address,indirizza,verb,
+address,indirizzo,noun,
+"administration screens","area amministrativa",expression,"""Area amministrativa"" quando ci si riferisce a tutto il backend (es: Area amministrativa > Pagine > Aggiungi nuova); mentre è ""Schermata/e di amministrazione"" quando ci si riferisce a una particolare schermata o sezione del backend (es: Tutti gli articoli)"
+administrator,amministratore,noun,
+AJAX,AJAX,noun,"Lasciare invariato"
+all-in-one,tutto-in-uno,adjective,
+apologies,"non tradurre se a inizio frase",noun,"Nelle frasi che iniziano con Apologies come ad esempio ""Apologies, but no results were found."" nella traduzione in italiano NON ha senso riportare il ""Mi spiace"" non essendo di uso comune nei messaggi inviati da un computer. Eliminarlo e tradurre la frase senza il ""Mi spiace""."
+appearance,aspetto,noun,"Per l'utilizzo di maiuscola o minuscola vedere Guida di Stile"
+archive,archivio,noun,
+archive,archivia,verb,
+"are you sure you want","vuoi davvero",expression,
+argument,argomento,noun,
+array,array,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+article,articolo,noun,
+ascending,crescente,noun,
+aside,"a lato",adverb,"ALTRA POSSIBILE TRADUZIONE: laterale
+Nel caso di testo/descrizione"
+aside,digressione,noun,"Formato di post simile a una nota, senza titolo
+Lasciare invariato nel caso di tag puro HTML.
+"
+attachment,allegato,noun,
+"attachment page","pagina dell’allegato",expression,
+audio,audio,noun,
+author,autore,noun,
+"back end",backend,noun,"Lasciare invariato, senza spazio. Declinare al maschile. In italiano non si riportano le s del plurale."
+"back to top","torna in alto",noun,
+back-end,backend,noun,"Lasciare invariato, senza trattino. Declinare al maschile. In italiano non si riportano le s del plurale."
+backend,backend,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+background,sfondo,noun,"Traducibile anche come ”esecuzione in background” in contesti simili a:
+”If administrators have automatic background updates enabled,...”"
+"background color","colore di sfondo",noun,
+"backup font","font di backup",expression,
+ban,banna,verb,"Da ""bannare"": escludere da una comunità online."
+banned,bannato,adjective,
+beta,beta,noun,"Sottinteso ""versione beta"". Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale. "
+"beta build","beta build",expression,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale. "
+"beta version","versione beta",expression,
+bitrate,bitrate,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+black,nero,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 900."
+blacklist,"blacklist ",noun,
+blacklist,"aggiungi in blacklist",verb,
+blacklisted,"in blacklist",adjective,
+"block bindings","blocchi con associazioni",expression,
+"block editor","editor a blocchi",expression,
+"block inspector","gestione del blocco",expression,"Se riferito alla funzionalità presente nell'editor di WordPress."
+blog,blog,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+body,contenuto,noun,"Se si riferisce a <body> tag html, lasciare invariato. Declinare al maschile"
+bold,grassetto,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 700."
+"border radius","raggio del bordo",expression,
+"border width","spessore del bordo",expression,"Traduzione descrittiva. Quando è riferito alla proprietà CSS compare col trattino e va mantenuto invariato."
+border-width,border-width,noun,"Quando riferito alla proprietà CSS."
+boxed,boxed,noun,"In riferimento al layout di un sito web."
+brand,brand,noun,"Per quanto riguarda la declinazione si è preferita quella al maschile perché oramai maggiormente usata, nonostante la consapevolezza che laddove il termine brand indichi la marca dovrebbe essere declinato al femminile. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+breadcrumb,breadcrumb,noun,"Lasciare invariato. Declinare al maschile plurale. In italiano non si riportano le s del plurale."
+browser,browser,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+bug,bug,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+builder,builder,noun,
+bulk,"di massa",noun,"Bulk Actions=azioni di gruppo
+Bulk Selection= selezione multipla"
+bullet,"punto elenco",noun,
+"bullet list","elenco puntato",noun,
+"bulleted list","elenco puntato",noun,
+button,pulsante,noun,
+"call to action","invito all'azione",expression,
+callback,callback,noun,"Identifica una funzione senza nome chiamata dopo che un'altra funzione termina la sua esecuzione.
+Lasciare invariato, declinare al femminile. In italiano non si riportano le s del plurale."
+callout,"invito all'azione",noun,"generalmente riferito a un pulsante"
+cancel,annulla,verb,
+cancelled,annullato,adjective,
+capability,capacità,noun,"'capacità' se riferito ai permessi di un utente; 'funzionalità' se riferito a un software"
+caption,didascalia,noun,
+cart,carrello,noun,
+category,categoria,noun,
+changelog,changelog,noun,
+changeset,changeset,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"Cheatin' huh","Vuoi barare, eh",noun,
+checkbox,checkbox,noun,"Elemento di form. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+checked,selezionato,adjective,
+checkout,pagamento,noun,"quando si riferisce all'etichetta di una sezione di pagamento di un plugin;
+traducibile anche come:
+Riepilogo ordine — intestazione della pagina di riepilogo o testo del pulsante che porta alla pagina
+
+Rimane invariato se inserito in ambito alberghiero: checkout (come opposto di checkin)"
+checkout,paga,verb,"quando riferito al pulsante per procedere al pagamento vero e proprio;
+traducibile anche come:
+Procedi con l’ordine — in caso di pulsante che conferma l’ordine (con successivo obbligo di pagamento) "
+child,figlio/bambino,noun,"Fare attenzione se riferito a theme, nel caso mantenere child"
+"child theme","tema child",expression,
+citation,fonte,noun,"Quando riguarda una citazione se abbinata a ""quote"" o ""pullquote""."
+Classic,"Editor classico",noun,"Riferito al nome del blocco di Gutenberg"
+"Classic Editor","Classic Editor",noun,"Riferito al plugin Classic Editor"
+click,clic,noun,"Senza K finale (clic, NON click)"
+click,"fai clic",verb,"Non utilizzare mai il neologismo ""cliccare"""
+clicked,cliccato,adjective,"ATTENZIONE: si usa cliccato solo quando è aggettivo. Diversamente, quando participio passato, si traduce con ""fatto clic"" (es the user has clicked=l'utente ha fatto clic)"
+clicking,"facendo clic",verb,"Mai mai mai cliccando!"
+"code editor","editor del codice",noun,
+codebase,codebase,noun,
+"color picker","selettore colore",expression,
+comment,commento,noun,
+comment,commenta,verb,
+community,Community,noun,"Usare Community nell'ambito dei progetti WordPress, altrimenti tradurre in base al contesto se riferito ad altro."
+constant,costante,noun,
+cookie,cookie,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"cookie policy","cookie policy",expression,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+cover,copertina,noun,"Mantenere in originale nel caso dell'attributo CSS"
+cover,copri,verb,"Mantenere in originale nel caso dell'attributo CSS"
+custom,personalizzato,adjective,
+"custom CSS","CSS personalizzato",expression,
+Customizer,Personalizza,noun,
+Dashboard,Bacheca,noun,
+"data breach","violazione dei dati",noun,
+"Data Liberation","Data Liberation",expression,"Nel contesto del progetto ""Data Liberation"" di WordPress.org rimane invariato. Se necessario anteporre la parola ""progetto""."
+"data picker","selettore della data",expression,
+"data time picker","selettore data e ora",expression,
+dataview,"visualizzazione dei dati",noun,
+default,predefinito,noun,
+delete,elimina,verb,
+deleted,eliminato,adjective,
+"demi bold",semigrassetto,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 600."
+demi-bold,semigrassetto,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 600."
+deprecated,deprecato,adjective,
+descending,decrescente,noun,
+directory,directory,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale.
+"
+disable,disabilita,verb,
+disabled,disabilitato,adjective,
+dismiss,ignora,verb,
+display,visualizza,verb,
+"distraction free","senza distrazioni",expression,"A seconda del contesto si può anche usare Modalità senza distrazioni"
+domain,dominio,noun,
+down,giù,noun,"""giù"" se riferito a uno spostamento; ""sotto"" se riferito a una posizione; ""fuori servizio"" se riferito a un server o a un servizio"
+draft,bozza,noun,
+"drag and drop","trascina e rilascia",expression,
+drag-and-drop,"trascina e rilascia",expression,
+"drop down","menu a discesa",noun,
+drop-down,"menu a discesa",noun,
+dropdown,"menu a discesa",noun,
+duotone,bicromia,noun,
+e-commerce,e-commerce,noun,
+e-mail,email,noun,
+ecommerce,e-commerce,noun,
+editor,editor,noun,"Nel senso di strumento: “editor di testo”. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+editor,editore,noun,"Nel senso di ruolo in un sito.
+"
+email,email,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+"email address","indirizzo email",expression,
+embed,incorpora,verb,
+embed,"oggetto incorporato",noun,"generico e quando riferito al nome del blocco in Gutenberg"
+embedded,incorporato,adjective,
+emoticon,emoticon,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+enable,abilita,verb,
+enabled,abilitato,adjective,
+endpoint,endpoint,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+enter,inserisci,verb,
+Enter,Invio,noun,"Tasto Invio"
+error,errore,noun,
+escape,escludere,noun,
+example.com,example.com,noun,
+example.net,example.net,noun,
+example.org,example.org,noun,
+excerpt,riassunto,noun,
+expires,scade,verb,"es. the cookie expires after 1 day"
+expiring,"in scadenza",adjective,
+"extra black","nero accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 950."
+"extra bold","grassetto accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 800."
+"extra light",chiarissimo,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 200."
+extra-black,"nero accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 950."
+extra-bold,"grassetto accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 800."
+extra-light,chiarissimo,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 200."
+"F j g:i a","j F G:i",expression,"Il formato delle date e degli orari va localizzato."
+"F j, Y g:i a","j F Y G:i",expression,"Il formato delle date e degli orari va localizzato."
+fallback,"di riserva",adjective,
+FAQ,FAQ,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale. "
+"fatal error","errore irreversibile",expression,
+feature,caratteristica,noun,"In alcuni casi anche funzionalità"
+"featured image","immagine in evidenza",expression,
+feed,feed,noun,"Lasciare invariato. Declinare al maschile."
+feedback,feedback,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+file,file,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+filter,filtro,noun,
+"filter hook","filter hook",expression,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+fix,correzione,noun,
+fix,correggi,verb,
+fixed,corretto,adjective,"A seconda del contesto:
+Corretto – quando riferito a bug
+Fisso – in contesto non tecnico ma descrittivo
+Fixed – invariato quando riferito a classi CSS
+"
+"fixed payment","pagamenti rateizzati",noun,"Si trova principalmente in contesti di e-commerce"
+flag,segnalazione,noun,"Contesto: segnalazione di un utente ad es: per contenuto inappropriato. Per altri significati contestualizzare: bandiera, ..."
+flag,segnala,verb,"Contesto: segnalare un utente ad es: per contenuto inappropriato. In altri contesti: ""contrassegnare"", ""contrassegnare come"""
+focusable,"che possono ricevere il focus",noun,
+folder,cartella,noun,
+follower,follower,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+font,font,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"font collection","raccolta di font",expression,
+"font face",font,expression,"Se riferito alla funzionalità presente nell'editor di WordPress"
+"font family","famiglia di font",expression,
+"font size","dimensione del font",expression,
+"font weight","font weight",expression,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+font-face,font-face,noun,"Regola CSS lasciare invariato."
+footer,footer,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+form,modulo,noun,"es. modulo di contatto"
+forum,forum,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+free,gratuito,adjective,"Due possibili traduzioni:
+Gratuito – quando riferito a pagamenti
+Libero – per licenze software e altri contesti non relativi a pagamenti"
+"free software","software libero",expression,
+"Frequently Asked Questions","domande frequenti",noun,
+"front end",frontend,noun,"Lasciare invariato, senza spazio. Declinare al maschile.  In italiano non si riportano le s del plurale."
+"front page","home page",noun,
+front-end,frontend,noun,"Lasciare invariato, senza trattino. Declinare al maschile. In italiano non si riportano le s del plurale."
+frontend,frontend,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+frontpage,"home page",noun,
+"Full Site Editing","Full Site Editing",noun,"Riferito alla possibilità di modificare l'intero sito con l'editor a blocchi"
+"full width","larghezza piena",noun,
+full-width,"larghezza piena",noun,
+fullwidth,"larghezza piena",noun,
+"g:i a",G:i,expression,"Il formato delle date e degli orari va localizzato."
+"g:i a T","H:i T",expression,"Il formato delle date e degli orari va localizzato."
+"g:i:s a",H:i:s,expression,"Il formato delle date e degli orari va localizzato."
+gallery,galleria,noun,
+"global styles","stili globali ",noun,
+globals,"variabili globali",noun,
+"grid view","vista griglia",expression,
+ham,ham,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+header,header,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"header (html)",header,noun,"Lasciare invariato. Maschile"
+"header image","immagine dell'header",noun,
+headline,motto,noun,"Nel caso del pannello di personalizzazione di WP; tradurre come ""intestazione"" nel caso si parli di un titolo principale o generico."
+heavy,scuro,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 900."
+height,altezza,noun,
+"hidden input","campo nascosto",expression,
+highlights,"in evidenza",noun,"la traduzione è da contestualizzare, inserendo l'opportuno sinonimo che è messo ""in evidenza"""
+hit,hit,noun,
+"home page",homepage,noun,
+homepage,homepage,noun,
+hook,hook,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+host,host,noun,
+host,ospita,verb,
+"hosting provider","fornitore di hosting",noun,
+hover,"al passaggio del mouse",noun,"Se per necessità la traduzione deve occupare poco spazio lasciare invariato (hover) e declinare al maschile."
+howdy,ciao,expression,
+hyperlink,"collegamento ipertestuale",noun,
+icon,icona,noun,
+ID,ID,noun,"Lasciare invariato, sempre tutto maiuscolo. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+image,immagine,noun,
+import,importa,verb,
+input,input,noun,"Lasciare invariato, al maschile. Talvolta, però può assumere altri significati come campo, elemento... Quindi FARE SEMPRE riferimento al contesto."
+inserter,"pannello di inserimento",noun,
+"Installing Plugin: %s","Installazione del plugin in corso: %s",expression,
+invalid,"non valido",adjective,
+"IP address","indirizzo IP",noun,
+item,elemento,noun,"ATTENZIONE: in base al contesto può essere necessario scegliere l'uso di termini più specifici come ad esempio articolo o voce"
+"knowledge base",documentazione,expression,
+label,etichetta,noun,
+"label (html)",label,expression,
+"landing page","landing page",noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+"landmark roles","attributi di ruolo",noun,
+last,durare,verb,"es. login cookies last for 2 days - i cookie di accesso durano 2 giorni"
+layout,layout,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"lazy loading","lazy loading",expression,
+Learn,Learn,noun,"se riferito al progetto Learn WordPress"
+"learn more",approfondisci,expression,
+"Learn WordPress","Learn WordPress",expression,"nome del progetto"
+"learning pathway","percorso di apprendimento",expression,
+legacy,legacy,noun,
+"lesson plan","piano di lezione",expression,"Riferito al progetto Learn"
+"lesson plans","piani di lezione",expression,"Riferito al progetto Learn"
+"letter spacing","spaziatura tra caratteri",expression,
+"license key","chiave della licenza",expression,
+light,chiaro,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 300."
+link,link,noun,
+link,collega,verb,"Se riferito ai link web, lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale. In tutti gli altri casi tradurre come Collegamento."
+"list view","vista elenco",expression,
+"live demo","demo live",expression,
+lock,blocca,verb,"Quando riferita all'altezza si può utilizzare ""fissa"""
+"log in",accedi,verb,
+"log out",disconnessione,noun,
+"log out",esci,verb,
+"logged in",connesso,adjective,
+"logged out",disconnesso,adjective,
+login,accesso,noun,
+loop,loop,noun,"Nel contesto della programmazione, si può dire che un ciclo o uno script è in loop per indicare che non terminerà mai. 
+Nel contesto dell'audio è di uso comune ""loop audio"" per indicare la ripetizione di un brano.
+Se loop è riferito a una struttura ciclica tipo ""for o while"" si più tradurre con il termine ciclo."
+"M j, Y g:i A","j M Y H:i",expression,"Il formato delle date e degli orari va localizzato."
+marker,indicatore,noun,
+masonry,masonry,noun,
+match,corrispondenza,noun,"ALTRE POSSIBILI TRADUZIONI: partita (quando il termine è utilizzato in ambito sportivo)"
+maxlenght,"lunghezza massima",noun,
+media,media,noun,"Lasciare invariato. Plurale."
+"media library","libreria dei media",expression,
+medium,medio,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 500."
+"menu item","voce di menu",expression,
+meta,meta,noun,"lasciare invariato, a meno che non si riferisca ai metadati"
+metadata,metadato,noun,
+minify,minifica,verb,"è un neologismo, generalmente usato in ambiente di sviluppo. Per approfondimenti: html.it"
+minlenght,"lunghezza minima",noun,
+miscellaneous,varie,noun,
+modal,modal,noun,"lasciare invariato"
+moderate,modera,verb,
+"more info","maggiori informazioni",expression,"Utilizzare approfondisci in caso sia necessaria la forma breve."
+multisite,multisito,noun,
+"n/j/Y g:i A","d/m/Y H:i",expression,"Il formato delle date e degli orari va localizzato."
+namespace,namespace,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"namespace prefix","namespace prefix",expression,"Lasciare invariato.  In italiano non si riportano le s del plurale."
+navigation,navigazione,noun,
+network,"network o rete",noun,"In base al contesto si può decidere se tradurlo; in caso di contesto tecnico lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"newer comments","commenti più recenti",noun,
+"next post","articolo successivo",noun,
+"nick name",nickname,noun,
+nickname,nickname,noun,
+nightly,nightly,noun,"Sottinteso ""versione nightly"". Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale. "
+"nightly build","nightly build",expression,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale. "
+"nightly version","versione nightly",expression,
+"non breaking space","spazio unificatore",noun,
+"non-breaking space","spazio unificatore",noun,
+"nonbreaking space","spazio unificatore",noun,
+nonce,nonce,noun,"Lasciare invariato, tutto in minuscolo. Declinare al maschile. In italiano non si riportano le s del plurale."
+normal,normale,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 400."
+note,nota,noun,
+notifications,notifiche,noun,
+off,off,noun,"Lasciare invariato quando riferito a un pulsante o stato, tradurre nel caso di preposizione e tutti gli altri casi"
+"off canvas",off-canvas,noun,
+off-canvas,off-canvas,noun,
+offset,offset,noun,"Lasciare invariato. Declinare al maschile. 
+Utilizzare ""scostamento"" quando indica ad esempio lo scostamento tra due date. Utilizzare ""sfalsato"" per indicare la disposizione di elementi grafici."
+"older comments","commenti meno recenti",noun,
+"older posts","articoli meno recenti",expression,
+on,on,noun,"Lasciare invariato quando riferito a un pulsante o stato, tradurre in caso di preposizione e in tutti gli altri casi"
+option,opzione,noun,
+optional,facoltativo,noun,
+order,ordine,noun,"ALTRA POSSIBILE TRADUZIONE: ordinamento
+Traduciamo come ”ordinamento” nel caso in cui il termine sia riferito all’azione di mettere in ordine una serie di elementi"
+order,ordina,verb,"Tradurre come ”ordina” quando si riferisce a pulsanti e link"
+overlay,overlay,noun,"Si può utilizzare “sovrapposizione” in contesti di layout grafici; nota bene: quando è riferito a dei processi informatici va lasciato invariato. In italiano non si riportano le s del plurale."
+override,sovrascrittura,noun,"Contesto: editor e full site editing, dove possibile esprimerlo al singolare in quanto funzionalità"
+padding,"spaziatura interna",noun,
+page,pagina,noun,
+pagination,paginazione,noun,
+parameter,parametro,noun,
+parent,genitore,noun,
+password,password,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+"password input","campo della password",expression,
+path,percorso,noun,
+pattern,pattern,noun,"In alcuni casi e comunque al di fuori del contesto del Full Site Editing, se ritenuto più opportuno può essere utilizzato anche ""modello""."
+pending,"in attesa",adjective,
+permalink,permalink,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+permission,autorizzazione,noun,
+pingback,pingback,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+pixelation,sgranatura,noun,
+pixelation,sgranato,adjective,
+Please,"NON SI TRADUCE",noun,"Nelle frasi che iniziano con Please come ad esempio ""Please try again later"" nella traduzione in italiano NON ha senso riportare il ""Per favore"" non essendo di uso comune nei messaggi inviati da un computer. Eliminarlo e tradurre la frase senza il ""Per favore""."
+plugin,plugin,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+post,pubblica,verb,
+post,articolo,noun,
+"post thumbnail","immagine in evidenza",expression,
+"post type","post type",noun,"Se è tecnico lasciare invariato. Declinare al maschile. Se non è tecnico: tipo di contenuto"
+"post types","post type / tipo di contenuto",noun,"Se non è tecnico: tipi di contenuto Se è tecnico lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"poster image","immagine di copertina",noun,
+"powered by","powered by",expression,"Lasciare invariato"
+pre-packaged,incorporato,noun,
+preload,precaricamento,noun,
+preload,precarica,verb,
+preset,preimpostazione,noun,"Usare preimpostazione nell'ambito dell'editor di WordPress, tradurre nel modo più appropriato per altri contesti (es: in ambito musicale si può lasciare invariato, ...)"
+preset,preimpostare,verb,
+preview,"vedi l'anteprima",verb,
+preview,anteprima,noun,
+"previous post","articolo precedente",expression,
+"privacy policy","privacy policy",expression,"Lasciare invariato. Declinare la femminile. In italiano non si riportano le s del plurale."
+processed,elaborato,adjective,
+profile,profilo,noun,
+"Proudly powered by","Proudly powered by",expression,"lasciare invariato"
+purge,svuota,verb,"riferito alla cache"
+query,query,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+query,"effettua una query",verb,
+"query loop","query loop",noun,
+"radio button","radio button ",noun,"Elemento di form. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"read more","leggi tutto",expression,
+redirect,reindirizza,verb,
+referer,referer,noun,"Referer è un termine tecnico utilizzato per sapere da quale pagina si è arrivati a quella attuale e raramente vuol dire riferimento in ambito informatico che è reference. 
+Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+refresh,aggiorna,verb,
+refresh,ricarica,verb,
+regular,normale,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 400."
+release,versione,noun,
+repository,repository,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"request ID","ID richiesta",noun,"da usare in contesti simili al tool per la gestione dei dati (esportazione/cancellazione dati) "
+"request ID","richiedi ID",verb,"se nella stringa request è da intendersi come verbo "
+requested,richiesto,noun,"ALTRA POSSIBILE TRADUZIONE: obbligatorio
+Verificare il contesto in fase di traduzione"
+required,necessario,adjective,
+"required plugin","plugin richiesto",expression,
+"required plugins","plugin richiesti",expression,
+reset,reimposta,verb,
+"reset button","pulsante reimposta",expression,
+resolve,correggi,verb,"Testo del pulsante per correggere del contenuto HTML in Gutenberg"
+"resolve block","correggi blocco",noun,"Titolo della schermata per correggere del contenuto HTML in Gutenberg"
+responsive,"responsive ",adjective,"Invariato; nel senso di ”che si adatta a ogni dispositivo”"
+return,restituisci,verb,"ALTRE POSSIBILI TRADUZIONI: ritornare (quando riferito ad esempio all'azione di tornare alla schermata iniziale, precedente,...)"
+return,return,noun,"Quando è usato nel senso di tasto, lasciare invariato."
+"rich text","rich text",expression,"quando si riferisce alla formattazione/elaborazione di un testo"
+role,ruolo,noun,
+row,"disponi in riga",verb,"(""verbo"") nel contesto dell'interfaccia dell'editor, riferito all'azione di poter disporre più blocchi in riga"
+"RSS Feed","Feed RSS",expression,
+"RSS feed","feed RSS",noun,
+save,salva,verb,
+schedule,programma,verb,
+scheduled,programmato,noun,
+screen,schermata,noun,"Il termine è a volte usato per intendere una schermata e non lo schermo di un device. È importante quindi notare il contesto in cui si opera la traduzione"
+screen,schermo,noun,
+"screen reader","screen reader",noun,"Non tradurre"
+screenshot,screenshot,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"search page","pagina di ricerca",expression,
+"search results","risultati della ricerca",noun,
+"search results for","risultati della ricerca per",noun,
+"self hosted",esterno,noun,
+"semi bold",semigrassetto,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 600."
+"semi light",semichiaro,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 350."
+semi-bold,semigrassetto,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 600."
+semi-light,semichiaro,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 350."
+"seo friendly","orientato alla SEO",expression,
+server,server,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale.
+"
+setting,impostazione,noun,
+setup,configurazione,noun,
+share,condivisione,noun,
+sharing,condividi,verb,
+shipping,spedizione,noun,
+shop,negozio,noun,"valido sia per negozi online che per negozi fisici"
+shortcode,shortcode,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+shortcut,scorciatoia,noun,
+sidebar,"barra laterale",noun,
+site,sito,noun,
+"site editor","editor del sito",expression,
+sitewide,"tutto il sito",noun,
+skin,"variante colore",noun,"Si trova principalmente, anche se non solo, nei temi e si riferisce alla variante colore generale del tema"
+"skip link","skip link",noun,"Non tradurre"
+slide,scorri,verb,
+slide,slide,noun,"Utilizzare presentazione (nome) quando indica tutte le slide, da slideshow.
+Utilizzare scorrimento (nome) quando indica l’effetto grafico di scorrimento o l’azione di scorrimento; dovrà essere accompagnato da altri sostantivi in modo da mantenere l'omogeneità nella traduzione, stesso discorso nel caso si utilizzasse il verbo - tutti sostantivi o tutti verbi."
+slug,slug,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"solid color","tinta unita",expression,
+sorry,"NON SI TRADUCE",noun,"Nelle frasi che iniziano con Sorry come ad esempio ""Sorry, you don't have pemissionsr"" nella traduzione in italiano NON ha senso riportare il ""Mi spiace"" non essendo di uso comune nei messaggi inviati da un computer. Eliminarlo e tradurre la frase senza il ""Mi spiace""."
+"Sorry, you are not allowed to","Non hai i permessi per",expression,
+spam,spam,noun,"Lasciare invariato. Declinare al maschile.
+"
+spotlight,"in risalto",noun,"Se riferito a spotlight mode dell'editor di WordPress"
+"spotlight mode","modalità in risalto",noun,
+stack,"disponi in colonna",verb,"nel contesto dell'interfaccia dell'editor, riferito all'azione di poter disporre più blocchi in colonna"
+standalone,indipendente,adjective,
+sticky,"in evidenza",noun,"riferito a un articolo"
+"sticky header","header fisso",expression,"riferito al comportamento dell’header quando si scorre la pagina"
+stopwords,stopword,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+string,stringa,noun,
+stylesheet,"foglio di stile ",noun,
+submit,invia,verb,
+"submit button","pulsante di invio",expression,
+subscription,abbonamento,noun,
+tab,scheda,noun,"Altre traduzioni possibili:
+Tabulazione (quando riferito alla spaziatura)
+Tab (invariato, quando riferito al tasto Tab)"
+"table of contents",indice,expression,"In base al contesto può essere anche ""sommario"", ad esempio il sommario di una rivista, di un giornale."
+tag,tag,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+tag,tagga,verb,
+tagline,motto,noun,"Utilizzare ""descrizione"" quando è così intesa."
+taxonomy,tassonomia,noun,
+team,team,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+template,template,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"template hierarchy","gerarchia di template",expression,
+templates,template,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+term,termine,noun,
+"text area","area di testo",expression,
+"text editor","editor di testo",expression,
+"text input","campo di testo",expression,
+theme,tema,noun,
+thin,sottile,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 100."
+thumbnail,miniatura,noun,
+timeline,timeline,noun,"Lasciare invariato. Declinare al femminile. In italiano non si riportano le s del plurale."
+toggle,attiva/disattiva,verb,"ALTRA POSSIBILE TRADUZIONE: ""mostra/nascondi o modifica o commuta o cambia""
+La traduzione dipende molto dal contesto. Es: toggle menu= mostra/nascondi il menu; mentre toggle audio=attiva/disattiva audio; toggle loop=attiva/disattiva riproduzione automatica. 
+Per situazioni in cui serve utilizzare un termine compatto utilizzare ""commutare"""
+token,token,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+toolbar,"barra degli strumenti",noun,
+tooltip,tooltip,noun,"Un tooltip è  piccola finestra che viene visualizzata posizionando il puntatore del mouse in corrispondenza di una scritta o di un’icona, e che contiene informazioni relative all’oggetto selezionato. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+top,"in alto",adverb,
+"top menu","menu in alto",expression,
+"top toolbar","barra degli strumenti in alto",expression,
+topbar,"barra superiore",expression,
+topic,argomento,noun,"Nel caso il contesto sia un forum lasciare il termine topic invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+trackback,trackback,noun,"Lasciare invariato. Declinare al maschile.Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+transient,transient,noun,"QUANDO USATO in un contesto di sviluppo/tecnico. Lasciare invariato. Declinare al maschile. Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+trash,cestino,noun,
+trash,cestina,verb,
+trial,"periodo di prova",noun,
+trigger,trigger,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+"two-factor authentication","autenticazione a due fattori",expression,
+"ultra black","nero accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 950."
+"ultra bold","grassetto accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 800."
+"ultra light",chiarissimo,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 200."
+ultra-black,"nero accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 950."
+ultra-bold,"grassetto accentuato",noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 800."
+ultra-light,chiarissimo,noun,"Quando riferito al peso (spessore) del font. Nelle specifiche OpenType corrisponde al peso 200."
+unban,"togli il ban",verb,
+unbanned,riammesso,adjective,
+unsticky,"non in evidenza",noun,
+untrash,ripristinare,noun,
+unwrap,separa,verb,"in particolar modo se riferito all'azione di togliere un blocco dall'interno di un altro blocco"
+update,aggiorna,verb,
+update,aggiornamento,noun,
+upload,carica,verb,
+upload,upload,noun,"Lasciare invariato. Declinare al maschile. Lasciare invariato. In italiano non si riportano le s del plurale. ATTENZIONE: quando si riferisce al nome della cartella conserva la ""s"" del nome della cartella"
+uploaded,caricato,adjective,
+uploader,uploader,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+URI,URI,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale. "
+URL,URL,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+user,utente,noun,
+"user agent","user agent",noun,
+username,"nome utente",noun,
+valid,valido,adjective,
+video,video,noun,
+view,visualizza,verb,
+viewport,viewport,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+warning,attenzione,noun,"se fa parte di un elenco di tipologie di errore (error, warning,..) tradurre coerentemente ciascun termine"
+website,"sito web",noun,"""web"" dovrebbe sempre essere minuscolo per l'Accademia della Crusca"
+whitelist,whitelist,noun,
+whitelist,"aggiungi in whitelist",verb,
+whitelisted,"in whitelist",adjective,
+widget,widget,noun,"A self-contained area of a web page that performs a specific function. For example, you can use a widget to display your Twitter feed in your site’s sidebar. More info: http://en.support.wordpress.com/widgets/"
+widgets,widget,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+width,larghezza,noun,"in alcuni contesti potrebbe riferirsi allo spessore"
+working,"elaborazione in corso",expression,
+workshop,workshop,noun,"Lasciare invariato. Declinare al maschile. In italiano non si riportano le s del plurale."
+wrap,wrap,verb,"ALTRA POSSIBILE TRADUZIONE: in contesti non tecnici racchiudere"
+wrapper,wrapper,noun,"Termine tecnico si usa come nell'es. ""La funzionalità è un wrapper di quella originale"" ALTRA POSSIBILE TRADUZIONE: in contesti non tecnici contenitore, involucro.
+Lasciare invariato. Declinare al maschile.  In italiano non si riportano le s del plurale."
+XML-RPC,XML-RPC,noun,"More info: http://codex.wordpress.org/XML-RPC_Support"
+"Y/m/d g:i:s a","d/m/Y H:i:s",expression,"Il formato delle date e degli orari va localizzato."
+"you do not have permission","non hai i permessi per",expression,
+"you don't have permission","non hai i permessi per",expression,

@@ -1,0 +1,343 @@
+en,pt,pos,description
+ability,funcionalidade,noun,"Contexto: Abilities API"
+about,sobre,preposition,
+activate,activar,verb,
+add,adicionar,verb,
+add-on,"add-on, módulo, extensão",noun,
+addon,"add-on, módulo, extensão",noun,
+"admin bar","barra de administração",noun,
+appearance,apresentação,noun,"Contexto: Apresentação no menu da administração "
+"application password","senha de aplicação",noun,"Nova funcionalidade do WordPress 5.6"
+approve,aprovar,verb,
+archives,arquivo,noun,"sempre no singular"
+"are you sure you want","Tem a certeza que pretende",expression,
+aside,aparte,noun,
+"aspect ratio","rácio largura:altura",noun,
+"at the bottom","na parte inferior (ou na base)",expression,"conforme o contexto"
+"at the top","na parte superior (ou no topo)",expression,"conforme o contexto"
+auto-embeds,"incorporação automática",noun,
+"background update","actualização automática",expression,
+backup,"cópia de segurança",noun,
+backup,"cópia de segurança",verb,
+banner,banner,noun,
+batch,lote,noun,
+batch,"em lote",adjective,
+"Block Inserter","painel de inserir blocos",noun,
+blogroll,"lista de ligações",noun,
+blur,desfoque,noun,"Sombra: desfoque da sombra"
+border,borda,noun,"CSS border"
+"border radius","raio da borda",noun,"CSS border-radius"
+browse,procurar,verb,"quando a tradução remete para uma acção óbvia"
+browser,navegador,noun,
+"button label","texto do botão",noun,
+"by default","por omissão",expression,
+can’t,"não é possível",expression,
+capability,capacidade,noun,"Contexto: Roles and Capabilities, papéis e capacidades"
+caption,legenda,noun,"contexto: legenda descritiva de imagem (diferente de “captions”, que é uma transcrição do áudio para tornar o conteúdo acessível a pessoas surdas e para legendagem)"
+"captioning ID","ID de legenda",expression,"no feminino"
+captions,"legendas para surdos",noun,"contexto: legendas de vídeo para visualização sem som (diferente de “caption”, legenda descritiva de imagem, e “subtitles”, legendas de tradução)"
+cart,carrinho,noun,"no contexto de loja"
+change,alterar,verb,
+charset,charset,noun,"Contexto: Database charset. Manter no original até haver uma tradução bem consolidada."
+"cheating, uh?","A fazer batota?",expression,
+check,"marcar (ou confirmar)",verb,"conforme o contexto"
+"check out",consultar,verb,
+checkbox,"caixa de selecção",noun,
+checkout,"finalização de compra",noun,"Contexto: Processo de compra em loja online"
+checkout,"finalizar compra",verb,"Contexto: Processo de compra em loja online"
+"child theme","tema dependente",noun,"ainda em discussão"
+clear,limpar,verb,
+closed,fechado,adjective,
+collapse,minimizar,noun,
+collation,collation,noun,"Contexto: Database collation. Manter no original até haver uma tradução bem consolidada."
+"color scheme","paleta de cores",expression,
+"colour scheme","paleta de cores",expression,
+complete,concluído/concluída,adjective,
+"connect to x","ligar a x ou ligar-se a x",verb,
+connection,ligação,noun,
+container,contentor,noun,"Elemento limitador, que contém outros."
+content,conteúdo,noun,
+couldn’t,"não foi possível",expression,
+coupon,cupão,noun,"cupões de comércio electrónico"
+crop,cortar,verb,
+"custom post type","tipo de conteúdo personalizado",noun,
+customization,personalização,noun,
+Customizer,Personalizador,noun,"maiúscula inicial"
+"Dark mode","Modo nocturno",noun,"Modo em tons escuros utilizado pelo editor e por alguns temas"
+Dashboard,Painel,noun,"Painel de administração do WordPress"
+"data breach","violação de dados",expression,
+"Data Protection Officer","Encarregado da Protecção de Dados",expression,
+database,"base de dados",noun,
+deactivate,desactivar,verb,
+default,"por omissão",noun,"invariável sem plural"
+default,"por omissão",adjective,"invariável sem plural"
+delete,"eliminar (ou excluir)",verb,"conforme o contexto"
+design,design,noun,
+developer,programador,noun,
+directory,directório,noun,
+disable,desactivar,verb,
+discard,descartar,verb,
+dismiss,descartar,verb,
+display,"mostrar (ou exibir)",verb,
+display,exibição,noun,
+"Distraction free","Sem distracções",noun,"Contexto: Distraction free mode"
+"Distraction free mode","Modo sem distracções",noun,
+"don’t be stupid","não invente…",expression,
+done,concluído,adjective,
+downgrading,"instalar versão anterior",verb,
+download,descarregamento,noun,
+download,descarregar,verb,
+draft,rascunho,noun,
+dropdown,selector,noun,"Elemento HTML ""Select"", também conhecido como Dropdown, com uma lista de itens para seleccionar."
+duotone,bicolor,noun,"Filtro 'duotone' para imagens"
+e-mail,email,noun,"sem hífen"
+email,email,noun,"sem hífen"
+embed,incorporação,noun,
+embed,"incorporar (ou incorporar conteúdo)",verb,"conforme o contexto"
+embedded,incorporado,adjective,
+enable,activar,verb,
+enter,digite,verb,
+entry,"artigo (ou entrada)",noun,
+excerpt,excerto,noun,"Texto opcional associado ao artigo/conteúdo.
+https://wordpress.org/support/article/excerpt/"
+excerpt,resumo,noun,
+"Extra Light","Extra Light",noun,"Não se traduz até haver um termo consolidado. Contexto: peso de letra. Extra Light = espessura 200 (escala 100-900); Light = espessura 300"
+FAQ,"perguntas frequentes",abbreviation,
+feature,"recurso (ou funcionalidade)",noun,"conforme o contexto"
+"featured image","imagem de destaque",noun,
+feeds,feeds,noun,"não se traduz"
+fetch,"procurar (ou recolher)",verb,"conforme o contexto"
+file,ficheiro,noun,
+fire,desencadear,verb,"Contexto: acções e filtros, onde/quando são desencadeados"
+"first name",nome,noun,
+flag,sinalizar,verb,
+font,"tipo de letra",noun,"font family: família tipográfica;
+font size: tamanho de letra;
+font style: estilo de letra;
+font weight: peso de letra;
+font type: tipo de letra;
+font appearance: estilo de letra"
+"font family","família tipográfica",noun,
+"font size","tamanho de letra",noun,
+"font style","estilo de letra",noun,"Itálico, normal, sublinhado, etc."
+"font type","tipo de letra",noun,"O mesmo que “font”"
+"font weight","peso de letra",noun,"Negrito, seminegrito, médio, etc."
+form-tag,"etiqueta de variável",noun,"Variável utilizada para incorporar ""dados variáveis"" em conteúdos"
+frame,frame,noun,"não se traduz (em discussão)"
+"Freshly Pressed","Notícias frescas (ou Acabadinhas de sair…)",expression,
+freshness,"actualidade (ou tempo desde a publicação)",expression,"conforme o contexto"
+fulfillment,expedição,noun,"Contexto: processo de envio parcial ou total de encomendas no WooCommerce"
+"Full Site Editing","Modo de edição integral do site",noun,(obsoleto)
+fullscreen,"ecrã inteiro",noun,
+gatekeeper,guardião,noun,
+gateway,gateway,noun,"Substantivo feminino, sistema de pagamento integrado"
+"global dashboard","painel geral",noun,
+grid,grelha,noun,
+handle,identificador,noun,"Script handle"
+header,cabeçalho,noun,
+"help on","ajuda sobre",expression,
+hook,hook,noun,"Não se traduz, é um termo próprio do jargão do WordPress"
+hosting,alojamento,noun,
+"hosting provider","fornecedor de alojamento",noun,
+"hot tag","etiqueta popular",expression,
+hotkeys,"teclas de acesso (ou atalhos de teclado)",expression,"conforme o contexto"
+ID,ID,noun,feminino
+Inset,interior,noun,"Sombra: interior"
+"invoke URLs","chamar URL",expression,"acrónimos (URL) não têm plural"
+"keep in mind that","lembre-se que",expression,
+keyword,"palavra-chave (ou descritor)",noun,"conforme o contexto"
+label,legenda,noun,"legenda (caso geral); texto (button label: texto do botão)"
+"last name",apelido,expression,
+latest,"mais recentes",adjective,
+layout,,noun,layout
+"lazy load","carregamento diferido",noun,"Carregamento de imagens em 'lazy load'"
+"lazy load","carregar em diferido",verb,"Carregamento de imagens em 'lazy load'"
+lazy-load,"carregamento diferido",noun,"Carregamento de imagens em 'lazy load'"
+lazy-loading,"carregamento diferido",noun,"Carregamento de imagens em 'lazy load'"
+Light,Light,noun,"Não se traduz até haver um termo consolidado. Contexto: peso de letra. Light = espessura 300 (escala 100-900); Extra Light = espessura 200 "
+link,ligação,noun,
+"link to","ligar a",verb,
+locale,locale,noun,"Refere-se a uma localização onde é usado um idioma específico. Pode não corresponder exatamente a um limite geográfico como um país, daí ter-se optado por manter o termo original."
+log,"registo (ou relatório)",noun,"conforme o contexto"
+"log in","iniciar sessão",expression,
+"log out",sair,expression,
+"logged in","sessão iniciada",expression,
+"logged in as","sessão iniciada como",expression,
+loop,loop,noun,"não se traduz, é um termo próprio do jargão do WordPress"
+"magic tag","etiqueta de variável",noun,"Variável utilizada para incorporar ""dados variáveis"" em conteúdos"
+malware,malware,noun,"não se traduz, masculino"
+manage,gerir,verb,
+mapping,mapeamento,noun,
+mapping,mapear,verb,
+"matching x","correspondente a x",expression,
+media,"(conteúdo) multimédia",noun,"conforme o contexto"
+"menu location","localização do menu",noun,
+merge,unir,verb,"Juntar, unir dois elementos"
+merge-tag,"etiqueta de variável",noun,"Variável utilizada para incorporar ""dados variáveis"" em conteúdos"
+Mine,Meu,pronoun,"Contexto: tipos de artigo genéricos
+Mine <span class=""count"">(%s)</span>
+
+Usa-se ""Meu"" no singular, referindo-se a tudo ""o que é Meu"", sem associar ao género do tipo de artigo (meus/minhas)."
+"mini cart",minicarrinho,noun,"Contexto: carrinho de compras de loja online"
+moderate,moderar,verb,
+multisite,multissite,noun,
+newest,"mais recente",adjective,
+"Nice Name","Slug do utilizador",expression,
+Nicename,"Slug do utilizador",noun,
+nickname,alcunha,noun,
+"no x found","nenhum x encontrado",expression,
+Note,Atenção,noun,"Contexto: chamada de atenção
+Por exemplo: ""Note: "" ou ""Please note: """
+offline,offline,adjective,"sem hífen"
+offset,desfasamento,noun,
+"on/off (adj)",activo/inactivo,adjective,"varia com o contexto"
+online,online,adjective,"sem hífen"
+Oops,"Ups ",expression,":) (caramba…)"
+"Open Source","Código Aberto",noun,
+order,encomenda,noun,"Contexto: Encomendas do WooCommerce"
+"Ordered list (ol)","lista ordenada",expression,
+"out of range","fora dos limites",expression,
+outset,exterior,noun,"Sombra: exterior"
+overlay,sobreposição,noun,
+overview,"vista geral",noun,
+"parent category","categoria superior",expression,"ainda em discussão"
+"parent theme","tema principal",noun,"ainda em discussão"
+password,senha,noun,"preferível a palavra-passe (no WordPress pode ser uma frase com espaços)"
+"password reset","redefinição de senha",expression,
+"password strength","nível de segurança da senha",expression,
+performance,desempenho,noun,
+permalink,"ligação permanente",noun,
+"Pickup Point","Ponto de recolha",noun,"Referente aos locais de levantamento de encomendas de transportadoras"
+pingback,pingback,noun,"não se traduz, masculino"
+"Please note",Atenção,expression,"Contexto: chamada de atenção
+Por exemplo: ""Note: "" ou ""Please note: """
+plugin,plugin,noun,"sem tradução, manter no original"
+portfolio,portefólio,noun,
+post,publicar,verb,
+post,artigo,noun,"confrontar com post type"
+"post type","tipo de conteúdo",noun,"diferente de artigo"
+"poster image","imagem de capa",noun,
+prefetch,pré-carregar,verb,
+preview,pré-visualizar,verb,
+preview,pré-visualização,noun,
+query,consulta,noun,
+radio,"botão de opção",noun,"Contexto: campo de formulário"
+"radio button","botão de opção",noun,"Contexto: campo de formulário"
+rating,classificação,noun,"Contexto: classificação quantitativa/qualitativa de produto ou serviço"
+reblog,republicar,verb,
+reblogged,republicado,adjective,
+reblogging,republicar,verb,
+redo,refazer,verb,"Histórico de edições (undo/redo)"
+refresh,actualizar,verb,
+"Remember Me","Manter sessão",expression,"Opção de guardar cookie com informação para manter a sessão iniciada"
+"reply to","responder a",verb,
+request,pedido,noun,
+request,solicitar,verb,
+requirement,requisito,noun,
+reset,"recomeçar (ou valores padrão)",verb,"conforme o contexto"
+"reset password","redefinir senha",expression,
+"respond to","responder a (ou comentar)",verb,"conforme o contexto"
+"responsive design","design responsivo",noun,
+restore,repor,verb,"Caso geral, aplicável a cópias de segurança, ""autosaves"", revisões, personalizações, etc."
+restore,recuperar,verb,"Excepção aplicável a ""recuperar do lixo"" ou ""recuperar do spam""."
+"restore from spam","recuperar do spam",expression,
+"restore from trash","recuperar do lixo",expression,
+"restored from the spam","recuperado do spam",noun,
+"restored from the trash","recuperado do lixo",expression,
+review,avaliação,noun,"Contexto: avaliação de produto ou serviço"
+"Rich Editor","Editor visual",noun,
+role,papel,noun,"Contexto: Roles and Capabilities, papéis e capacidades"
+"RSS feed","feed RSS",noun,
+save,guardar,verb,
+"save changes","guardar alterações",expression,
+saved,guardado(a),adjective,
+schedule,agenda,noun,
+schedule,agendar,verb,
+scheduled,agendado,adjective,
+search,pesquisa,noun,
+search,pesquisar,verb,
+"search engine","motor de pesquisa",noun,
+"search for","pesquisar por",verb,
+"secret key","chave secreta",noun,
+select,selector,noun,"Elemento HTML ""Select"", também conhecido como Dropdown, com uma lista de itens para seleccionar."
+"set a password","definir uma senha",expression,
+settings,opções,noun,
+"shipping class","classe de envio",noun,"Contexto: Configuração de envios de loja online (WooCommerce)"
+shortcode,shortcode,noun,"Não se traduz, é um termo próprio do jargão do WordPress"
+show,mostrar,verb,
+shuffle,baralhar,verb,
+sidebar,"barra lateral",noun,
+site,site,noun,
+"Site Editing","Edição do site",expression,"Com origem em Site Editor"
+"Site Editor","Editor do site",noun,"Antigo Full Site Editor (FSE), renomeado para Site Editor"
+"Site Health","Diagnóstico do site",noun,"Funcionalidade Site Health do core do WordPress"
+"site library","biblioteca de sites",noun,"Biblioteca de sites pré-criados para importar"
+sitemap,sitemap,noun,"Não se traduz. Contexto: ficheiro XML para SEO"
+SKU,REF,abbreviation,"Contexto: WooCommerce. Acrónimo de Stock Keeping Unit."
+slug,slug,noun,"masculino em discussão"
+"so you cannot","logo, não é possível ",expression,
+soon,"em breve",adjective,
+"source code",código-fonte,noun,
+spam,spam,noun,"em minúsculas"
+"Spotlight mode","Modo de foco",noun,"""Spotlight mode"": Modo de edição no core do WordPress"
+spread,distância,noun,"Sombra: distância da sombra"
+start,início,noun,
+start,"começar (ou iniciar)",verb,"conforme o contexto"
+"starter site","modelo de site",noun,"Site pré-criado para importar"
+state-of-the-art,"de vanguarda",expression,
+status,estado,noun,
+sticky,fixo,adjective,
+"stretch to fit","ajustar ao tamanho",expression,
+submit,enviar,verb,
+subscribe,subscrever,verb,
+subscriber,subscritor,noun,
+subtitles,legendas,noun,"contexto: legendas de tradução para vídeo (diferente de “captions” quando se refere a transcrição para efeitos de acessibilidade do conteúdo áudio a pessoas surdas)"
+switch,mudar,verb,
+tab,separador,noun,
+"table of contents",índice,expression,
+tag,elemento,noun,"Contexto: HTML tag -> Elemento HTML"
+tag,etiqueta,noun,"Contexto: Tag (taxonomia) do WordPress"
+tagline,descrição,noun,"contexto: site tagline"
+"take over","assumir controlo",expression,
+target,destino,noun,
+taxonomy,taxonomia,noun,
+template,modelo,noun,"conforme o contexto"
+theme,tema,noun,
+then,então,adverb,
+thin,fino,noun,"Contexto: peso de letra (espessura 100 na escala de 100-900)"
+throttling,"controlo de fluxo",expression,
+timezone,"fuso horário",noun,
+trackback,trackback,noun,"não se traduz, masculino"
+tracking,rastreio,noun,"Envio de encomendas com código que permite acompanhar o respectivo estado."
+trash,lixo,noun,
+trash,"mover para o lixo",verb,
+trigger,accionador,noun,
+trigger,desencadear,verb,
+undelete,restaurar,verb,
+undo,anular,verb,"Histórico de edições (undo/redo)"
+unnaprove,reprovar,verb,
+"unordered list (ul)","lista não ordenada",expression,
+unsubscribe,"cancelar subscrição",verb,
+upload,carregamento,noun,
+upload,carregar,verb,
+uploaded,carregado,adjective,
+URL,URL,noun,"masculino, acrónimos nunca são pluralizados"
+user,utilizador,noun,
+"user agent","agente do utilizador",expression,
+username,"utilizador (ou nome de utilizador)",noun,"conforme o contexto"
+view,visualização,noun,
+view,ver,verb,
+visitor,visitante,noun,
+warning,atenção,noun,
+website,site,noun,masculino
+widget,widget,noun,"Não se traduz, é um termo próprio do jargão do WordPress"
+"with success","com sucesso, bem sucedido (ou sem problemas)",expression,"conforme o contexto"
+write,escrever,verb,
+write,escrever,verb,
+"you are about to","está prestes a",expression,
+"you are not allowed to","não tem permissão para",expression,
+"you can just/only","basta (ou só pode)",expression,"conforme o contexto"
+"you cannot to","não tem permissão para",expression,
+"you must have x","deve ter x",expression,
+"Zoom Out","Zoom Out",noun,"Contexto: Modo de Zoom Out introduzido no WP 6.7. Até melhor nome, manter Zoom Out."
+zorglub,zorglub,noun,

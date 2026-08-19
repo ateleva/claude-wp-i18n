@@ -1,0 +1,507 @@
+en,es,pos,description
+about,"acerca de",adverb,"Preferimos «Acerca de» antes que «Sobre», pero dependerá del contexto. 
+«Acerca del tema Baskerville»
+«Sobre el autor»"
+"above the fold","antes de desplazarse",expression,
+account,cuenta,noun,
+activate,activar,verb,
+activated,activado,adjective,"«Una vez que haya sido activado»"
+active,activo,adjective,"«Mostrar plugins activos»"
+add,añadir,verb,"No traducir como «agregar», «agrega»"
+add-on,extensión,noun,
+addon,extensión,noun,
+address,dirección,noun,
+admin,"administrador / administración",noun,"«administrador» cuando se refiere al perfil dentro del sistema.
+«administración» cuando se refiere al área de administración de WordPress.
+"
+"After the Deadline","After the Deadline",noun,"Nombre de un producto de software http://afterthedeadline.com"
+AI,IA,abbreviation,
+ajax,ajax,noun,"No se traduce"
+"are you sure","¿Seguro que…?",expression,"Para hacer la pregunta sin género no usar «¿Estás seguro…?» o «¿Estás segura…?» sino «¿Seguro que…?» adaptable a ambos géneros "
+array,array,noun,"No se traduce"
+aside,minientrada,noun,
+"aspect ratio","relación de aspecto",expression,
+attachment,adjunto,noun,
+attributes,atributos,noun,
+authenticate,identificar,verb,"NO usar autenticar, autentificar ni cosas similares"
+authentication,identificación,noun,"No usar autenticación, autentificación y similares"
+author,autor,noun,
+autosave,autoguardado,noun,
+backend,"administración / escritorio",noun,
+backlink,retroenlace,noun,
+backorder,reserva,noun,
+backup,"copia de seguridad",noun,
+"bad words","palabras malsonantes",expression,"No usar «malas palabras»"
+badge,"acreditación / insignia / distinción",noun,
+banner,banner,noun,"No se traduce"
+BCC,CCO,noun,"No dejar la abreviatura en inglés de Blind Carbon Copy, ponerla en español para Con Copia Oculta"
+benefit,ventaja,noun,
+bill,factura,noun,
+billing,facturación,noun,
+bitrate,bitrate,noun,"No se traduce"
+blockquote,cita,noun,
+blog,blog,noun,"(No se traduce)"
+blueprint,modelo,noun,"Se refiere a modelos (como bocetos) de instalación, de WordPress, WooCommerce y otros, para reutilizar en otras instalaciones."
+body,cuerpo,noun,"No se traduce si se refiere a la etiqueta <body>"
+bookmarklet,marcador,noun,
+branch,"rama / sucursal",noun,"Usar «rama» para las versiones mayores de WordPress.
+Usar «sucursal» en relación a comercio electrónico."
+branding,"imagen de marca / marca",noun,
+breadcrumb,"migas de pan",noun,
+"brick and mortar store","tienda física",expression,
+BuddyPress,BuddyPress,noun,"No se traduce"
+bug,fallo,noun,
+builder,maquetador,noun,"Se puede usar «editor» cuando vaya unido a «arrastrar y soltar» p.ej. «drag and drop builder», en ese caso se puede traducir como «editor de arrastrar y soltar»"
+bulk,"por lotes",noun,"Según el contexto podría ser «en lotes» o «en bloque». No usar «en masa» ni «masivamente»"
+"bulk actions","acciones en lote",noun,
+bundle,lote,noun,"No usar «agrupado» para no confundir con los productos por defecto de WooCommerce"
+"by clicking","al hacer clic",expression,
+canvas,lienzo,noun,
+capability,capacidad,noun,
+caption,leyenda,noun,"Es el texto conocido como pie de foto"
+cart,carrito,noun,"No usar carro ni cesta"
+"case sensitive","distingue entre mayúsculas y minúsculas",expression,
+category,categoría,noun,
+changelog,"registro de cambios",noun,
+changeset,"grupo de cambios",noun,
+"Cheatin’ uh?","Haciendo trampas, ¿eh?",expression,
+check,"marcar / comprobar",verb,"Dependiendo del contexto. Por ejemplo: marcar una casilla / comprobar un ajuste"
+check,cheque,noun,"En comercio, como medio de pago."
+checkbox,"casilla de verificación",noun,
+checkout,"finalizar compra / pago",noun,"Cuando se refiere a la página de pagos es «Finalizar compra», sino traducir como pago/s, por ejemplo «El cliente procede al pago»"
+clear,vaciar,verb,
+click,clic,noun,
+click,"hacer clic",verb,"Se pone «clic» sin K (https://www.fundeu.es/consulta/hacer-clic-1753/)"
+"clip art","imagen prediseñada",expression,
+clip-art,"imagen prediseñada",noun,
+clipart,"imagen prediseñada",noun,
+"COD ","contra reembolso",noun,"Siglas en inglés de «Charge On Delivery»
+Normalmente, en mayúsculas (COD)."
+code,código,noun,
+code,programar,verb,
+collapse,plegar,verb,"En ocasiones, cerrar"
+collapsed,plegado,adjective,"En ciertos contextos, «cerrado»"
+collation,cotejo,noun,
+comic,tebeo,noun,
+comment,comentario,noun,
+comment,comentar,verb,
+commit,"commit ",noun,"(No se traduce)"
+commit,"hacer commit",verb,
+computer,ordenador,noun,"No usar computador o computadora"
+"contact with your host","contacta con tu alojamiento",expression,
+content,contenido,noun,"No usar «contenidos»"
+contributor,colaborador,noun,"Role Contributor -> Perfil de colaborador"
+"convenience store","tienda de proximidad",expression,"Frase muy utilizada por las IAs, nada utilizada en España. Usa 'tienda de proximidad'"
+cookie,cookie,noun,"Plural «Cookies». No se traduce."
+copyright,copyright,noun,"No se traduce"
+core,núcleo,noun,"Se suele referir al núcleo de WordPress"
+cornerstone,esencial,noun,"Normalmente se refiere a contenido esencial (cornerstone content)"
+countdown,"cuenta atrás",noun,
+"credit note","factura rectificativa",noun,
+credits,"agradecimientos / reconocimientos / acreditaciones",noun,
+cross-sell,"venta cruzada",expression,
+crowdfunding,microfinanciación,noun,"Recomendación Fundéu: https://www.fundeu.es/recomendacion/crowdfunding-mejor-financiacion-colectiva-financiacion-popularo-suscripcion-popular-982/"
+curate,seleccionar,verb,"Se refiere a la selección de contenidos (curate content) en redes sociales"
+curated,seleccionado,expression,"Se refiere a la selección de contenidos (content curated)"
+curation,selección,adverb,"Se refiere a la selección de contenidos (content curation)"
+curator,seleccionador,noun,"Se refiere a la selección de contenidos (content curator) en redes sociales"
+"custom CSS","CSS personalizado",noun,
+"custom post type","tipo de contenido personalizado",noun,"Decidido por votación popular aquí:
+https://twitter.com/wp_es/status/684352383267270656"
+customer,cliente,noun,
+customize,personalizar,verb,
+Customizer,Personalizador,noun,
+"daily Archive","archivo diario",noun,
+Dashboard,Escritorio,noun,"No utilizar «tablero» o «panel de control»"
+debug,depurar,verb,
+debug,depuración,noun,
+default,"por defecto",noun,
+"defaults to","por defecto es",noun,
+delete,borrar,verb,
+deprecate,descarta,verb,
+deprecated,obsoleto,adjective,
+deselect,"anular selección",noun,"No usar «deseleccionar» o similares"
+designation,nombramiento,noun,
+disable,desactivar,verb,
+disabled,desactivado,adverb,
+discontinued,"en desuso",adjective,
+dismiss,descartar,noun,
+"double check","vuelve a comprobar",expression,
+draft,borrador,noun,
+"drag and drop","arrastrar y soltar",expression,
+"drag and drop builder","editor de arrastrar y soltar",expression,"no usar «maquetador de arrastrar y soltar»"
+drop-in/s,dependiente/s,noun,
+dropin,dependiente,noun,"Se refiere a un tipo de plugins especiales, dependientes de otros procesos"
+e-learning,"aprendizaje virtual",expression,"Recomendación de Fundéu:
+https://www.fundeu.es/recomendacion/e-learning/"
+e-mail,"correo electrónico",noun,
+ebook,"libro electrónico",noun,
+ecommerce,"comercio electrónico",noun,
+email,"correo electrónico",noun,"No utilizar:
+email (Incorrecto).
+correo e (Incorrecto).
+e-mail (Incorrecto).
+Correo Electrónico (con E mayúscula) (Incorrecto)
+
+email address = dirección de correo electrónico (Correcto)"
+embed,incrustar,verb,
+Embedded,Incrustado,adjective,Incrustado
+enable,activar,verb,"Casi siempre es activar, pero a veces tiene sentido de «permitir»"
+enabled,"activado / activo",adverb,
+encrypt,cifrar,verb,"No usar encriptar"
+encrypted,cifrado,adjective,"No usar encriptado"
+encryption,cifrado,noun,"No usar encriptación"
+endpoint,variable,noun,"se refiere a las variables/constantes en los slugs normalmente"
+endpoint,variable,noun,"En WooCommerce de refiere a slugs de la URL para diferentes situaciones en el proceso de compra. En el resto de situaciones a variables de programación."
+engagement,participación,noun,
+entries,"entradas / registros",noun,"Si se refiere a datos almacenados es mejor usar registros"
+entry,"entrada / registro",noun,"Si se refiere a un dato almacenado es mejor usar registro"
+evergreen,perenne,noun,
+excerpt,extracto,noun,
+"excluding tax","impuestos no incluidos",expression,
+expanse,expandir,verb,
+expiration,caducidad,noun,"Según el contexto se puede usar «vencimiento» pero NO «expiración»"
+expire,caduca,expression,
+expired,caducado,noun,"No usar «expirado»"
+expires,caduca,noun,"No usar «expira»"
+"F jS, Y","j \d\e F \d\e Y",expression,"Formato de fecha al español"
+"fancy permalink","enlace permanente amigable",noun,
+FAQ,FAQ,noun,"No se traduce."
+feature,característica,noun,"Por defecto, traducir por «característica», aunque en muchas ocasiones será más preciso «función»"
+feature,destacar,verb,
+fee,cuota,noun,WooCommerce
+feed,feed,noun,"No se traduce. Se refiere al feed RSS."
+feedback,"respuesta / comentario / opinión",noun,
+"feel free","no dudes",expression,"No traducir literal como «siéntete libre»"
+file,archivo,noun,
+firewall,cortafuegos,noun,
+fix,corrección,noun,
+fixed,corregido,expression,
+footer,"pie de página",noun,
+"front page","página de inicio",noun,
+front-end,"portada / vista pública",noun,
+frontend,"portada / vista pública / parte pública",noun,
+"Full Site Editing","edición completa del sitio",expression,
+fuzzy,impreciso/a,noun,
+gallery,galería,noun,
+gamification,ludificación,noun,"Mejor ludificación: https://www.fundeu.es/recomendacion/ludificacion-mejor-que-gamificacion-como-traduccion-de-gamification-1390/"
+gateway,pasarela,noun,"Se refiere a pasarelas de pago"
+GDPR,RGPD,noun,"Es masculino: «el RGPD» porque se refiere al «Reglamento general de protección de datos»"
+"get started","primeros pasos",expression,
+grid,cuadrícula,noun,
+gross,bruto,noun,"Término contable, referido a ingresos o ventas brutas"
+guidelines,directrices,noun,
+handbook,manual,noun,
+hardening,refuerzo,noun,
+header,cabecera,noun,
+heading,encabezado,noun,
+headline,titular,noun,
+hero,"Sección destacada",noun,"Se refiere a secciones, imágenes o bloques que ocupan toda la pantalla"
+hide,ocultar,verb,"No usar «esconder»"
+holder,titular,noun,"Cuando se habla del titular de una tarjeta o cuenta de banco «account holder» «card holder»"
+home,"inicio / página de inicio",noun,
+homepage,"página de inicio",noun,
+honeypot,señuelo,noun,"Se refiere al señuelo para spammers "
+hook,gancho,noun,"Action hook -> gancho de acción
+Filter hook -> gancho de filtro"
+hoster,proveedor,noun,"El proveedor de servicios de alojamiento web."
+hosting,alojamiento,noun,"El servicio de alojamiento web."
+hostname,hostname,noun,"No se traduce"
+hotkeys,"teclas rápidas",noun,
+hover,"al pasar el cursor",expression,
+how-to,"guía práctica",expression,
+Howdy,Hola,noun,
+"if applicable","si procede",expression,
+"in order to",para,expression,
+"in the background","en segundo plano",expression,
+inline,integrado,adjective,
+integer,"número entero",noun,
+invalid,"no válido",noun,"No utilizar: Inválido (Incorrecto)."
+invoice,factura,noun,
+"is missing",falta,expression,
+"is not writable","no tiene permisos de escritura",expression,
+"is writable","tiene permisos de escritura",expression,
+issue,"problema / conflicto / incidencia",noun,
+item,"elemento / artículo",noun,"Solo usar «artículo» en tiendas online"
+JavaScript,JavaScript,noun,"No se traduce"
+Jetpack,Jetpack,noun,"No se traduce. Se refiere al plugin Jetpack"
+key,clave,noun,"Cuando se usa como sinónimo de contraseña para un servicio, por ejemplo, una API"
+landing,destino,noun,"Para «páginas de …» No usar «aterrizaje», el término correcto en SEO consolidado con los sistemas de analítica es «destino»"
+"landing page","página de destino",expression,"Término utilizado en SEO y UX"
+language,idioma,noun,
+large,grande,noun,
+"last name",apellidos,noun,
+layout,"estructura / disposición / diseño / plantilla",noun,"Si se refiere a una página se usa «plantilla» si es relativo a la distribución de contenidos, según contexto se puede usar «estructura», «diseño», »disposición»"
+lazy,diferida,noun,"Usada normalmente en la expresión lazy load -> carga diferida"
+lead,"cliente potencial",noun,
+legacy,heredado,adjective,
+library,biblioteca,noun,"No usar librería, que solo se refiere a libros"
+license,licencia,noun,
+lightbox,"caja de luz",noun,"El efecto emergente al  hacer clic en imágenes con fondo opaco"
+link,enlazar,verb,"No usar «vincular», «linkear» ni ninguna otra cosa"
+link,enlace,noun,"no usar «link», «vínculo» ni «liga»"
+"link juice","zumo de enlaces",expression,
+listing,"anuncio / catálogo / ficha",noun,"De forma general usar «anuncio(s)», si es un catálogo de clasificados se puede usar «catálogo» y en casos particulares (ofertas de empleo, etc) usar el adecuado al producto: «oferta», «inmueble», etc"
+locale,"configuración regional",noun,
+log,registro,noun,
+"log in",acceder,verb,
+"log out",salir,verb,
+"logged in",conectado,noun,
+"logged out",desconectado,noun,
+login,"acceder / acceso",verb,"Usar «Acceder» cuando sea
+1) una etiqueta de un botón, cuando se haga la acción de acceder al pulsarlo.
+2) se refiera en un texto a la acción de acceder.
+
+No utilizar:
+Iniciar Sesión (Incorrecto).
+Entrar (Incorrecto).
+Identificarse (Incorrecto)"
+mailer,"servicio de envío",noun,
+malicious,malintencionado,noun,
+manage,gestionar,verb,"No utilizar: Administrar (Incorrecto)"
+management,gestión,noun,"No utilzar: Administración (Incorrecto)"
+map,mapa,noun,"Asegúrate de que no se refiere al verbo «map»"
+map,asignar,verb,"No usar «mapear»"
+mapping,asignación,expression,"No usar «mapeo»"
+marketplace,mercado,noun,
+masonry,mosaico,adjective,"Los diseños masonry son aquellos que simulan un muro de ladrillos que encajan unos sobre otros."
+media,medios,noun,
+membership,membresía,noun,
+merchant,vendedor,noun,"Hay varias acepciones aceptables según la RAE pero la de uso más común y natural es 'vendedor'"
+"meta box","caja meta",expression,
+"meta description","meta description",expression,"Se refiere a una etiqueta meta específica para SEO, denominada así, no sustituye a la descripción o el extracto, aunque puedan coincidir. No traducir."
+"meta title","meta title",expression,"Se refiere a una etiqueta meta específica para SEO, denominada así, no sustituye al título. No traducir."
+metabox,"caja meta",noun,
+minification,minimización,noun,"No usar «minimificación» o similares"
+minify,minimizar,noun,"No usar «minificar» o similares"
+modal,emergente,noun,
+monitor,"supervisar / seguir / vigilar",verb,"No usar «monitorear» o similares"
+monitoring,"seguimiento / vigilancia / supervisión",noun,"No usar «monitorización» o similares"
+monto,importe,noun,"Nadie usa en España la palabra 'monto', usa en su lugar 'importe'"
+multisite,multisitio,noun,
+N/A,N/D,abbreviation,https://x.com/RAEinforma/status/1114146214038188032
+next,siguiente,noun,"Si es comienzo de frase traducir como «A continuación»"
+nicename,"slug de usuario",noun,
+nickname,alias,noun,"No utilizar: 
+Apodo (Incorrecto) 
+Nickname (Incorrecto)"
+nonce,nonce,noun,"(no se traduce)"
+"not allowed","no tienes permisos",expression,"No usar «permiso» sino «permisos» debido a que no es un «permiso» que da alguien sino «permisos» asociados a las capacidades de un perfil de usuario. Según el contexto, puede traducirse por «no (está) permitido»"
+notice,aviso,noun,
+notification,aviso,noun,"No usar «notificación»"
+notify,avisar,verb,"No usar «notificar»"
+object,objeto,noun,
+OK,Aceptar,expression,
+"on hover","al pasar el cursor",expression,
+onboarding,"puesta en marcha",noun,"Proceso de bienvenida para ajustes iniciales de algunos plugins, como WooCommerce"
+only,solo,adjective,"RAE: https://www.rae.es/espanol-al-dia/el-adverbio-solo-y-los-pronombres-demostrativos-sin-tilde"
+only,"solo / solamente",adverb,"RAE: https://www.rae.es/espanol-al-dia/el-adverbio-solo-y-los-pronombres-demostrativos-sin-tilde"
+Oops,Vaya,noun,
+Oops,¡Vaya!,expression,Exclamación
+options,opciones,noun,"No utilizar: Ajustes (Incorrecto)"
+order,"pedido / orden",noun,"En una tienda online, como nombre se refiere al «pedido», pero en ocasiones también al orden de elementos. Según contexto."
+order,"pedir / encargar / realizar pedido / ordenar",verb,"Usar «ordenar» solo para referirse al orden de elementos. Si es en una tienda siempre se refiere a algo relacionado con pedidos "
+"packing slip",albarán,expression,
+padding,relleno,noun,"Término de CSS"
+page,página,noun,
+page,página,noun,
+parallax,paralaje,noun,
+path,ruta,noun,
+pattern,patrón,noun,
+"payment gateway","pasarela de pago",expression,
+performance,rendimiento,noun,
+Permalink,"Enlace permanente",noun,
+Permalinks,"Enlaces permanentes",noun,
+phishing,"suplantación de identidad",noun,
+ping,ping,noun,"No se traduce"
+pingback,pingback,noun,"No se traduce"
+pixel,píxel,noun,"Con tilde"
+pixels,píxeles,noun,"Con tilde"
+"place order","realizar pedido",expression,
+placeholder,"marcador de posición",noun,
+playground,"zona de pruebas",noun,
+plugin,plugin,noun,"No se traduce"
+plugins,plugins,noun,"no se traduce"
+pop-up,"mensaje / ventana emergente",noun,
+popup,"mensaje / ventana emergente",noun,
+portfolio,porfolio,noun,https://www.fundeu.es/consulta/portfolio-863/
+POS,TPV,noun,"Por «Terminal Punto de Venta» (del inglés «Point Of Sale»)"
+post,entrada,noun,
+"post type","tipo de contenido",noun,"Hay varios tipos de contenido (entradas, páginas, etc)
+
+Decidido por votación popular aquí:
+https://twitter.com/wp_es/status/684352383267270656"
+"post types","tipos de contenido",expression,
+posts,entradas,noun,
+"powered by","funciona con",expression,
+powerful,potente,noun,"No usar «poderoso»"
+preloader,"indicador de carga",noun,
+preset,preajuste,noun,
+preview,"vista previa",noun,
+preview,previsualizar,verb,
+previous,anterior,noun,
+primary,principal,noun,
+pro-forma,proforma,noun,"Se refiere a facturas"
+prompt,instrucción,noun,"Cuando se refiere a una IA
+A falta de una recomendación de la RAE o Fundeu usar «instrucción», que es como la documentación de OpenAI lo traduce, y es explicativo de su uso, pues son 'instrucciones' a una IA"
+"proudly powered by","funciona gracias a",expression,
+"proudly Powered by WordPress","funciona gracias a WordPress",expression,"Traducción actual. "
+Publicize,Divulgar,noun,"El módulo de Jetpack"
+"push notifications","avisos instantáneos",expression,"Se refiere a los avisos emergentes de aplicaciones móviles principalmente"
+query,consulta,noun,
+QuickPress,"ublicación rápida",noun,
+quiz,cuestionario,noun,"No usar examen"
+quotation,presupuesto,noun,
+quote,"cita / presupuesto",noun,"Según contexto, en temas de comercio se refiere a pedir un presupuesto"
+rate,"tasa / tarifa",noun,"Usar «tasa» cuando va unido a otro nombre, por ejemplo «taxes rate» - «tasa de impuestos». Usar «tarifa» cuando va unido a envío. Ej. «shipping rate» = «tarifa de envío»"
+rate,"valorar / puntuar",verb,"Usa «valorar» en el directorio de plugins y temas. Usa «puntuar» en el resto de situaciones"
+rating,"valoración / puntuación",noun,"Usar «valoración» en el directorio de plugins y temas. Usar «puntuación» en el resto de situaciones"
+receipt,recibo,noun,
+receiver,destinatario,noun,"No usar receptor"
+recipient,destinatario,noun,"Se refiere al destinatario de un correo electrónico"
+recurring,periódico,adjective,"NO usar «recurrente» o «repetido»"
+refactor,"reprogramar / rediseñar",verb,"Según el contexto (programación/diseño) usar una traducción u otra."
+refund,reembolso,noun,
+refund,reembolsar,verb,
+release,versión,noun,"No confudir con Released --> Lanzamiento"
+removal,eliminación,expression,
+remove,"quitar / eliminar",verb,"Casi siempre usar «quitar». Usar «eliminar» cuando es un borrado físico (usuarios, cookies, plugins, etc)"
+render,"procesar / mostrar",verb,"Usar según el contexto. En programación usar «procesar», cuando se refiere a mostrar elementos en una página usar «mostrar»"
+report,informe,noun,"No usar «reporte»"
+report,informar,verb,"No usar «reportar»"
+required,"obligatorio / requerido / necesario",adverb,"Usar siempre «obligatorio», y solo en contadas ocasiones - muy justificadas por el contexto - se puede usar requerido. También «necesario», que es menos impositivo."
+reset,restablecer,verb,
+resource,recurso,noun,
+responsive,adaptable,noun,
+retrieve,recuperar,verb,
+review,"reseña / valoración",noun,"Depende del contexto se usa reseña (foros) o valoración (directorio de plugins y temas)"
+role,perfil,noun,"NO usar «rol»"
+roles,perfiles,noun,
+rollback,retroceso,noun,
+rollback,retroceder,verb,
+"RSS Feed","feed RSS",noun,
+"safe mode","modo seguro",noun,
+salary,sueldo,noun,
+sale,oferta,noun,
+sandbox,"entorno de pruebas",noun,
+save,"guardar o ahorrar, según contexto",verb,"No utilizar: Salvar (incorrecto)"
+scan,explorar,verb,
+scan,exploración,noun,
+schema,schema,noun,"Referido a metadatos estructurados, no se traduce"
+scope,extensión,noun,"Se refiere a la extensión de la cabecera en una tabla. Valores: col, row, colgroup, rowgroup"
+screen,pantalla,noun,
+screening,"proyección / emisión",noun,
+scroll,desplazamiento,noun,
+sender,remitente,noun,"Se refiere al que envía un correo electrónico"
+set,establecer,verb,
+set,conjunto,noun,
+settings,ajustes,noun,"No utilizar: Opciones (Incorrecto)"
+ship,enviar,verb,
+shipping,envío,noun,
+shortcode,shortcode,noun,"No se traduce"
+shortcut,atajo,noun,"Plural: Shortcuts --> Atajos"
+sidebar,"barra lateral",noun,
+"sign in",acceder,verb,
+"sign out",salir,verb,
+site,sitio,noun,"No traducir como «página web» o «sitio web», solo como «sitio»"
+"site identity","identidad del sitio",noun,"Sección del Personalizador"
+sitemap,"mapa del sitio",noun,
+skin,estilo,noun,
+skip,omitir,verb,
+skipped,omitido,noun,
+slide,deslizar,verb,"No confundir con el nombre «slide»: diapositiva"
+slide,diapositiva,noun,"Cada elemento de un carrusel (slider)"
+slider,"carrusel / control deslizante",noun,"Traducir como «carrusel» para pases de diapositivas / Traducir como «control deslizante» para selectores de precios, en widgets, etc"
+slug,slug,noun,"No se traduce"
+snapshot,instantánea,noun,
+snippet,"fragmento de código",noun,"No se traduce cuando se refiera a las cajas de resultado de búsqueda (snippets, rich snippets / snippets enriquecidos)"
+"social media","medios sociales",expression,
+sorry,"lo siento",noun,"No utilizar:
+Lo sentimos (Incorrecto)
+Perdona (Incorrecto)"
+Spam,Spam,noun,"No se traduce"
+spinner,"icono de carga",noun,"Se refiere al icono que aparece en los temas mientras se carga el contenido"
+spoiler,destripar,verb,"Fuente: https://www.fundeu.es/recomendacion/destripe-destripar-hacer-spoiler/"
+spoiler,destripamiento,noun,"Fuente: https://www.fundeu.es/recomendacion/destripe-destripar-hacer-spoiler/"
+sponsor,patrocinador,noun,
+sponsored,patrocinado,adverb,
+"static front page","página de inicio estática",noun,
+status,estado,noun,
+sticky,fijo,adjective,
+stock,"inventario / existencias",noun,"Cuando es palabra suelta usar «inventario». Como frase usamos «hay existencias» para el texto «in stock»"
+"stop words","palabras vacías",expression,"Se refiere a palabras que no se tienen en cuenta al analizar textos en varios tipos de acciones y contextos"
+streaming,transmisión,noun,
+string,cadena,noun,
+stylesheet,"hoja de estilos",noun,
+subscriber,suscriptor,noun,
+successful,correcto,noun,
+successfully,correctamente,adverb,
+suite,"solución completa",noun,"Por ejemplo: «Office apps suite» como «Solución completa de aplicaciones de oficina»"
+support,"es compatible con / dar soporte",verb,"Si se refiere a compatibilidad entre versiones/software se traduce como «compatible con» si se refiere a dar ayuda en foros se traduce como «dar soporte»"
+supported,compatible,noun,
+swag,regalos,noun,
+tab,pestaña,noun,
+tag,etiqueta,noun,
+tagline,"descripción corta",noun,
+"tariff code","código arancelario",expression,
+tax,impuesto,noun,
+"tax rate","tasa de impuesto",expression,
+taxonomy,taxonomía,noun,
+template,plantilla,noun,"No utilizar: tema (Incorrecto)"
+theme,tema,noun,"No utilizar: plantilla (Incorrecto)"
+thumbnail,miniatura,noun,
+ticket,"tique / entrada",noun,"Traducir tickets a tiques igualmente (RAE, Fundeu)"
+timer,temporizador,noun,
+toggle,conmutador,noun,
+toggle,"cambiar / alternar",verb,
+token,token,noun,"(no se traduce)"
+tools,herramientas,noun,"Nombre de menú principal de WordPress"
+tooltip,"información emergente",noun,
+topic,debate,noun,"En el contexto de foros y otros, usar «debate». En otros ámbitos puede traducirse por «tema» "
+tour,"recorrido, gira, viaje",noun,"No usar «tour». Ref: https://www.rae.es/dpd/tour"
+trackback,trackback,noun,"No se traduce"
+tracking,seguimiento,noun,
+transient,"dato transitorio",noun,
+trash,papelera,noun,"No utilizar «basura»"
+trial,"periodo de prueba",expression,
+troubleshoot,diagnosticar,verb,
+troubleshooting,diagnosticar,verb,
+tweak,retoque,noun,
+two-factor,"dos pasos",noun,
+unable,"no se ha podido",expression,
+unapproved,"sin aprobar",adjective,"Se refiere a un comentario o mensaje que, a pesar de haber sido aprobado previamente, se considera que no debería estarlo y se pasa a no aprobado."
+up-sell,"venta dirigida",expression,
+update,actualización,noun,
+update,actualizar,verb,
+updated,actualizado,noun,
+upgrade,actualización,noun,
+upgrade,actualizar,verb,"«actualizar» si es a una nueva versión, «mejorar» si es a un plan superior"
+upload,subida,noun,"No utilizar: carga (incorrecto)"
+upload,subir,verb,"No utilizar: cargar (incorrecto)"
+uploaded,subido,adverb,
+upsell,"venta dirigida",expression,
+upsells,"ventas dirigidas",expression,
+uptime,"tiempo de actividad",noun,"Se refiere al tiempo de actividad de un sitio, asociado normalmente a características de los servidores"
+URI,URI,noun,"No se traduce"
+URL,URL,noun,"No se traduce"
+username,"nombre de usuario",noun,
+variation,variación,noun,"En el contexto de WooCommerce, no usar «variante»"
+vendor,vendedor,noun,
+viewport,"área visible",noun,"Traducir si es interfaz para el usuario final, no traducir si la interfaz es para programadores"
+walker,walker,noun,"No se traduce"
+wallet,"monedero / billetera / cartera virtual",noun,https://www.fundeu.es/recomendacion/monedero-digital-alternativa-a-wallet/
+warning,advertencia,noun,
+website,"sitio web",noun,"También son aceptables «web» y «sitio», según el contexto
+https://www.fundeu.es/consulta/sitio-web-2029/"
+Welcome,"Te damos la bienvenida",noun,"Para que encaje el saludo para cualquier persona"
+widget,widget,noun,"No se traduce"
+wizard,asistente,noun,
+worth,valor,adverb,
+wrapper,envoltura,noun,"Se refiere a la envoltura alrededor de las imágenes que funciona como margen de las mismas"
+writable,"tener permisos de escritura",expression,
+XML-RPC,XML-RPC,noun,"No se traduce"
+"yearly archive","archivo anual",noun,
+zoom,"ampliar / acercar",expression,"Fundeu recomienda usar en español la adaptación «zum», según aconsejan las Academias de la Lengua, pero su uso no está muy extendido.
+https://www.fundeu.es/recomendacion/zum/"
+"zoom in","ampliar / acercar",noun,
+"zoom out","reducir / alejar",expression,

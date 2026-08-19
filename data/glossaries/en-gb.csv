@@ -1,0 +1,407 @@
+en,en-gb,pos,description
+acknowledgment,acknowledgement,noun,
+addon,add-on,noun,"(Unless part of a product name)"
+addons,add-ons,noun,"(Unless part of a product name)"
+"admin bar","Admin Bar",noun,"Correct capitalisation.
+
+Note: 'Admin Bar' applies before WordPress 3.3; from 3.3 onwards it was replaced by the Toolbar. Capitalise only when naming the feature, otherwise lowercase."
+adminbar,"Admin Bar",noun,"Correct capitalisation.
+
+Note: 'Admin Bar' applies before WordPress 3.3; from 3.3 onwards it was replaced by the Toolbar. Capitalise only when naming the feature, otherwise lowercase."
+airplane,aeroplane,noun,
+AJAX,Ajax,noun,"Correct capitalisation."
+akismet,Akismet,noun,"Correct capitalisation."
+aluminum,aluminium,noun,
+analog,analogue,noun,
+analyze,analyse,verb,
+analyzed,analysed,verb,
+analyzer,analyser,noun,
+analyzes,analyses,verb,
+analyzing,analysing,verb,
+anonymization,anonymisation,noun,
+anonymize,anonymise,verb,
+anonymized,anonymised,verb,
+anonymizing,anonymising,verb,
+Api,API,noun,"Correct capitalisation."
+apologize,apologise,verb,
+atom,Atom,noun,"Capitalise when used in reference to a name such as the Atom Editor or Atom RSS or it's the first word in a sentence."
+authorization,authorisation,noun,
+authorize,authorise,verb,
+authorized,authorised,verb,
+"back end",back-end,adjective,"Hyphenate when used as an adjective, e.g. 'the back-end editor'."
+back-end,"back end",noun,"Business use only: back-end"
+backend,back-end,adjective,"Hyphenate when used as an adjective, e.g. 'the back-end editor'."
+backend,"back end",noun,"Business use only: back-end"
+backorder,"back order",noun,"Two words as a noun, e.g. 'the shop has back orders to fulfil'."
+backorder,back-order,verb,"Hyphenated as a verb, e.g. 'to back-order an item'."
+"bank check","bank cheque",noun,
+bbpress,bbPress,noun,"Correct capitalisation."
+behavior,behaviour,noun,
+behavioral,behavioural,adjective,
+behaviors,behaviours,noun,
+"Block Editor","block editor",noun,"Lowercase unless in reference to the Gutenberg plugin."
+buddypress,BuddyPress,noun,"Correct capitalisation."
+caliber,calibre,noun,
+canceled,cancelled,verb,
+canceling,cancelling,verb,
+capitalization,capitalisation,noun,
+capitalize,capitalise,verb,
+capitalized,capitalised,verb,
+capitalizes,capitalises,verb,
+caramelized,caramelised,adjective,
+cart,basket,noun,"Amazon UK uses basket, while Amazon US uses cart, so we apply the same here for familiarity. The UK would not say ""shopping trolley"" which would be the direct replacement phrase. Don't change if part of a product name."
+catalog,catalogue,verb,
+categorization,categorisation,noun,
+categorize,categorise,verb,
+categorized,categorised,verb,
+categorizing,categorising,verb,
+center,centre,verb,
+centralized,centralised,adjective,
+centralizing,centralising,verb,
+"change log",changelog,noun,"In a technical context, the single word is the acceptable form."
+characterize,characterise,verb,
+characterized,characterised,verb,
+chrome,Chrome,noun,"Correct capitalisation."
+"chrome extension","Chrome Extension",noun,"Correct capitalisation."
+"classic block","Classic Block",noun,"Correct capitalisation."
+"classic editor","Classic Editor",noun,"Lowercase unless in reference to the Classic Editor plugin."
+"classic paragraph block","Classic Paragraph Block",noun,"Correct capitalisation."
+Co-Author,co-author,noun,"No need to capitalise unless specifically talking about the name of a plugin like Co-Authors Plus."
+coauthor,co-author,noun,
+"Code Editor","code editor",noun,Lowercase.
+color,colour,verb,"Don't change inside inline style attributes."
+colored,coloured,verb,
+colorful,colourful,adjective,
+coloring,colouring,verb,
+colors,colours,noun,
+counseling,counselling,noun,
+criticize,criticise,verb,
+css,CSS,noun,"Correct capitalisation.
+See the WordPress Jargon Glossary: https://make.wordpress.org/marketing/2018/02/28/wordpress-jargon-glossary/"
+curl,cURL,noun,"Correct capitalisation."
+customizable,customisable,adjective,
+customization,customisation,noun,
+customizations,customisations,noun,
+customize,customise,verb,
+customized,customised,verb,
+Customizer,Customiser,noun,
+customizing,customising,verb,
+dailymotion,Dailymotion,noun,"Correct capitalisation."
+db,DB,noun,"Correct capitalisation."
+defense,defence,noun,
+democratize,democratise,verb,
+dialog,dialogue,verb,
+dialogs,dialogues,verb,
+digitize,digitise,verb,
+digitized,digitised,verb,
+discord,Discord,noun,"Correct capitalisation when referring to the social media platform."
+e-book,ebook,noun,"British English closes this up: 'ebook' (cf. email). See the Guardian style guide (letter E): https://www.theguardian.com/guardian-observer-style-guide-e"
+e-mail,email,noun,
+ecommerce,e-commerce,noun,"British English keeps the hyphen here: 'e-commerce'. Note this differs from 'ebook'. See the Guardian style guide (letter E): https://www.theguardian.com/guardian-observer-style-guide-e"
+emphasize,emphasise,verb,
+"end of cycle",end-of-cycle,noun,
+"end of life",end-of-life,noun,
+"end of sale",end-of-sale,noun,
+"end of state",end-of-state,noun,
+endeavor,endeavour,verb,
+enroll,enrol,verb,
+enrollment,enrolment,noun,
+excerpt,Excerpt,noun,"Capitalise when it's the first word in a sentence.
+In a URL, do not capitalise it.
+See the WordPress Jargon Glossary: https://make.wordpress.org/marketing/2018/02/28/wordpress-jargon-glossary/"
+facebook,Facebook,noun,"Correct capitalisation."
+favor,favour,noun,
+favorite,favourite,verb,
+favorited,favourited,verb,
+favorites,favourites,verb,
+feed,Feed,noun,"Lowercase unless in reference to the RSS/RDF Feed."
+fiber,fibre,noun,
+finalize,finalise,verb,
+finalized,finalised,verb,
+finalizing,finalising,verb,
+flavor,flavour,noun,
+friction-less,frictionless,adjective,
+front-end,front-end,adjective,
+front-end,"front end",noun,"Business use only: front-end"
+frontend,"front end",noun,"Business use only: front-end"
+fueled,fuelled,verb,
+fueling,fuelling,verb,
+fulfill,fulfil,verb,
+fulfillment,fulfilment,noun,
+github,GitHub,noun,"Correct capitalisation."
+glotdict,GlotDict,noun,"Correct capitalisation."
+glotpress,GlotPress,noun,"Correct capitalisation."
+"google fonts","Google Fonts",noun,"Correct capitalisation."
+"google maps","Google Maps",noun,"Correct capitalisation."
+"google plus",Google+,noun,"Correct capitalisation."
+googleplus,Google+,noun,"Correct capitalisation."
+gravatar,Gravatar,noun,"Correct capitalisation."
+gray,grey,adjective,
+grayscale,greyscale,noun,
+gutenberg,Gutenberg,noun,"Correct capitalisation.
+
+Note: when in reference to WordPress core use lowercase block editor / when in reference to Gutenberg plugin the correct capitalisation is Gutenberg or alternatively Gutenberg Editor."
+"gutenberg editor","Gutenberg Editor",noun,"Correct capitalisation.
+
+Note: when in reference to WordPress core use lowercase block editor / when in reference to Gutenberg plugin the correct capitalisation is Gutenberg Editor."
+hiya,Hi,noun,
+"home page",homepage,noun,
+honor,honour,noun,
+honored,honoured,verb,
+honoring,honouring,verb,
+hood,bonnet,noun,"As in ""Under the hood..."""
+howdy,Hi,noun,
+htaccess,.htaccess,noun,"Correct capitalisation."
+html,HTML,noun,"Correct capitalisation.
+See the WordPress Jargon Glossary: https://make.wordpress.org/marketing/2018/02/28/wordpress-jargon-glossary/"
+"html editor","HTML editor",noun,"Correct capitalisation."
+http,http,noun,
+http://wordpress.org,https://en-gb.wordpress.org,noun,"Localisation of the WP URL.
+Note: do not localise Support Forum links as they won't exist."
+https,https,noun,
+https://wordpress.org,https://en-gb.wordpress.org,noun,"Localisation of the WP URL.
+Note: do not localise Support Forum links as they won't exist."
+humor,humour,noun,
+incentivize,incentivise,verb,
+incentivized,incentivised,verb,
+individualized,individualised,verb,
+initialization,initialisation,noun,
+initialize,initialise,verb,
+initialized,initialised,verb,
+initializing,initialising,verb,
+instagram,Instagram,noun,"Correct capitalisation."
+installment,instalment,noun,
+internationalization,internationalisation,noun,
+internationalize,internationalise,verb,
+internationalized,internationalised,verb,
+javascript,JavaScript,noun,"Correct capitalisation."
+jetpack,Jetpack,noun,"Correct capitalisation."
+jewelry,jewellery,noun,
+jquery,jQuery,noun,"Correct capitalisation."
+json,JSON,noun,"Correct capitalisation.
+Lowercase if formatted as the file extension (.json)."
+judgment,judgement,noun,
+labeled,labelled,verb,
+labeling,labelling,verb,
+labor,labour,noun,
+license,licence,noun,
+license,license,verb,
+Linkedin,LinkedIn,noun,"Correct capitalisation."
+liter,litre,noun,
+localization,localisation,noun,
+localize,localise,verb,
+localized,localised,verb,
+"log in",login,adjective,"""A login button"""
+"log in","log in",verb,"""Please log in to access"" (no change)"
+"log in",login,noun,"""List of logins"""
+"log out",logout,adjective,"""A logout button"""
+"log out","log out",verb,"""Please log out when finished"" (no change)"
+"log out",logout,noun,"""A list of logouts"""
+log-in,login,noun,"""List of logins"""
+log-in,"log in",verb,"""Please log in to access"""
+log-in,login,adjective,"""A login button"""
+log-out,logout,noun,"""List of logouts"""
+log-out,"log out",verb,"""Please log out when finished"""
+log-out,logout,adjective,"""A logout button"""
+login,login,adjective,"""A login button"" (no change)"
+login,"log in",verb,"""Please log in to access"""
+login,login,noun,"""List of logins"" (no change)"
+logout,"log out",verb,"""Please log out when finished"""
+logout,logout,noun,"""List of logouts"" (no change)"
+logout,logout,adjective,"""A logout button"" (no change)"
+mariadb,MariaDB,noun,"Correct capitalisation."
+maximize,maximise,verb,
+maximized,maximised,verb,
+memorize,memorise,verb,
+meta-box,"meta box",noun,
+metabox,"meta box",noun,
+meter,metre,noun,
+minimize,minimise,verb,
+minimized,minimised,verb,
+modeled,modelled,verb,
+modeling,modelling,verb,
+modernizations,modernisations,noun,
+modernize,modernise,verb,
+modernized,modernised,verb,
+monetization,monetisation,noun,
+monetize,monetise,verb,
+monetized,monetised,verb,
+monetizing,monetising,verb,
+monolog,monologue,noun,
+mp3,MP3,noun,"Correct capitalisation."
+mp4,MP4,noun,"Correct capitalisation."
+mysql,MySQL,noun,"Correct capitalisation."
+mysqli,MySQLi,noun,
+neighbor,neighbour,noun,
+neighborhood,neighbourhood,noun,
+normalization,normalisation,noun,
+normalize,normalise,verb,
+normalized,normalised,verb,
+normalizing,normalising,verb,
+offense,offence,noun,
+opt-in,"opt in",noun,"Business use only: opt-in"
+optimization,optimisation,noun,
+optimizations,optimisations,noun,
+optimize,optimise,verb,
+optimized,optimised,verb,
+optimizer,optimiser,noun,
+optimizing,optimising,verb,
+optin,"opt in",noun,"Business use only: opt-in"
+organization,organisation,noun,
+organizations,organisations,noun,
+organize,organise,verb,
+organized,organised,verb,
+organizer,organiser,noun,
+organizers,organisers,noun,
+organizing,organising,verb,
+"paragraph block","Paragraph Block",noun,"Correct capitalisation."
+parameterized,parameterised,verb,
+paypal,PayPal,noun,"Correct capitalisation."
+personalization,personalisation,noun,
+personalize,personalise,verb,
+personalized,personalised,verb,
+php,PHP,noun,"Correct capitalisation."
+pinterest,Pinterest,noun,"Correct capitalisation."
+pngs,PNGs,noun,"Correct capitalisation."
+"pop up",pop-up,noun,"As in ""close the pop-up""."
+"pop up",pop-up,adjective,"As in ""click the pop-up menu""."
+pop-up,pop-up,noun,"As in ""close the pop-up""."
+pop-up,pop-up,adjective,"As in ""click the pop-up menu""."
+popup,pop-up,noun,"As in ""close the pop-up""."
+popup,pop-up,adjective,"As in ""click the pop-up menu""."
+practice,practise,verb,"British English: the verb is 'practise' (the noun is 'practice')."
+practice,practice,noun,"British English: the noun is 'practice' (the verb is 'practise')."
+prepackaged,pre-packaged,adjective,
+pretense,pretence,noun,
+prioritization,prioritisation,noun,
+prioritize,prioritise,verb,
+prioritized,prioritised,verb,
+Publicise,Publicize,noun,"Publicize is a Jetpack branded feature/module name."
+publicize,publicise,verb,
+randomize,randomise,verb,
+randomized,randomised,verb,
+randomizing,randomising,verb,
+raw,RAW,noun,"File extension. Correct capitalisation."
+rdf,RDF,noun,"Correct capitalisation."
+"rdf feed","RDF Feed",noun,"Capitalise when used in reference to a name such as the RDF Editor or RDF Feed."
+realize,realise,verb,
+realized,realised,verb,
+reauthorization,reauthorisation,verb,
+reauthorize,reauthorise,verb,
+reauthorized,reauthorised,verb,
+recaptcha,reCAPTCHA,noun,"Correct capitalisation."
+recognizable,recognisable,adjective,
+recognize,recognise,verb,
+recognized,recognised,verb,
+recognizing,recognising,verb,
+reddit,Reddit,noun,"Correct capitalisation."
+reoptimization,reoptimisation,noun,
+reoptimizations,reoptimisations,noun,
+reoptimize,reoptimise,verb,
+reoptimized,reoptimised,verb,
+reoptimizing,reoptimising,verb,
+reorganization,reorganisation,noun,
+reorganize,reorganise,verb,
+reorganized,reorganised,verb,
+retreive,retrieve,verb,
+retrive,retrieve,verb,
+rss,RSS,noun,"Correct capitalisation."
+"rss feed","RSS Feed",noun,"Capitalise when used in reference to a name such as the RSS Editor or RSS Feed."
+rumor,rumour,noun,
+sanitization,sanitisation,noun,
+sanitize,sanitise,verb,
+sanitized,sanitised,verb,
+sanitizing,sanitising,verb,
+savory,savoury,adjective,
+seo,SEO,noun,"Correct capitalisation."
+serialization,serialisation,noun,
+serialize,serialise,verb,
+serialized,serialised,verb,
+serializing,serialising,verb,
+serp,SERP,noun,"Correct capitalisation."
+serps,SERPs,noun,"Correct capitalisation."
+"serve happy",ServeHappy,noun,"Correct capitalisation."
+servehappy,ServeHappy,noun,"Correct capitalisation."
+short-circuit,short-circuit,verb,
+short-circuit,"short circuit",noun,"Bad electrical connection."
+sign-up,"sign up",noun,
+signaled,signalled,verb,
+signaling,signalling,verb,
+skillful,skilful,adjective,
+skype,Skype,noun,"Correct capitalisation."
+socialize,socialise,verb,
+soundcloud,SoundCloud,noun,"Correct capitalisation."
+specialization,specialisation,noun,
+specialize,specialise,verb,
+specialized,specialised,verb,
+specializing,specialising,verb,
+specter,spectre,noun,
+sql,SQL,noun,"Correct capitalisation."
+stabilize,stabilise,verb,
+stabilized,stabilised,verb,
+standardize,standardise,verb,
+standardized,standardised,verb,
+strategize,strategise,verb,
+"style sheet",stylesheet,noun,"In a technical context, the single word is the acceptable form."
+"style sheets",stylesheets,noun,"In a technical context, the single word is the acceptable form."
+stylize,stylise,verb,
+summarize,summarise,verb,
+summarized,summarised,verb,
+svg,SVG,noun,"Correct capitalisation."
+symbolize,symbolise,verb,
+symbolizes,symbolises,verb,
+synchronization,synchronisation,noun,
+synchronize,synchronise,verb,
+synchronized,synchronised,verb,
+synchronizing,synchronising,verb,
+termmeta,"term meta",noun,
+"Text Editor","text editor",noun,Lowercase.
+thankyou,"thank you",noun,
+theater,theatre,noun,
+tickbox,checkbox,noun,"Use 'checkbox' (one word). See the GOV.UK A to Z style guide: https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/#c"
+tiktok,TikTok,noun,"Correct capitalisation."
+timezone,"time zone",noun,
+tinymce,TinyMCE,noun,"Correct capitalisation."
+trash,bin,noun,
+trash,bin,verb,
+trashed,binned,verb,
+traveled,travelled,verb,
+traveler,traveller,noun,
+traveling,travelling,verb,
+twitter,Twitter,noun,"Correct capitalisation."
+ui,UI,noun,"Correct capitalisation."
+unauthorized,unauthorised,verb,
+uncategorized,uncategorised,verb,
+unlabeled,unlabelled,verb,
+unoptimized,unoptimised,verb,
+unorganized,unorganised,verb,
+unrecognizable,unrecognisable,adjective,
+unrecognized,unrecognised,verb,
+unserialize,unserialise,verb,
+unserialized,unserialised,verb,
+unticked,unchecked,adjective,"Use 'unchecked'. See the GOV.UK A to Z style guide: https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/#c"
+url,URL,noun,"Correct capitalisation.
+See the WordPress Jargon Glossary: https://make.wordpress.org/marketing/2018/02/28/wordpress-jargon-glossary/"
+urls,URLs,noun,"Correct capitalisation."
+utilize,utilise,verb,
+utilized,utilised,verb,
+utilizes,utilises,verb,
+utilizing,utilising,verb,
+vapor,vapour,noun,
+"Visual Editor","visual editor",noun,Lowercase.
+visualization,visualisation,noun,
+visualize,visualise,verb,
+visualized,visualised,verb,
+visualizing,visualising,verb,
+vk,VK,noun,"Correct capitalisation."
+whatsapp,WhatsApp,noun,"Correct capitalisation."
+widgetized,widgetised,verb,
+willful,wilful,adjective,
+woocommerce,WooCommerce,noun,"Correct capitalisation."
+woopayments,WooPayments,noun,"Correct capitalisation."
+wordcamp,WordCamp,noun,"Correct capitalisation."
+wordpress,WordPress,noun,"Correct capitalisation."
+wp,WP,noun,"Correct capitalisation."
+xing,XING,noun,"Correct capitalisation."
+xss,XSS,noun,"Correct capitalisation."
+youtube,YouTube,noun,"Correct capitalisation."

@@ -1,0 +1,537 @@
+en,de,pos,description
+abilities,Fähigkeiten,noun,Mehrzahl
+ability,Fähigkeit,noun,Einzahl
+account,Konto,noun,Einzahl
+accounts,Konten,noun,Mehrzahl
+"action hook",Action-Hook,noun,Einzahl
+"action hooks",Action-Hooks,noun,Mehrzahl
+activate,aktivieren,verb,
+activate,aktiviere,verb,
+activate,aktiviert,adjective,
+activated,aktiviert,adjective,
+add-on,Add-on,noun,Einzahl
+add-ons,Add-ons,noun,Mehrzahl
+addon,Add-on,noun,Einzahl
+addons,Add-ons,noun,Mehrzahl
+"admin bar",Adminleiste,noun,Einzahl
+"admin bars",Adminleisten,noun,Mehrzahl
+"admin panel",Adminpanel,noun,Einzahl
+"admin panels",Adminpanels,noun,Mehrzahl
+administrator,Administrator,noun,Einzahl
+administrator,Administratoren,noun,Mehrzahl
+"After the Deadline","After the Deadline",noun,"Produktname : https://afterthedeadline.com/"
+alert,"Warnmeldung/Warnhinweis, -hinweis, -meldung",noun,"Einzelnes Wort: entweder Warnhinweis oder Warnmeldung.
+Wortzusammensetzung: z. B. Infohinweis, Fehlermeldung."
+Appearance,Design,noun,UI-Menü
+appender,Appender,noun,
+approve,freigeben,verb,"Im Kontext von Kommentaren"
+approve,freigegeben,verb,"Im Kontext von Kommentaren"
+approved,freigegeben,adjective,"Im Kontext von Kommentaren"
+archive,Archiv,noun,Einzahl
+archive,archivieren,verb,
+archive,archiviert,verb,
+archived,archiviert,verb,
+archives,Archive,noun,Mehrzahl
+argument,Argument,noun,Einzahl
+arguments,Argumente,noun,Mehrzahl
+array,Array,noun,Einzahl
+arrays,Arrays,noun,Mehrzahl
+aside,Kurzmitteilung,noun,"Ein Beitragsformat"
+attachment,Anhang,noun,Einzahl
+attachments,Anhänge,noun,Mehrzahl
+audio,Audio,noun,
+author,Autor,noun,"(Einzahl) Autor von z. B. Beiträgen, Seiten, Plugins oder Themes"
+authors,Autoren,noun,"(Mehrzahl) Autoren von z. B. Beiträgen, Seiten, Plugins oder Themes"
+autosave,"Automatische Speicherung",noun,
+backend,Backend,noun,
+binary,Binär-,noun,
+"black list",Sperrliste,noun,Einzahl
+"black lists",Sperrlisten,noun,Mehrzahl
+blacklist,Sperrliste,noun,Einzahl
+blacklists,Sperrlisten,noun,Mehrzahl
+"block editor",Block-Editor,noun,
+"block library",Block-Bibliothek,noun,
+"block theme",Block-Theme,noun,Einzahl
+"block themes",Block-Themes,noun,Mehrzahl
+bookmarklet,Bookmarklet,noun,
+border,Rand,noun,"(Einzahl) Im Kontext von CSS"
+border,Ränder,noun,"(Mehrzahl) Im Kontext von CSS"
+"border radius",Eckenradius,noun,"Im Kontext von CSS"
+border-radius,Eckenradius,noun,"Im Kontext von CSS"
+box,Box,noun,Einzahl
+boxes,Boxen,noun,Mehrzahl
+browser,Browser,noun,
+BuddyPress,BuddyPress,noun,Produktname
+"bulk action",Mehrfachaktion,noun,"Je nach Kontext"
+"bulk action",Mehrfachauswahl,noun,"Je nach Kontext"
+"bulk actions",Mehrfachaktionen,noun,"Je nach Kontext"
+"bulk actions",Mehrfachauswahl,noun,"Je nach Kontext"
+bundle,Paket,noun,
+button,Button,noun,Einzahl
+buttons,Buttons,noun,Mehrzahl
+capabilities,Berechtigungen,noun,"Im Kontext von Benutzerrollen"
+capability,Berechtigung,noun,"Im Kontext von Benutzerrollen"
+cart,Warenkorb,noun,Einzahl
+carts,Warenkörbe,noun,Mehrzahl
+categories,Kategorien,noun,Mehrzahl
+category,Kategorie,noun,Einzahl
+"character code",Zeichencode,noun,Einzahl
+"character codes",Zeichencodes,noun,Mehrzahl
+"character entity reference",Zeichenreferenz,noun,Einzahl
+"character entity references",Zeichenreferenzen,noun,Mehrzahl
+"character set",Zeichensatz,noun,Einzahl
+"character sets",Zeichensätze,noun,Mehrzahl
+checklist,Checkliste,noun,Einzahl
+checklists,Checklisten,noun,Mehrzahl
+"classic editor","klassischer Editor",noun,"Wenn nicht der Plugin-Name gemeint ist"
+"classic editor","Classic Editor",noun,"Wenn das Plugin „Classic Editor“ gemeint ist"
+"Code of Conduct",Verhaltenskodex,noun,
+Collaborator,Beteiligter,noun,"(Einzahlt) im Kontext der Kollaborationsfunktion"
+Collaborators,Beteiligte,noun,"(Mehrzahl) im Kontext der Kollaborationsfunktion"
+"color picker",Farbwähler,noun,
+"color scheme",Farbschema,noun,Einzahl
+"color schemes",Farbschemen,noun,Mehrzahl
+comment,kommentieren,verb,
+comment,kommentiere,verb,
+comment,kommentiert,verb,
+comment,Kommentar,noun,Einzahl
+commented,kommentiert,verb,
+comments,Kommentare,noun,Mehrzahl
+computer,Computer,noun,
+"conditional tag","Conditional Tag",noun,Einzahl
+"conditional tags","Conditional Tags",noun,Mehrzahl
+connector,Konnektor,noun,"(Einzahl) im Kontext der Connector-API"
+connectors,Konnektoren,noun,"(Mehrzahl) im Kontext der Connector-API"
+constant,Konstante,noun,Einzahl
+constants,Konstanten,noun,Mehrzahl
+container,Container,noun,
+contributors,Mitwirkende,noun,
+cookie,Cookie,noun,"(Einzahl) Browser-Cookie"
+cookies,Cookies,noun,"(Mehrzahl) Browser-Cookies"
+create,erstellen,verb,
+create,erstelle,verb,
+create,erstellt,verb,
+created,erstellt,verb,
+"CSS Grid","CSS Grid",noun,"Wenn CSS Grid (https://www.w3.org/TR/css-grid/) gemeint ist"
+custom,individuell,adjective,
+custom,individuelle,adjective,
+custom,individueller,adjective,
+custom,individuelles,adjective,
+"Custom Post Type","Individueller Inhaltstyp",noun,Einzahl
+"Custom Post Types","Individuelle Inhaltstypen",noun,Mehrzahl
+customization,Anpassung,noun,
+customize,anpassen,verb,
+Customizer,Customizer,noun,"Siehe:
+https://de.wordpress.org/team/2014/08/27/begriffsklarung-customizer/"
+dashboard,Dashboard,noun,Einzahl
+dashboards,Dashboards,noun,Mehrzahl
+deactivate,deaktivieren,verb,
+deactivate,deaktiviere,verb,
+deactivate,deaktiviert,verb,
+default,Standard,noun,
+"default theme",Standard-Theme,noun,Einzahl
+"default themes",Standard-Themes,noun,Mehrzahl
+delete,löschen,verb,
+delete,lösche,verb,
+delete,gelöscht,verb,
+deprecated,veraltet,adjective,
+developer,Entwickler,noun,"Ebenfalls möglich: „Entwicklungs-“ oder andere gender-neutrale Formen; etwa für „developer documentation“: „technische Dokumentation“"
+directories,Verzeichnisse,noun,Mehrzahl
+directory,Verzeichnis,noun,Einzahl
+disable,deaktivieren,verb,
+disable,deaktiviere,verb,
+disable,deaktiviert,verb,
+disabled,deaktiviert,verb,
+downgrade,Downgrade,noun,
+downgrade,"Downgrade durchführen",verb,
+downgrade,"Downgrade durchgeführt",verb,
+downgraded,"Downgrade durchgeführt",verb,
+download,herunterladen,verb,
+download,Download,noun,Einzahl
+downloaded,heruntergeladen,verb,
+downloads,Downloads,noun,Mehrzahl
+draft,Entwurf,noun,Einzahl
+drafts,Entwürfe,noun,Mehrzahl
+"drag & drop",Drag-and-drop,noun,
+"Drag &amp; drop",Drag-and-drop,noun,
+"drag and drop",Drag-and-drop,noun,
+drag-and-drop,Drag-and-drop,noun,
+editor,Editor,noun,"(Einzahl) Bearbeitungswerkzeug (z. B. visueller Editor, Theme-Editor, Plugin-Editor)."
+editor,Redakteur,noun,"(Einzahl) Benutzerrolle"
+Editor,Beteiligter,noun,"(Einzahl) im Kontext der Kollaborationsfunktion"
+editors,Editoren,noun,"(Mehrzahl) Bearbeitungswerkzeug (z. B. visueller Editor, Theme-Editor, Plugin-Editor)."
+editors,Redakteure,noun,"(Mehrzahl) Benutzerrolle"
+Editors,Beteiligte,noun,"(Mehrzahl) im Kontext der Kollaborationsfunktion"
+email,E-Mail,noun,"(Einzahl) Falls eine E-Mail gemeint ist"
+email,E-Mail-Adresse,noun,"(Einzahl) Falls E-Mail-Adresse gemeint ist"
+"email address",E-Mail-Adresse,noun,Einzahl
+"email addresses",E-Mail-Adressen,noun,Mehrzahl
+emails,E-Mails,noun,"(Mehrzahl) Falls E-Mails gemeint sind"
+emails,E-Mail-Adressen,noun,"(Mehrzahl) Falls E-Mail-Adressen gemeint ist"
+enable,aktivieren,verb,"Im Kontext von Funktionen"
+enable,aktiviere,verb,"Im Kontext von Funktionen"
+enable,aktiviert,verb,"Im Kontext von Funktionen"
+enabled,aktiviert,verb,"Im Kontext von Funktionen"
+english,englisch,adjective,"Als Abkürzung bitte „engl.“."
+english,englische,adjective,
+english,englischer,adjective,
+english,englisches,adjective,
+english,Englisch,noun,"Nach Präpositionen von auf, in und zu sowie das substantivierte Adjektiv."
+error,Fehler,noun,Einzahl
+errors,Fehler,noun,Mehrzahl
+excerpt,Textauszug,noun,Einzahl
+excerpts,Textauszüge,noun,Mehrzahl
+Facebook,Facebook,noun,Produktname
+feature,Funktion,noun,Einzahl
+feature,hervorheben,verb,
+featured,Hervorgehoben,noun,
+"featured image",Beitragsbild,noun,Einzahl
+"featured images",Beitragsbilder,noun,Mehrzahl
+"featured post","hervorgehobener Beitrag",noun,Einzahl
+"featured posts","hervorgehobene Beiträge",noun,Mehrzahl
+features,Funktionen,noun,Mehrzahl
+feed,Feed,noun,Einzahl
+feeds,Feeds,noun,Mehrzahl
+filter,Filter,noun,"Einzahl + Mehrzahl"
+"filter hook",Filter-Hook,noun,Einzahl
+"filter hooks",Filter-Hooks,noun,Mehrzahl
+folder,Ordner,noun,"Einzahl + Mehrzahl"
+follower,Follower,noun,"Einzahl + Mehrzahl"
+font,Schrift,noun,Einzahl
+"font face",Schriftart,noun,Einzahl
+"font faces",Schriftarten,noun,Mehrzahl
+"font families",Schriftfamilien,noun,Mehrzahl
+"font family",Schriftfamilie,noun,Einzahl
+"font size",Schriftgröße,noun,Einzahl
+"font sizes",Schriftgrößen,noun,Mehrzahl
+"font style",Schriftstil,noun,Einzahl
+"font styles",Schriftstile,noun,Mehrzahl
+"font weight",Schriftstärke,noun,Einzahl
+"font weights",Schriftstärken,noun,Mehrzahl
+font-families,Schriftfamilien,noun,Mehrzahl
+font-family,Schriftfamilie,noun,Einzahl
+font-size,Schriftgröße,noun,Einzahl
+font-sizes,Schriftgrößen,noun,Mehrzahl
+font-style,Schriftstil,noun,Einzahl
+font-styles,Schriftstile,noun,Mehrzahl
+font-weight,Schriftstärke,noun,Einzahl
+font-weights,Schriftstärken,noun,Mehrzahl
+fonts,Schriften,noun,Mehrzahl
+footer,Footer,noun,"(Einzahl) generell"
+footer,Fußzeile,noun,"(Einzahl) Nur bei Tabellen/Dokumenten"
+"footer section",Fußzeile,noun,"(Einzahl) Nur bei Tabellen"
+"Footer sections",Fußzeilen,noun,"(Mehrzahl) Nur bei Tabellen"
+footers,Footer,noun,"(Mehrzahl) generell"
+footers,Fußzeilen,noun,"(Mehrzahl) Nur bei Tabellen/Dokumenten"
+"front end",Frontend-,adjective,"Die Bindestriche am Ende kommen daher, weil damit zusammengesetzte Wörter gemeint sind. „front end output“ wäre dann also zum Beispiel „Frontend-Ausgabe“."
+"front end",Frontend,noun,
+front-end,Frontend,noun,
+galleries,Galerien,noun,Mehrzahl
+gallery,Galerie,noun,Einzahl
+GDPR,DSGVO,noun,"„General Data Protection Regulation (GDPR)“ ist die englische Bezeichnung für die „Datenschutz-Grundverordnung (DSGVO oder DS-GVO)“; beides bezeichnet die gleiche (!) EU-Verordnung"
+GitHub,GitHub,noun,Produktname
+GMT,UTC,noun,"Im Allgemeinen ist die koordinierte Weltzeit (UTC) gemeint. Die Serverzeit ist in UTC. Englischsprachige Regionen nehmen gerne noch den veralteten Begriff GMT. Für unsere Region ist UTC richtig."
+"Google Fonts","Google Fonts",noun,"Produktname:
+https://fonts.google.com/"
+grid,Raster,noun,"Einzahl + Mehrzahl"
+"Happiness Engineer","Happiness Engineer",noun,Produktname
+"Happiness Engineers","Happiness Engineers",noun,Produktname
+header,Header,noun,"(Einzahl) generell"
+header,Kopfzeile,noun,"(Einzahl) Nur bei Tabellen/Dokumenten"
+"header image",Header-Bild,noun,Einzahl
+"header images",Header-Bilder,noun,Mehrzahl
+"header section",Kopfzeile,noun,"(Einzahl) Nur bei Tabellen"
+"header sections",Kopfzeilen,noun,"(Mehrzahl) Nur bei Tabellen"
+"header text",Header-Text,noun,Einzahl
+"header text color",Header-Textfarbe,noun,Einzahl
+"header text colors",Header-Textfarben,noun,Mehrzahl
+"header texts",Header-Texte,noun,Mehrzahl
+headers,Header,noun,"(Mehrzahl) generell"
+headers,Kopfzeilen,noun,"(Mehrzahl) Nur bei Tabellen/Dokumenten"
+homepage,Homepage,noun,
+Honeypot,Honeypot,noun,Produktname
+"hosting provider",Hosting-Anbieter,noun,
+hosts,Hosts,noun,Mehrzahl
+hover,"bei Mauszeigerkontakt",verb,
+inserter,Inserter,noun,
+invalid,ungültig,adjective,
+"IP address",IP-Adresse,noun,Einzahl
+"IP addresses",IP-Adressen,noun,Mehrzahl
+JavaScript,JavaScript,noun,Markenname
+Jetpack,Jetpack,noun,Produktname
+license,Lizenz,noun,Einzahl
+license,lizenzieren,verb,
+license,lizenziere,verb,
+license,lizenziert,verb,
+licensed,lizenziert,verb,
+licenses,Lizenzen,noun,Mehrzahl
+lightbox,Lightbox,noun,Einzahl
+lightboxes,Lightboxes,noun,Mehrzahl
+Like,Like,noun,"Ein „Like“ wie bei Facebook"
+Likes,Likes,noun,"Mehrere „Likes“ wie bei Facebook"
+"line height",Zeilenhöhe,noun,
+line-height,Zeilenhöhe,noun,
+link,Link,noun,
+LinkedIn,LinkedIn,noun,"Produktname:
+https://about.linkedin.com/"
+location,Position,noun," Im Kontext von Menü-Positionen"
+"log in",anmelden,verb,
+"log out",abmelden,verb,
+"logged in",angemeldet,adjective,
+"logged out",abgemeldet,adjective,
+login,Anmeldung,noun,Einzahl
+"Login URL",Anmelde-URL,noun,
+logins,Anmeldungen,noun,Mehrzahl
+logout,Abmeldung,noun,Einzahl
+logouts,Abmeldungen,noun,Mehrzahl
+LTR,Links-nach-rechts-Schreibrichtung,noun,"Siehe:
+https://www.w3.org/International/questions/qa-scripts.de
+Abkürzung: v.l.n.r."
+mail,E-Mail-Adresse,noun,"(Einzahl) Falls E-Mail-Adresse gemeint ist"
+mail,E-Mail,noun,"(Einzahl) Falls eine E-Mail gemeint ist"
+"mail address",E-Mail-Adresse,noun,Einzahl
+"mail addresses",E-Mail-Adressen,noun,Mehrzahl
+mails,E-Mails,noun,"(Einzahl) Falls E-Mails gemeint sind"
+mails,E-Mail-Adressen,noun,"(Einzahl) Falls E-Mail-Adressen gemeint sind"
+margin,Außenabstand,noun,"(Einzahl) Im Kontext von CSS"
+margins,Außenabstände,noun,"(Mehrzahl) Im Kontext von CSS"
+"media libraries",Mediatheken,noun,Mehrzahl
+"media library",Mediathek,noun,Einzahl
+"Media Uploader",Media-Uploader,noun,
+meta,Meta,noun,
+moderation,Freigabe,noun,"Je nach Kontext"
+moderation,Moderation,noun,"Je nach Kontext"
+moderation,Freischaltung,noun,"Je nach Kontext"
+multisite,Multisite,noun,Einzahl
+multisites,Multisites,noun,Mehrzahl
+namespace,Namensraum,noun,Einzahl
+namespaces,Namensräume,noun,Mehrzahl
+navigation,Navigation,noun,
+"next post","nächster Beitrag",noun,Einzahl
+"next posts","nächste Beiträge",noun,Mehrzahl
+nickname,Spitzname,noun,Einzahl
+nicknames,Spitznamen,noun,Mehrzahl
+nonce,Nonce,noun,Einzahl
+nonces,Nonces,noun,Mehrzahl
+"not sticky","nicht oben gehalten",adjective,"Für den Beitragsstatus „sticky“"
+"older post","älterer Beitrag",noun,Einzahl
+"older posts","ältere Beiträge",noun,Mehrzahl
+option,Option,noun,Einzahl
+options,Optionen,noun,Mehrzahl
+overlay,Overlay,noun,Einzahl
+overlays,Overlays,noun,Mehrzahl
+padding,Innenabstand,noun,"(Einzahl) Im Kontext von CSS"
+paddings,Innenabstände,noun,"(Mehrzahl) Im Kontext von CSS"
+page,Seite,noun,Einzahl
+"page builder",Page-Builder,noun,Einzahl
+"page builders",Page-Builder,noun,Mehrzahl
+pages,Seiten,noun,Mehrzahl
+pagination,Seitennummerierung,noun,Einzahl
+paginations,Seitennummerierungen,noun,Mehrzahl
+parameter,Parameter,noun,"Einzahl + Mehrzahl"
+pattern,Vorlage,noun,"(Einzahl) In Zusammenhang mit dem Block-Editor (Gutenberg) oder/und Full Site Editing. Bei regulären Ausdrücken (RegExp, Regex) jedoch mit Muster übersetzen."
+patterns,Vorlagen,noun,"(Mehrzahl) In Zusammenhang mit dem Block-Editor (Gutenberg) oder/und Full Site Editing. Bei regulären Ausdrücken (RegExp, Regex) jedoch mit Muster übersetzen."
+PayPal,PayPal,noun,Produktname
+pending,ausstehend,verb,
+permalink,Permalink,noun,"(Einzahl) Kurzform für „Permanent“ und „Hyperlink“"
+permalinks,Permalinks,noun,"(Mehrzahl) Kurzform für „Permanent“ und „Hyperlink“"
+permission,Berechtigung,noun,Einzahl
+permission,Recht,noun,Einzahl
+permissions,Berechtigung,noun,Mehrzahl
+permissions,Rechte,noun,Mehrzahl
+ping,Ping,noun,Einzahl
+pingback,Pingback,noun,Einzahl
+pingbacks,Pingbacks,noun,Mehrzahl
+pings,Pings,noun,Mehrzahl
+plain,einfach,adjective,"Im Kontext von Permalinks"
+plugin,Plugin,noun,Einzahl
+plugins,Plugins,noun,Mehrzahl
+poll,Umfrage,noun,Einzahl
+Polldaddy,Polldaddy,noun,Produktname
+polls,Umfragen,noun,Mehrzahl
+pop-up,Pop-up,noun,Einzahl
+pop-ups,Pop-ups,noun,Mehrzahl
+popup,Pop-up,noun,Einzahl
+popups,Pop-ups,noun,Mehrzahl
+post,Beitrag,noun,Einzahl
+post,"Beitrag veröffentlichen",verb,
+post,"Beitrag veröffentlicht",verb,
+"post format",Beitragsformat,noun,Einzahl
+"post formats",Beitragsformate,noun,Mehrzahl
+"post status",Beitragsstatus,noun,"Einzahl + Mehrzahl"
+"post thumbnail",Beitrags-Vorschaubild,noun,Einzahl
+"post thumbnails",Beitrags-Vorschaubilder,noun,Mehrzahl
+"post type",Inhaltstyp,noun,Einzahl
+"post types",Inhaltstypen,noun,Mehrzahl
+posted,"Beitrag veröffentlicht",verb,
+posts,Beiträge,noun,Mehrzahl
+"Press This","Press This",noun,
+"previous post","vorheriger Beitrag",noun,Einzahl
+"previous posts","vorherige Beiträge",noun,Mehrzahl
+"privacy policy",Datenschutzerklärung,noun,
+prompt,Prompt,noun,"(Einzahl) Im Kontext von KI"
+prompts,Prompts,noun,"(Mehrzahl) Im Kontext von KI"
+queries,Abfragen,noun,Mehrzahl
+query,Abfrage,noun,Einzahl
+"Quick Edit",Schnellbearbeitung,noun,
+"quick inserter",Quick-Inserter,noun,
+"Quick Post",Schnellbeitrag,noun,
+reader,Besucher,noun,Einzahl
+reader,Leser,noun,Einzahl
+reader,Reader,noun,Einzahl
+readers,Besucher,noun,Mehrzahl
+readers,Leser,noun,Mehrzahl
+readers,Readers,noun,Mehrzahl
+"replace with","ersetzen durch",expression,"„replace … with …“ &rarr; „… durch … ersetzen“ (= Grundform) oder „ersetze … durch …“ (= Befehlsform)"
+repositories,Repositories,noun,Mehrzahl
+repository,Repository,noun,Einzahl
+require,erfordern,verb,
+require,erfordert,verb,
+required,erfordert,verb,
+required,erforderlich,adjective,
+resource,Ressource,noun,"(Einzahl) Technischer Begriff"
+"Resource Hints","Resource Hints",noun,"Technischer Begriff, siehe:
+https://www.w3.org/TR/2023/DISC-resource-hints-20230314/"
+resources,Ressourcen,noun,"(Mehrzahl) Technischer Begriff"
+responsive,responsiv,adjective,
+"REST API",REST-API,noun,Einzahl
+"REST APIs",REST-APIs,noun,Mehrzahl
+"return value",Rückgabewert,noun,Einzahl
+"return values",Rückgabewerte,noun,Mehrzahl
+review,Rezension,noun,"Im Zusammenhang mit den Rezensionen auf den Plugin- und Theme-Webseiten von wordpress.org"
+role,Rolle,noun,Einzahl
+roles,Rollen,noun,Mehrzahl
+RSS,RSS,noun,
+RTL,Rechts-nach-links-Schreibrichtung,noun,"Siehe:
+https://www.w3.org/International/questions/qa-scripts.de
+Abkürzung: v.r.n.l."
+safelist,Freigabeliste,noun,Einzahl
+safelists,Freigabelisten,noun,Mehrzahl
+scheme,Vorlage,noun,"(Einzahl) Aber bei color scheme: „Farbschema“"
+schemes,Vorlagen,noun,"(Mehrzahl) Aber bei color schemes: „Farbschemen“"
+screen,Ansicht,noun,"Je nach Kontext"
+screen,Bildschirm,noun,"Je nach Kontext"
+"Screen Options","Ansicht anpassen",noun,
+"screen reader",Screenreader,noun,Einzahl
+"screen readers",Screenreader,noun,Mehrzahl
+"search result",Suchergebnis,noun,Einzahl
+"search results",Suchergebnisse,noun,Mehrzahl
+section,Abschnitt,noun,Einzahl
+sections,Abschnitte,noun,Mehrzahl
+self-hosted,"selbst gehostet",adjective,
+server,Server,noun,"Einzahl + Mehrzahl"
+shortcode,Shortcode,noun,"(Einzahl) Ein WordPress-spezifischer Code, der es dem Benutzer ermöglicht, Aktionen wie das Einbetten von Dateien oder das Erstellen von Objekten durchzuführen, die ansonsten viel Programmierung erfordern würden."
+shortcodes,Shortcodes,noun,"(Mehrzahl) Ein WordPress-spezifischer Code, der es dem Benutzer ermöglicht, Aktionen wie das Einbetten von Dateien oder das Erstellen von Objekten durchzuführen, die ansonsten viel Programmierung erfordern würden."
+sidebar,Seitenleiste,noun,Einzahl
+sidebars,Seitenleisten,noun,Mehrzahl
+"single post",Einzelbeitrag,noun,Einzahl
+"single posts","einzelne Beiträge",noun,Mehrzahl
+site,Website,noun,"Einzahl
+https://www.duden.de/sprachwissen/sprachratgeber/website-oder-webseite"
+"site editing",Website-Bearbeitung,noun,"Im Kontext „Site Editor“"
+"Site Editor",Website-Editor,noun,
+"Site Health",Website-Zustand,noun,
+"Site Kit","Site Kit",noun,"Produktname:
+https://de.wordpress.org/plugins/google-site-kit/"
+sites,Websites,noun,"Mehrzahl
+https://www.duden.de/sprachwissen/sprachratgeber/website-oder-webseite"
+slug,Titelform,noun,Einzahl
+slugs,Titelformen,noun,Mehrzahl
+snackbar,Snackbar,noun,"Terminus: 
+https://materialdoc.com/components/snackbars-and-toasts/"
+"Social Icon","Social Icon",noun,"Einzahl
+aber: Social-Icon-Block"
+"Social Icons","Social Icons",noun,"Mehrzahl
+aber: Social-Icons-Block"
+spaces,Leerzeichen,noun,"Identisch für Singular und Plural!"
+spam,Spam,noun,
+status,Status,noun,"Identisch für Singular und Plural!"
+stick,"oben halten",verb,"Für den Beitragsstatus „sticky“"
+sticky,"oben gehalten",adjective,
+string,Zeichenfolge,noun,Einzahl
+strings,Zeichenfolgen,noun,Mehrzahl
+subgrid,Subgrid,noun,
+subpanel,Unterbereich,noun,Einzahl
+subpanels,Unterbereiche,noun,Mehrzahl
+Subversion,Subversion,noun,"Produktname: https://de.wikipedia.org/wiki/Apache_Subversion"
+"super admin",Super-Administrator,noun,Einzahl
+"super admins",Super-Administratoren,noun,Mehrzahl
+survey,Befragung,noun,Einzahl
+surveys,Befragungen,noun,Mehrzahl
+tab,Tab,noun,Einzahl
+tabs,Tabs,noun,Mehrzahl
+tag,Schlagwort,noun,"(Einzahl) Falls nicht HTML-Tag"
+tag,Tag,noun,"(Einzahl) Falls HTML-Tag"
+tagline,Untertitel,noun,"Einzahl + Mehrzahl"
+tags,Schlagwörter,noun,"(Mehrzahl) Falls nicht HTML-Tag"
+tags,Tags,noun,"(Mehrzahl) Falls HTML-Tag"
+taxonomies,Taxonomien,noun,Mehrzahl
+taxonomy,Taxonomie,noun,Einzahl
+template,Template,noun,Einzahl
+"template hierarchies",Template-Hierarchien,noun,Mehrzahl
+"template hierarchy",Template-Hierarchie,noun,Einzahl
+templates,Templates,noun,Mehrzahl
+term,Begriff,noun,Einzahl
+terms,Begriffe,noun,Mehrzahl
+"text editor",Texteditor,noun,Einzahl
+"text editors",Texteditoren,noun,Mehrzahl
+theme,Theme,noun,Einzahl
+themes,Themes,noun,Mehrzahl
+thumbnail,Vorschaubild,noun,Einzahl
+thumbnails,Vorschaubilder,noun,Mehrzahl
+TikTok,TikTok,noun,Produktname
+tool,Werkzeug,noun,Einzahl
+toolbar,Werkzeugleiste,noun,Einzahl
+toolbars,Werkzeugleisten,noun,Mehrzahl
+tools,Werkzeuge,noun,Mehrzahl
+trackback,Trackback,noun,Einzahl
+trackbacks,Trackbacks,noun,Mehrzahl
+transient,Transient,noun,Einzahl
+transients,Transienten,noun,Mehrzahl
+troubleshooting,Problembehandlung,noun,
+Twitter,X,noun,"seit Juli 2023: X"
+"two factor authentication",Zwei-Faktor-Authentifizierung,noun,
+upgrade,Upgrade,noun,Einzahl
+upgrade,"Upgrade installieren",verb,
+upgrades,Upgrades,noun,Mehrzahl
+upgrades,"Upgrade installieren",verb,
+upload,Upload,noun,Einzahl
+upload,hochladen,verb,
+uploaded,hochgeladen,verb,
+uploader,Uploader,noun,
+uploads,Uploads,noun,Mehrzahl
+URL,URL,noun,
+user,Benutzer,noun,"Einzahl + Mehrzahl"
+username,Benutzername,noun,Einzahl
+usernames,Benutzernamen,noun,Mehrzahl
+valid,gültig,adjective,
+VaultPress,VaultPress,noun,Produktname
+video,Video,noun,Einzahl
+VideoPress,VideoPress,noun,Produktname
+videos,Videos,noun,Mehrzahl
+view,anzeigen,verb,
+view,Aufruf,noun,"(Einzahl) Bei Verwendung im Statistik-Bildschirm"
+viewport,Viewport,noun,Einzahl
+viewports,Viewports,noun,Mehrzahl
+views,Aufrufe,noun,"(Mehrzahl) Bei Verwendung im Statistik-Bildschirm"
+"web server",Webserver,noun,Einzahl
+"web servers",Webserver,noun,Mehrzahl
+Website,Website,noun,"Einzahl
+https://www.duden.de/sprachwissen/sprachratgeber/website-oder-webseite"
+Websites,Websites,noun,"Mehrzahl
+https://www.duden.de/sprachwissen/sprachratgeber/website-oder-webseite"
+WhatsApp,WhatsApp,noun,Produktname
+"white list",Freigabeliste,noun,Einzahl
+"white lists",Freigabelisten,noun,Mehrzahl
+whitelist,Freigabeliste,noun,Einzahl
+whitelists,Freigabelisten,noun,Mehrzahl
+WooCommerce,WooCommerce,noun,"Produktname:
+https://woocommerce.com/de/"
+WordCamp,WordCamp,noun,Einzahl
+WordCamps,WordCamps,noun,Mehrzahl
+WordPress,WordPress,noun,Produktname
+"WordPress Dashboard",WordPress-Dashboard,noun,
+"WordPress Mobile Apps","WordPress Mobile Apps",noun,https://wordpress.org/mobile/
+XML-RPC,XML-RPC,noun,
+YouTube,YouTube,noun,"Produktname:
+https://about.youtube/"
