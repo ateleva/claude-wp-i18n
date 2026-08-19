@@ -6,7 +6,7 @@ Short ISO 639-1 code → WordPress locale code
 (`https://translate.wordpress.org/locale/{slug}/default/glossary/-export/?format=csv`)
 and in `data/glossaries/{slug}.csv`. It is only filled in where it differs
 unpredictably from `Short` (`en_GB` -> `en-gb`, not `en`) or where a glossary
-file actually exists in this repo — most locales have neither yet.
+file actually exists in this repo - most locales have neither yet.
 
 | Short | WP Locale | Language | Plural forms | Glossary slug |
 |-------|-----------|----------|--------------|----------------|

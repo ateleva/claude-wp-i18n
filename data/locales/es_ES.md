@@ -1,4 +1,4 @@
-# Spanish (es_ES) — Polyglots style stub
+# Spanish (es_ES) - Polyglots style stub
 
 Not a full handbook. This is a short stub covering only what
 `typhography-rules.md` recorded, so a translator at least gets tone right
@@ -9,7 +9,7 @@ before relying on this for anything beyond tone and quoting.
 
 - Always informal (**de "tú"**, never "usted").
 - Always use **Spanish angle quotes**: `«comillas españolas»`
-  (Windows: Alt+174 / Alt+175 — Mac: Shift+Alt+{ / Shift+Alt+}).
+  (Windows: Alt+174 / Alt+175 - Mac: Shift+Alt+{ / Shift+Alt+}).
 - No mid-sentence capitalization, except proper nouns and exceptions accepted
   by the RAE (Real Academia Española).
 - Font proper names are not translated, **except** "System Fonts" ->
@@ -26,7 +26,7 @@ Slack: #polyglots-es channel on Make WordPress Slack
 
 ## Glossary
 
-`data/glossaries/es.csv` — 507 rows, columns `en,es,pos,description`.
+`data/glossaries/es.csv` - 474 terms, columns `en,es,pos,description`.
 
 ## Not yet documented here
 

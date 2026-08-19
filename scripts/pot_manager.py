@@ -104,7 +104,7 @@ def cmd_update(pot_path, extracted_path):
     new_entries = [e for e in extracted if e['msgid'] not in existing_ids]
 
     if not new_entries:
-        print(f'POT up to date — no new strings.', file=sys.stderr)
+        print(f'POT up to date - no new strings.', file=sys.stderr)
         return
 
     if not os.path.exists(pot_path):

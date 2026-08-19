@@ -1,4 +1,4 @@
-# French (fr_FR) — Polyglots style stub
+# French (fr_FR) - Polyglots style stub
 
 Not a full handbook. This is a short stub covering only what
 `typhography-rules.md` recorded, so a translator at least gets tone right
@@ -16,7 +16,7 @@ Typography rules for translating WP into French:
 
 ## Glossary
 
-`data/glossaries/fr.csv` — 621 rows, columns `en,fr,pos,description`.
+`data/glossaries/fr.csv` - 603 terms, columns `en,fr,pos,description`.
 
 ## Not yet documented here
 

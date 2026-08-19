@@ -1,146 +1,215 @@
-# wp-code-translate
+# wp-i18n
 
-A Claude Code skill that automates the full WordPress i18n pipeline for **plugins and themes**.
+A **Claude Code plugin** for the WordPress developer i18n workflow: generate translation files from your plugin or theme source, check them against the WordPress.org Polyglots glossary and locale style rules, and diagnose why a translated string is still rendering in English.
 
-> **Not a content translation tool.** This skill generates `.pot` / `.po` / `.mo` / `.json` translation files from your plugin or theme source code — the developer workflow. It does not translate pages, posts, or WooCommerce products. For that, use Polylang or WPML.
+Three skills, one shared glossary and rules layer.
+
+> **Not a content translation tool.** This generates `.pot` / `.po` / `.mo` / `.json` files from source code. It does not translate pages, posts, or WooCommerce products. For that, use Polylang or WPML.
+
+> **Upgrading from `claude-wp-code-translate`?** This repo was a single skill installed into `~/.claude/skills/wp-code-translate/`. It is now a plugin bundling three skills. See [Migrating](#migrating-from-the-old-single-skill).
 
 ---
 
-## What it does
+## The three skills
 
-Given a plugin or theme slug and a list of target languages, it:
+| Skill | What it does | Writes files? |
+|-------|--------------|---------------|
+| **`/wp-code-translate`** | Extracts strings, updates `.pot`/`.po`, compiles `.mo`, generates JS sidecars. Translates using the locale's glossary and tone. | Yes |
+| **`/wp-polyglots-check`** | Checks a `.po` against Polyglots style rules and the glossary. Optionally fixes what it finds. | Only after you approve |
+| **`/wp-i18n-doctor`** | Diagnoses why a translated string renders in English, walking all five stages from source call to the file WP core actually loads. | Never. Read-only by design |
 
-1. Scans all `.php`, `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs` files for translatable strings
-2. Diffs against existing `.pot` to find new strings only
-3. Shows a token cost estimate and asks for confirmation before translating
-4. Translates new strings using Claude (batched, validated)
-5. Creates or updates `.po` files per locale
-6. Compiles `.mo` binaries via `msgfmt`
-7. Generates WP JS JSON sidecars (for `wp_set_script_translations()`)
+They compose: translate, check, then verify the chain. The doctor is safe to run anywhere, including against a production plugin directory.
 
-No wp-cli. No Poedit. No manual `.pot` editing. Pure Python 3 + GNU gettext.
+---
+
+## Why the glossary layer exists
+
+WordPress.org Polyglots teams maintain a per-locale glossary of binding term translations. A plugin author who wants their translations approved (or who is a PTE approving them) has to follow it.
+
+Generic machine translation does not. Left to itself it will render `required` as *richiesta* when the Italian glossary says *necessario*, translate `Dashboard` as *Dashboard* when the glossary says *Bacheca*, and pick a formal register for locales whose Polyglots teams mandate the informal one.
+
+This plugin makes the glossary and the locale style rules a first-class input to both translating and checking.
+
+**Glossaries are fetched live** from `translate.wordpress.org` and cached, so they do not go stale as teams add terms:
+
+```bash
+python3 scripts/glossary.py fetch --slug it
+```
+
+Any GlotPress locale slug works, not just the six seeded here.
 
 ---
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/code) — the CLI tool
-- Python 3 (`python3 --version`)
-- GNU gettext / msgfmt — install on macOS: `brew install gettext && brew link gettext --force`
+- [Claude Code](https://claude.ai/code)
+- Python 3, standard library only. No pip packages
+- GNU gettext (`msgfmt`). On macOS: `brew install gettext && brew link gettext --force`
 
 ---
 
 ## Installation
 
-Clone into your Claude Code skills directory:
-
-```bash
-git clone https://github.com/ateleva/claude-wp-code-translate ~/.claude/skills/wp-code-translate
+```
+/plugin marketplace add ateleva/claude-wp-i18n
+/plugin install wp-i18n
 ```
 
-No additional config needed. Claude Code picks up skills automatically from `~/.claude/skills/`.
+Then restart Claude Code. All three skills become available.
+
+### Migrating from the old single skill
+
+If you previously cloned this repo into `~/.claude/skills/wp-code-translate/`, remove or rename that directory first. A personal skill of the same name **shadows** the plugin's copy, so you would keep running the old glossary-unaware version:
+
+```bash
+mv ~/.claude/skills/wp-code-translate ~/.claude/skills/wp-code-translate.bak
+```
 
 ---
 
 ## Usage
+
+### Translate a plugin or theme
 
 ```
 /wp-code-translate plugin <slug> <lang-codes>
 /wp-code-translate theme  <slug> <lang-codes>
 ```
 
-### Examples
-
 ```
-# Translate a plugin to Italian
 /wp-code-translate plugin my-plugin it
-
-# Translate a plugin to multiple languages
 /wp-code-translate plugin my-plugin it,fr,de,es
-
-# Translate a theme
-/wp-code-translate theme my-theme it,fr
+/wp-code-translate theme  my-theme  it,fr
 ```
 
-Lang codes are ISO 639-1 short codes (see [supported languages](#supported-languages)).
+It shows a token estimate and waits for confirmation before translating. Answer `pot-only` to refresh the `.pot` without translating anything.
+
+### Check translations for compliance
+
+```
+/wp-polyglots-check <locale> <slug>
+/wp-polyglots-check it_IT my-plugin
+/wp-polyglots-check it_IT my-plugin --fix auto
+```
+
+Read-only until it asks. Output looks like:
+
+```
+Deterministic   ERROR 0  WARNING 10  INFO 3
+Glossary        47 candidates -> 12 real, 35 false positive
+```
+
+The deterministic findings are mechanical and final. The glossary candidates are extracted mechanically and then judged in context, because a glossary lemma is not a ready-made translation.
+
+### Diagnose a string stuck in English
+
+```
+/wp-i18n-doctor plugin <slug> [locale]
+/wp-i18n-doctor plugin my-plugin it_IT
+```
+
+Reports which of the five stages dropped the string: `NOT_IN_POT`, `NOT_IN_PO`, `EMPTY_MSGSTR`, `NOT_IN_SIDECAR`, `NO_SIDECAR`, `NO_HANDLE`.
 
 ---
 
 ## What gets generated
 
-For each locale, inside `{plugin-or-theme}/languages/`:
+Inside `{plugin-or-theme}/languages/`:
 
 | File | Description |
 |------|-------------|
-| `{textdomain}.pot` | Master translation template |
-| `{textdomain}-{locale}.po` | Translation source (human-readable) |
-| `{textdomain}-{locale}.mo` | Compiled binary loaded by WordPress |
-| `{textdomain}-{locale}-{hash}.json` | JS runtime translations (if plugin uses `wp_set_script_translations()`) |
+| `{textdomain}.pot` | Master template |
+| `{textdomain}-{locale}.po` | Translation source, human-readable |
+| `{textdomain}-{locale}.mo` | Compiled binary WordPress loads |
+| `{textdomain}-{locale}-{hash}.json` | JS runtime translations, if the plugin calls `wp_set_script_translations()` |
 
-A `.bak` backup is created before any existing `.po` is modified.
+A `.bak` is written before any existing `.po` is modified.
 
----
-
-## How it works
-
-### String extraction
-
-Extracts all standard WP i18n function calls from PHP and JS/TS source files:
-
-**PHP:** `__()`, `_e()`, `_n()`, `_x()`, `_nx()`, `esc_html__()`, `esc_html_e()`, `esc_attr__()`, `esc_attr_e()`, `_n_noop()`, `_nx_noop()`
-
-**JS/TS:** `__()`, `_n()`, `_x()`, `_nx()`, `sprintf()`
-
-Skips `node_modules/`, `vendor/`, `.git/`. Does **not** skip `build/` or `dist/` by default (some plugins serve JS directly from those dirs).
-
-### Text domain detection
-
-Auto-detects from plugin header (`Text Domain:` in main plugin file) or theme `style.css`. Warns and confirms if it can't be found.
-
-### JS JSON sidecars
-
-Detects `wp_set_script_translations()` calls, maps each handle back to its enqueued script src, computes `md5(relative_src_path)` for the correct filename. PHP-only plugins get no JSON file (`.mo` is sufficient).
+Editing a `.po` always triggers all three of: recompile `.mo`, regenerate the JS sidecar, re-run the doctor. Skipping the sidecar step is the single most common cause of "the `.po` is complete but the site shows English" and produces no error anywhere.
 
 ---
 
-## Supported languages
+## Project glossary overlays
 
-| Code | Locale | Language |
-|------|--------|----------|
-| `it` | it_IT | Italian |
-| `fr` | fr_FR | French |
-| `de` | de_DE | German |
-| `es` | es_ES | Spanish |
-| `pt` | pt_PT | Portuguese |
-| `pt_BR` | pt_BR | Portuguese (Brazil) |
-| `nl` | nl_NL | Dutch |
-| `ru` | ru_RU | Russian |
-| `pl` | pl_PL | Polish |
-| `cs` | cs_CZ | Czech |
-| `sv` | sv_SE | Swedish |
-| `da` | da_DK | Danish |
-| `fi` | fi | Finnish |
-| `nb` | nb_NO | Norwegian Bokmål |
-| `tr` | tr_TR | Turkish |
-| `ko` | ko_KR | Korean |
-| `he` | he_IL | Hebrew |
-| `uk` | uk | Ukrainian |
-| `ro` | ro_RO | Romanian |
-| `hu` | hu_HU | Hungarian |
-| `el` | el | Greek |
-| `bg` | bg_BG | Bulgarian |
-| `hr` | hr | Croatian |
-| `sk` | sk_SK | Slovak |
-| `lt` | lt_LT | Lithuanian |
-| `lv` | lv | Latvian |
-| `et` | et | Estonian |
-| `id` | id_ID | Indonesian |
-| `th` | th | Thai |
-| `vi` | vi | Vietnamese |
-| `ar` | ar | Arabic |
-| `ja` | ja | Japanese |
-| `zh` | zh_CN | Chinese (Simplified) |
-| `zh_TW` | zh_TW | Chinese (Traditional) |
+A locale glossary sometimes needs a project-specific ruling. GlotPress supports this with project glossaries that outrank the locale glossary, and so does this plugin.
+
+Create `{your-plugin}/.i18n/glossary-{LOCALE}.csv`, same four columns as the WP.org export:
+
+```csv
+en,it,pos,description
+"required plugin","plugin richiesto",expression,"Loanword noun keeps richiesto, not the bare lemma necessario."
+"required plugins","plugin richiesti",expression,"Plural agreement for the above."
+```
+
+Both skills pick it up automatically. Overlay entries win over locale entries, and are labelled `overlay` in reports so you can tell which ruling applied.
+
+---
+
+## Italian morphology
+
+The glossary gives a lemma. Italian needs agreement. Fixes are inflected to match the noun, never substituted blindly:
+
+```
+required          -> necessario / necessaria / necessari / necessarie
+required plugin   -> plugin richiesto
+required plugins  -> plugin richiesti
+```
+
+`Password is required.` becomes `La password è necessaria.`, agreeing with the feminine *password*.
+
+When gender or number cannot be determined from the string, or the glossary offers multiple targets, or the part of speech does not match the usage, the skill stops and asks. That holds even in `--fix auto` mode.
+
+---
+
+## Repository layout
+
+```
+.claude-plugin/
+  plugin.json            plugin manifest
+  marketplace.json       marketplace entry
+skills/
+  wp-code-translate/     translate
+  wp-polyglots-check/    check and fix
+  wp-i18n-doctor/        diagnose, read-only
+data/
+  glossaries/            per-locale CSVs + fetch metadata
+  locales/               per-locale style rules
+  locale-map.md          locale code, plural forms, glossary slug
+scripts/
+  glossary.py            fetch / cache / lookup / candidate extraction
+  polyglots_check.py     deterministic rules 6a-6m
+  extract_strings.py     source string extraction
+  pot_manager.py         .pot create / diff / update
+  po_manager.py          .po create / update / dedup
+  json_generator.py      JS sidecar generation
+  i18n_doctor.py         five-stage chain diagnostic
+tests/                   40 unit tests, stdlib unittest
+```
+
+Run the tests with:
+
+```bash
+python3 -m unittest discover -s tests
+```
+
+---
+
+## Locale coverage
+
+Glossaries are seeded for six locales and fetchable for any.
+
+| Locale | Glossary | Style rules |
+|--------|----------|-------------|
+| `it_IT` | 520 terms | Full handbook |
+| `fr_FR` | 603 terms | Stub, tone and handbook link |
+| `de_DE` | 517 terms | Stub, informal `du` variant |
+| `es_ES` | 474 terms | Stub, informal `tú`, angle quotes |
+| `pt_PT` | 331 terms | Stub, handbook pointer only |
+| `en_GB` | 390 terms | Stub, spelling variant locale |
+
+Any other locale still works for extraction, `.pot`/`.po`/`.mo` generation, and sidecars. Fetch its glossary with `glossary.py fetch --slug <slug>`.
+
+**Caveat worth knowing:** the style rules encoded in `polyglots_check.py` for accents, capitalization, punctuation, humanised "Please", gerunds, and dates are **Italian** conventions, currently applied regardless of locale. Before trusting the checker on another locale, port those rules to its handbook or rely on the locale-neutral ones (placeholders, HTML tags, must-not-translate strings, and the glossary-driven loanword rule).
 
 ---
 
@@ -148,12 +217,17 @@ Detects `wp_set_script_translations()` calls, maps each handle back to its enque
 
 | Tool | Purpose |
 |------|---------|
-| **wp-code-translate** | Generate translation files for your own plugin/theme code |
-| Loco Translate | Translate strings in already-installed plugins/themes via WP admin |
-| WPML / Polylang | Translate site content (pages, posts, custom fields) |
-| WP-CLI i18n | Official CLI for `.pot` extraction — requires WP-CLI installed |
+| **wp-i18n** | Generate, glossary-check, and debug translation files for your own plugin/theme code |
+| Loco Translate | Translate already-installed plugins/themes via WP admin |
+| WPML / Polylang | Translate site content: pages, posts, custom fields |
+| WP-CLI i18n | Official CLI for `.pot` extraction. Requires WP-CLI |
+| GlotDict | Browser extension adding glossary hints inside translate.wordpress.org |
 
 ---
+
+## Credits
+
+Glossary data is fetched from [translate.wordpress.org](https://translate.wordpress.org) and belongs to the respective WordPress Polyglots locale teams. The Italian style rules in `data/locales/it_IT.md` are reproduced from the [Italian Polyglots handbook](https://it.wordpress.org/team/handbook/polyglots/).
 
 ## License
 

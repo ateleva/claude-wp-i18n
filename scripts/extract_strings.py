@@ -3,7 +3,7 @@
 extract_strings.py - Extract translatable strings from a WordPress plugin or theme.
 
 Usage: python3 extract_strings.py <path> <textdomain> [--skip-dirs dir1,dir2]
-Output: JSON array to stdout — [{msgid, file, line, type, plural?, context?}, ...]
+Output: JSON array to stdout - [{msgid, file, line, type, plural?, context?}, ...]
 
 Handles PHP: __() _e() esc_html__() esc_attr__() esc_html_e() esc_attr_e()
              _x() _ex() esc_html_x() esc_attr_x()
@@ -296,7 +296,7 @@ def main():
                 seen_types[key] = {ftype}
                 all_strings.append(entry)
             else:
-                # String already seen — accumulate its type so PHP+JS strings get both
+                # String already seen - accumulate its type so PHP+JS strings get both
                 seen_types[key].add(ftype)
 
     # Write accumulated types back; 'types' is a sorted list e.g. ['js','php'] or ['js']

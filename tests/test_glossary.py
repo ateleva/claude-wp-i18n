@@ -39,7 +39,7 @@ class TestFindCandidates(unittest.TestCase):
         """The it glossary target for 'Please' is the instruction
         'NON SI TRADUCE'. Correct behaviour is to DROP it, so a msgstr that
         drops it passes. A generic accent/stem matcher can only verify the
-        literal survival case (translator left 'Please' untranslated) —
+        literal survival case (translator left 'Please' untranslated) -
         recognising a humanized rendering like 'si prega' needs
         locale-specific phrasing knowledge, which is polyglots_check.py's
         rule 6j (Phase 3), not this engine's job."""

@@ -80,7 +80,7 @@ def _is_meta_instruction(target):
 
 
 def _read_glossary_csv(path, source):
-    """Read a glossary CSV by column INDEX, not name — column 2's header is
+    """Read a glossary CSV by column INDEX, not name - column 2's header is
     the locale slug (en/it/de/...) and varies per file."""
     entries = []
     with open(path, encoding="utf-8", newline="") as f:
@@ -101,7 +101,7 @@ def load_glossary(slug, data_dir, overlay_path=None):
     """Load the locale glossary for `slug` (plus an optional project overlay)
     into {normalised_term: [GlossaryEntry, ...]}. Multiple entries under one
     key are alternatives (different POS senses, or comma/slash-separated
-    translation options) — find_candidates() decides precedence between
+    translation options) - find_candidates() decides precedence between
     overlay and locale entries at lookup time, not here."""
     path = os.path.join(data_dir, "glossaries", f"{slug}.csv")
     if not os.path.isfile(path):
@@ -235,7 +235,7 @@ def _entry_satisfied(entry, key_norm, tgt_norm):
 
 def find_candidates(entries, msgid, msgstr):
     """Check one msgid/msgstr pair against a loaded glossary dict. Returns a
-    list of Candidate — empty if nothing looks wrong. Longer (multi-word)
+    list of Candidate - empty if nothing looks wrong. Longer (multi-word)
     keys are checked before shorter ones, and a key whose match span is
     already covered by a longer match is skipped, so an overlay phrase like
     'required plugin' claims its span before the bare 'required' term is
@@ -273,7 +273,7 @@ def find_candidates(entries, msgid, msgstr):
             # Every entry for this key is a meta-instruction (e.g. "drop
             # this word", it glossary's Please -> NON SI TRADUCE). The only
             # thing a generic accent/stem matcher can honestly verify here
-            # is whether the literal source word survived untranslated —
+            # is whether the literal source word survived untranslated -
             # e.g. "Please" left in place. Recognising a HUMANIZED
             # translation of the dropped word ("si prega", "per favore")
             # needs locale-specific phrasing knowledge this engine doesn't
