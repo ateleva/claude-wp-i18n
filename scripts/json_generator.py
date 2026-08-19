@@ -3,22 +3,40 @@
 json_generator.py - Generate WP JS translation JSON sidecar file.
 
 Usage:
-  python3 json_generator.py <plugin_path> <textdomain> <locale> <po_path> [extracted_json]
+  python3 json_generator.py <plugin_path> <textdomain> <locale> <po_path> [extracted_json] [options]
 
   plugin_path    - root of plugin or theme
   textdomain     - text domain string
   locale         - WP locale (e.g. it_IT)
   po_path        - path to the compiled .po file
-  extracted_json - optional; path to extract_strings.py output (to filter JS-only strings)
+  extracted_json - optional; path to extract_strings.py output (to filter JS-only strings);
+                    pass '-' to skip this positional and still use options below
+
+Options:
+  --handle <handle>  Write directly to the handle-based filename
+                      <textdomain>-<locale>-<handle>.json (no hash, no src detection).
+                      WP core (load_script_textdomain) checks this name BEFORE the
+                      md5 fallback, so if a plugin's PHP calls wp_set_script_translations()
+                      with this handle, this is the file that actually loads. Use this
+                      instead of the md5 auto-detection whenever you know the handle.
+  --force            Skip the regression guard (see below).
 
 Output:
-  Writes JSON file to <plugin_path>/languages/<textdomain>-<locale>-<hash>.json
-  Prints the output path to stdout.
+  Default: <plugin_path>/languages/<textdomain>-<locale>-<hash>.json (hash auto-detected
+  from wp_enqueue_script/wp_register_script src, falling back to md5(handle)).
+  With --handle: <plugin_path>/languages/<textdomain>-<locale>-<handle>.json (no hash).
+  Prints the output path(s) to stdout.
 
 Hash formula: WordPress core uses md5(relative_script_path) where relative_script_path
 is the script src relative to the plugin directory (e.g. "build/app.js").
 This script detects it from wp_enqueue_script / wp_register_script calls.
 If no src found, falls back to md5(handle), then to no-hash filename with a warning.
+
+Regression guard: if an output file already exists, refuses to overwrite it with a
+sidecar that has 30%+ fewer keys than the existing one (this is exactly the bug that
+silently regressed 263 translations back to English in Aug 2026 - a JS-filter pass
+against an under-extracted POT dropped the sidecar from 325 keys to 103). Pass --force
+to override once you've confirmed the drop is expected (e.g. a deliberate string removal).
 """
 import sys
 import os
@@ -199,11 +217,19 @@ def parse_po_translations(po_path):
             continue
         raw_msgid = msgid_m.group(1)
         if raw_msgid == '':
-            # Check for continuation
+            # Multi-line msgid: gather only the consecutive quoted lines
+            # immediately following (stop at msgid_plural/msgstr so we don't
+            # swallow later fields - msgid is never the last field in a block).
             rest = block[msgid_m.end():]
-            cont = re.findall(r'^"([^"]*)"', rest, re.MULTILINE)
+            cont = []
+            for line in rest.split('\n')[1:]:
+                line_m = re.match(r'^"((?:[^"\\]|\\.)*)"$', line.strip())
+                if not line_m:
+                    break
+                cont.append(line_m.group(1))
             if not cont or ''.join(cont) == '':
                 continue  # header block
+            raw_msgid = ''.join(cont)
 
         def decode_po_str(s):
             return s.replace('\\"', '"').replace('\\\\', '\\').replace('\\n', '\n').replace('\\t', '\t')
@@ -276,6 +302,43 @@ def build_json(translations, locale, js_msgids=None):
     }
 
 
+def count_existing_keys(path):
+    """Return the number of translatable keys in an existing sidecar, or None if absent/unreadable."""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        messages = data.get('locale_data', {}).get('messages', {})
+        return len([k for k in messages if k != ''])
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
+def write_sidecar(out_path, data, force, label):
+    """Write a sidecar JSON, guarding against a silent >=30% key-count regression."""
+    new_count = len([k for k in data['locale_data']['messages'] if k != ''])
+    old_count = count_existing_keys(out_path)
+    if old_count and not force:
+        drop = (old_count - new_count) / old_count
+        if drop >= 0.30:
+            print(
+                f'ERROR: refusing to write {out_path}\n'
+                f'  {label}: existing sidecar has {old_count} keys, new one would have '
+                f'{new_count} ({drop:.0%} drop).\n'
+                f'  This is the exact failure mode that silently regressed 263 Pro '
+                f'translations to English (Aug 2026) - a JS-filter pass against an '
+                f'under-extracted POT. Verify the extractor is finding all __() calls '
+                f'(are any still 1-arg?) before overriding.\n'
+                f'  Pass --force once you have confirmed this drop is intentional.',
+                file=sys.stderr
+            )
+            sys.exit(1)
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=None, separators=(',', ':'))
+    print(f'Wrote {out_path} ({new_count} keys, was {old_count if old_count is not None else "n/a"})', file=sys.stderr)
+
+
 def main():
     if len(sys.argv) < 5:
         print(__doc__, file=sys.stderr)
@@ -285,14 +348,25 @@ def main():
     textdomain = sys.argv[2]
     locale = sys.argv[3]
     po_path = sys.argv[4]
-    extracted_json = sys.argv[5] if len(sys.argv) > 5 else None
+
+    rest = sys.argv[5:]
+    force = '--force' in rest
+    if force:
+        rest.remove('--force')
+    handle_override = None
+    if '--handle' in rest:
+        idx = rest.index('--handle')
+        handle_override = rest[idx + 1]
+        del rest[idx:idx + 2]
+    extracted_json = None
+    for a in rest:
+        if a != '-':
+            extracted_json = a
+            break
 
     if not os.path.exists(po_path):
         print(f'Error: {po_path} not found', file=sys.stderr)
         sys.exit(1)
-
-    # Detect script handles
-    handles = find_script_handles(plugin_path, textdomain)
 
     # Parse translations from PO
     translations = parse_po_translations(po_path)
@@ -311,6 +385,22 @@ def main():
         print(json.dumps([]))
         return
 
+    if handle_override:
+        # Skip src detection entirely: write straight to the handle-based filename,
+        # which is what WP core (load_script_textdomain) resolves BEFORE the md5
+        # fallback. This is the name that must exist for wp_set_script_translations()
+        # to actually load a translation for this handle.
+        filename = f'{textdomain}-{locale}-{handle_override}.json'
+        out_path = os.path.join(lang_dir, filename)
+        data = build_json(translations, locale, js_msgids)
+        write_sidecar(out_path, data, force, f'handle={handle_override}')
+        output_paths.append(out_path)
+        print(json.dumps(output_paths))
+        return
+
+    # Detect script handles
+    handles = find_script_handles(plugin_path, textdomain)
+
     if handles:
         for handle in handles:
             src_path = find_script_src_path(plugin_path, handle)
@@ -327,10 +417,8 @@ def main():
             filename = f'{textdomain}-{locale}-{h}.json'
             out_path = os.path.join(lang_dir, filename)
             data = build_json(translations, locale, js_msgids)
-            with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=None, separators=(',', ':'))
+            write_sidecar(out_path, data, force, f'handle={handle}')
             output_paths.append(out_path)
-            print(f'Wrote {out_path}', file=sys.stderr)
     else:
         # No wp_set_script_translations found - plugin may be PHP-only
         if js_msgids is None:

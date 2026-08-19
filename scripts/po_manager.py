@@ -91,17 +91,30 @@ def parse_po_blocks(content):
         m = re.search(r'^msgid\s+"((?:[^"\\]|\\.)*)"', block, re.MULTILINE)
         if m:
             msgid_val = m.group(1)
-            # Handle multi-line
+            # Handle multi-line: msgid "" followed by consecutive quoted
+            # continuation lines. MUST stop at the first non-quoted line
+            # (msgid_plural / msgstr) - a naive re.findall over the whole
+            # remainder of the block also matches msgstr's OWN continuation
+            # lines (since those are quoted too) and silently concatenates
+            # the translation text onto the msgid. That bug produced 18
+            # spurious "missing" msgids and near-duplicate PO entries in
+            # Aug 2026 (see also the same bug class, already fixed, in
+            # json_generator.py's parse_po_translations).
             if msgid_val == '':
-                # Check for continuation lines after msgid ""
                 rest = block[m.end():]
-                cont = re.findall(r'^"([^"]*)"', rest, re.MULTILINE)
+                cont = []
+                for line in rest.split('\n')[1:]:
+                    line_m = re.match(r'^"((?:[^"\\]|\\.)*)"$', line.strip())
+                    if not line_m:
+                        break
+                    cont.append(line_m.group(1))
                 if cont:
                     msgid_val = ''.join(cont)
             if msgid_val == '':
                 blocks.append((None, block))  # header
             else:
-                decoded = msgid_val.replace('\\"', '"').replace('\\\\', '\\').replace('\\n', '\n')
+                decoded = (msgid_val.replace('\\"', '"').replace('\\\\', '\\')
+                           .replace('\\n', '\n').replace('\\t', '\t'))
                 blocks.append((decoded, block))
         else:
             blocks.append((None, block))

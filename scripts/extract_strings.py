@@ -16,7 +16,13 @@ import re
 import json
 
 # Dirs that are never WP plugin/theme source code
-SKIP_DIRS_DEFAULT = {'node_modules', 'vendor', '.git', '__pycache__', '.github', '.svn'}
+# 'dist' excluded: translatable strings must come from SOURCE only, never
+# compiled/minified output - build tools rename identifiers (a local __()
+# wrapper becomes some minifier-assigned short name), which produces both
+# false negatives (real calls no longer match the __(/_e( pattern) and false
+# positives (an unrelated minified function that happens to be named _e/__
+# gets flagged as an unextractable i18n call).
+SKIP_DIRS_DEFAULT = {'node_modules', 'vendor', '.git', '__pycache__', '.github', '.svn', 'dist'}
 
 # PHP i18n functions where textdomain is the 2nd arg: func('string', 'textdomain')
 PHP_FUNCS_2ARG = r'(?:__|_e|esc_html__|esc_attr__|esc_html_e|esc_attr_e)'
@@ -241,6 +247,29 @@ def extract_js(filepath, textdomain, line_offsets, content):
     return results
 
 
+def detect_unextractable_js(filepath, line_offsets, content):
+    """
+    Find JS/JSX __() / _e() calls with fewer than 2 args (no textdomain literal).
+    These are INVISIBLE to extract_js() above and silently drop out of POT/PO/JSON
+    with no error anywhere in the pipeline - this exact pattern caused 517 Pro
+    strings (296 unique) to go untranslatable in Aug 2026, because a local i18n
+    wrapper hardcoded the domain so `__('text')` felt natural to write but the
+    extractor requires the literal 2-arg form. Reported loudly instead of skipped
+    silently, so a plugin's own build/lint step can catch new instances of this.
+    """
+    warnings = []
+    one_arg_single = re.compile(r"\b(__|_e)\(\s*'(?:[^'\\]|\\.)*'\s*\)")
+    one_arg_double = re.compile(r'\b(__|_e)\(\s*"(?:[^"\\]|\\.)*"\s*\)')
+    # bare variable/expression arg with no literal at all, e.g. __(d), __(t.label)
+    dynamic_arg = re.compile(r"\b(__|_e)\(\s*[A-Za-z_$][\w$.\[\]'\"]*\s*\)")
+    for pat, kind in ((one_arg_single, 'literal'), (one_arg_double, 'literal'), (dynamic_arg, 'dynamic')):
+        for m in pat.finditer(content):
+            fn = m.group(1)
+            line = offset_to_line(line_offsets, m.start())
+            warnings.append((filepath, line, fn, kind, m.group(0)[:60]))
+    return warnings
+
+
 def walk_files(root, skip_dirs):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in skip_dirs]
@@ -274,6 +303,7 @@ def main():
     seen = {}
     # Track all types (php/js) per key so strings used in both are marked for JSON sidecar
     seen_types = {}
+    unextractable = []
 
     for ftype, filepath in walk_files(root, skip_dirs):
         try:
@@ -288,6 +318,7 @@ def main():
             entries = extract_php(filepath, textdomain, line_offsets, content)
         else:
             entries = extract_js(filepath, textdomain, line_offsets, content)
+            unextractable.extend(detect_unextractable_js(filepath, line_offsets, content))
 
         for entry in entries:
             key = (entry['msgid'], entry.get('plural', ''), entry.get('context', ''))
@@ -311,6 +342,15 @@ def main():
             entry['file'] = os.path.relpath(entry['file'], root)
         except ValueError:
             pass
+
+    if unextractable:
+        print(f'\nWARNING: {len(unextractable)} JS/JSX call(s) will NEVER be extracted '
+              f'(missing textdomain arg or dynamic argument):', file=sys.stderr)
+        for filepath, line, fn, kind, snippet in sorted(unextractable):
+            rel = os.path.relpath(filepath, root)
+            reason = 'no 2nd (textdomain) arg' if kind == 'literal' else 'non-literal argument, cannot auto-extract at all'
+            print(f'  {rel}:{line}  {fn}(...)  [{reason}]  {snippet}', file=sys.stderr)
+        print('These strings are silently absent from every POT/PO/JSON generated below.\n', file=sys.stderr)
 
     print(json.dumps(all_strings, ensure_ascii=False, indent=2))
 

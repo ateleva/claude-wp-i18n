@@ -154,10 +154,20 @@ EXTRACTED_JSON="/tmp/wp-code-translate-extracted-{slug}.json"
 python3 "$WPI18N/scripts/extract_strings.py" "{path}" "{textdomain}" > "$EXTRACTED_JSON"
 ```
 
-Scans `.php`, `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs`, skipping `node_modules/`,
-`vendor/`, `.git/`. Does NOT skip `build/`/`dist/` - some plugins serve JS
-directly from there. For a bundled plugin with duplicates in both `src/` and
-`build/`, pass `--skip-dirs build`.
+Scans `.php`, `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs`. Skips `node_modules/`,
+`vendor/`, `.git/`, `__pycache__/`, `.github/`, `.svn/`, and `dist/`.
+
+`dist/` is skipped because translatable strings must come from **source**,
+never compiled output: a minifier renames a local `__()` wrapper to some
+short generated name, which both hides real calls and makes unrelated
+minified functions look like i18n calls. Override with
+`--skip-dirs dir1,dir2` if a plugin genuinely serves un-minified JS from a
+build directory.
+
+The extractor also reports JS/JSX calls that use the **1-arg form**
+(`__('text')`) or a fully dynamic argument (`__(someVar)`). These are
+invisible to extraction and can never reach the `.po` without a source
+change. Surface that count to the user; a translation pass cannot fix them.
 
 Report: "Found N translatable strings."
 
@@ -282,6 +292,13 @@ msgfmt -o "{path}/languages/{textdomain}-{locale}.mo" "$PO_FILE"
 # 10c - regenerate the JS sidecar
 python3 "$WPI18N/scripts/json_generator.py" \
   "{path}" "{textdomain}" "{locale}" "$PO_FILE" "$EXTRACTED_JSON"
+
+# 10c variant - if the plugin uses a HANDLE-based sidecar name rather than
+# WP's md5 default, pass it explicitly. WP core checks the handle-based
+# filename BEFORE the md5 fallback, so this is the file that actually loads.
+python3 "$WPI18N/scripts/json_generator.py" \
+  "{path}" "{textdomain}" "{locale}" "$PO_FILE" "$EXTRACTED_JSON" \
+  --handle "{handle}"
 ```
 
 If `msgfmt` reports errors, show them and do NOT overwrite the existing `.mo`.
@@ -289,6 +306,11 @@ If `msgfmt` reports errors, show them and do NOT overwrite the existing `.mo`.
 **10c is not optional.** A `.po` change that is compiled but not
 re-sidecarred leaves the browser showing the previous string. That is the
 exact failure `wp-i18n-doctor` exists to diagnose.
+
+`json_generator.py` refuses to overwrite an existing sidecar with a much
+smaller one unless you pass `--force`. That guard exists because a
+JS-filtered regen against an under-extracted source silently drops keys; if
+it trips, fix the extraction rather than forcing past it.
 
 The sidecar step scans PHP for `wp_set_script_translations()`, resolves each
 handle's script src, computes `md5(relative_src_path)`, filters the PO to
