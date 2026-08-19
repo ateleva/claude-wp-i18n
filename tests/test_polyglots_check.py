@@ -87,12 +87,47 @@ class TestIndividualRules(unittest.TestCase):
     def test_6f_normal_sentence_case_passes(self):
         self.assertIsNone(check_6f("Save changes", "Salva le modifiche"))
 
+    def test_6f_acronyms_and_proper_nouns_not_flagged(self):
+        """Real false positives from the free-plugin .po. Counting 3
+        consecutive capitalised words flagged all of these; none is Title
+        Case."""
+        for s in [
+            "Fotonic richiede l'estensione PHP OpenSSL. Abilitala sul tuo server.",
+            "Immagini, PDF, DOC, DOCX max 10 MB ciascuno",
+            "Apri la tua app di autenticazione (Google Authenticator, Authy, ecc.)",
+            "Questo sito è eseguito su Local by Flywheel ed esiste solo su questo computer",
+        ]:
+            self.assertIsNone(check_6f("x", s), f"false positive on: {s}")
+
+    def test_6f_sentence_initial_function_word_not_flagged(self):
+        """A function word opening a new sentence after '.' or '?' is
+        correctly capitalised. Ignoring sentence boundaries flagged 17
+        correct strings in the real .po."""
+        for s in [
+            "Genera un nuovo codice di recupero. Il codice precedente verrà invalidato.",
+            "Vuoi eliminare questa scheda? Questa azione è irreversibile.",
+        ]:
+            self.assertIsNone(check_6f("x", s), f"false positive on: {s}")
+
     def test_6g_space_before_punctuation_is_warning(self):
         f = check_6g("Done.", "Fatto .")
         self.assertEqual((f.rule, f.severity), ("6g", "WARNING"))
 
     def test_6g_clean_punctuation_passes(self):
         self.assertIsNone(check_6g("Done.", "Fatto."))
+
+    def test_6g_oxford_comma_in_a_real_list_is_flagged(self):
+        f = check_6g("one, two, and three", "uno, due, e tre")
+        self.assertEqual((f.rule, f.severity), ("6g", "WARNING"))
+
+    def test_6g_comma_joining_two_clauses_is_not_an_oxford_comma(self):
+        """Real false positive from both Fotonic .po files. The it_IT
+        handbook scopes this rule to the comma before the conjunction
+        ENDING A LIST; a comma joining independent clauses is correct."""
+        self.assertIsNone(check_6g(
+            "Encrypted backups need the PHP Sodium and Zip extensions, and this server lacks them.",
+            "I backup cifrati richiedono le estensioni PHP Sodium e Zip, e questo server non le ha.",
+        ))
 
     def test_6h_ampersand_conjunction_is_warning(self):
         f = check_6h("Name & Address", "Nome & Indirizzo")

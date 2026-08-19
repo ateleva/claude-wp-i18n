@@ -127,19 +127,51 @@ ITALIAN_MONTHS = (
     "agosto", "settembre", "ottobre", "novembre", "dicembre",
 )
 
+# Italian function words. A capitalised one MID-SENTENCE is the actual signal
+# for Title Case, because proper nouns and acronyms never capitalise these.
+# Counting "3 consecutive capitalised words" instead flagged ordinary strings
+# like "PHP OpenSSL", "Google Authenticator, Authy" and "Local by Flywheel":
+# measured against the real free-plugin .po, that heuristic produced 8
+# findings, all 8 false positives.
+ITALIAN_FUNCTION_WORDS = {
+    "il", "lo", "la", "i", "gli", "le", "un", "uno", "una", "di", "a", "da",
+    "in", "con", "su", "per", "tra", "fra", "e", "o", "ma", "che", "se",
+    "del", "dello", "della", "dei", "degli", "delle", "dal", "dallo",
+    "dalla", "dai", "dagli", "dalle", "al", "allo", "alla", "ai", "agli",
+    "alle", "nel", "nello", "nella", "nei", "negli", "nelle", "sul",
+    "sullo", "sulla", "sui", "sugli", "sulle", "come", "non", "anche",
+    "quando", "dove", "questo", "questa", "sono", "essere",
+}
+
+
+def _is_sentence_initial(text, start):
+    """True if the token at `start` opens the string or a new sentence.
+    A function word is legitimately capitalised there ("... recupero. Il
+    codice precedente ..."), so it must not count as Title Case. Ignoring
+    this flagged 17 correct strings in the real free-plugin .po."""
+    before = text[:start].rstrip()
+    if not before:
+        return True
+    return before[-1] in ".?!:;\n" or before[-1] in "([{\"'«"
+
 
 def check_6f(msgid, msgstr):
-    words = re.findall(r"[A-Za-zÀ-ÿ']+", msgstr)
+    words = list(re.finditer(r"[A-Za-zÀ-ÿ']+", msgstr))
     if len(words) > 3:
-        cap_run = 0
-        for w in words:
-            if w[:1].isupper():
-                cap_run += 1
-                if cap_run >= 3:
-                    return Finding("6f", "WARNING", msgid, msgstr,
-                                   "Possible Title Case -- Italian doesn't use Title Case")
-            else:
-                cap_run = 0
+        # ALL-CAPS acronyms (PHP, PDF, MB) carry no case information, and a
+        # function word opening a sentence is correct, so neither counts.
+        offenders = [
+            m.group(0) for m in words
+            if m.group(0)[:1].isupper()
+            and m.group(0) != m.group(0).upper()
+            and m.group(0).lower() in ITALIAN_FUNCTION_WORDS
+            and not _is_sentence_initial(msgstr, m.start())
+        ]
+        if offenders:
+            return Finding("6f", "WARNING", msgid, msgstr,
+                           f"Possible Title Case: function word(s) capitalised "
+                           f"mid-sentence {sorted(set(offenders))}. Italian uses "
+                           f"sentence case.")
     # month name capitalised mid-sentence (not the first word of msgstr)
     tail = msgstr[1:] if msgstr else ""
     for month in ITALIAN_MONTHS:
@@ -158,8 +190,15 @@ def check_6g(msgid, msgstr):
         problems.append("space before punctuation")
     if re.search(r"\.{4,}", msgstr):
         problems.append("ellipsis has 4+ dots (use … or exactly ...)")
-    if re.search(r",\s+e\s", msgstr):
-        problems.append("Oxford comma before 'e' (Italian omits it: 'uno, due e tre')")
+    # Oxford comma: per the it_IT handbook this is specifically "la virgola
+    # inserita prima della congiunzione che TERMINA UN ELENCO" ("uno, due, e
+    # tre"). A comma before "e" joining two independent clauses is ordinary
+    # correct Italian, so require an earlier comma proving a list is in
+    # progress. Without that, real strings like "... Sodium e Zip, e questo
+    # server non le ha" were flagged wrongly.
+    m_ox = re.search(r",\s+[eo]\s", msgstr)
+    if m_ox and "," in msgstr[:m_ox.start()]:
+        problems.append("Oxford comma ending a list (Italian omits it: 'uno, due e tre')")
     if re.search(r"\(\s|\s\)", msgstr):
         problems.append("space just inside parentheses")
     if problems:
